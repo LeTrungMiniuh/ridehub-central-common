@@ -1,0 +1,10 @@
+export KEYCLOAK_USERNAME=''
+export KEYCLOAK_PASSWORD=''
+
+mvn clean package -Prun-openapi
+mvn clean package
+
+git add .
+git commit -m"b"
+git tag -a v1.2.7 -m "Release 1.2.7"
+git push origin v1.2.7
