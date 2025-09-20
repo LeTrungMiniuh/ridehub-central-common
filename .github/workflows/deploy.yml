@@ -35,7 +35,7 @@ jobs:
           # Set version from git tag
           mvn versions:set -DnewVersion=${{ steps.extract_version.outputs.VERSION }}
           mvn -B -U -DskipTests clean deploy -Prun-openapi \
-            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/phungle2508/ridehub-central-common
+            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/LeTrungMiniuh/ridehub-central-common
         env:
           GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
           GITHUB_ACTOR: __token__
