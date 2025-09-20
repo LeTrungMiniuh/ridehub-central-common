@@ -1,10 +1,10 @@
-package com.ticketsystem.msnotification.client.api;
+package com.ridehub.msnotification.client.api;
 
-import com.ticketsystem.msnotification.client.invoker.ApiClient;
-import com.ticketsystem.msnotification.client.invoker.EncodingUtils;
-import com.ticketsystem.msnotification.client.model.ApiResponse;
+import com.ridehub.msnotification.client.invoker.ApiClient;
+import com.ridehub.msnotification.client.invoker.EncodingUtils;
+import com.ridehub.msnotification.client.model.ApiResponse;
 
-import com.ticketsystem.msnotification.client.model.NotificationDTO;
+import com.ridehub.msnotification.client.model.NotificationDTO;
 
 import java.util.ArrayList;
 import java.util.HashMap;

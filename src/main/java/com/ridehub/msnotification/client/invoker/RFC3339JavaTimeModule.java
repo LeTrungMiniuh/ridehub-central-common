@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ticketsystem.msnotification.client.invoker;
+package com.ridehub.msnotification.client.invoker;
 
 import java.time.Instant;
 import java.time.OffsetDateTime;

@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msroutedev.client.model;
+package com.ridehub.msroutedev.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ticketsystem.msroutedev.client.model.RouteDTO;
+import com.ridehub.msroutedev.client.model.RouteDTO;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;

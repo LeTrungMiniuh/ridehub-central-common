@@ -1,7 +1,7 @@
-package com.ticketsystem.kafka.broker;
+package com.ridehub.kafka.broker;
 
-import com.ticketsystem.avro.common.EventEnvelope;
-import com.ticketsystem.kafka.service.KafkaUtilityService;
+import com.ridehub.avro.common.EventEnvelope;
+import com.ridehub.kafka.service.KafkaUtilityService;
 import java.util.function.Consumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

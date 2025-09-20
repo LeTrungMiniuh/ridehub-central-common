@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.route;
+package com.ridehub.avro.route;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
   private static final long serialVersionUID = 6510100478324162838L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RouteDTO\",\"namespace\":\"com.ticketsystem.avro.route\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"routeName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"origin\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"destination\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"distance\",\"type\":[\"null\",\"double\"],\"default\":null},{\"name\":\"estimatedDuration\",\"type\":[\"null\",\"int\"],\"doc\":\"minutes\",\"default\":null},{\"name\":\"transportType\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"TransportType\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"TRAIN\",\"BUS\"]}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RouteDTO\",\"namespace\":\"com.ridehub.avro.route\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"routeName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"origin\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"destination\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"distance\",\"type\":[\"null\",\"double\"],\"default\":null},{\"name\":\"estimatedDuration\",\"type\":[\"null\",\"int\"],\"doc\":\"minutes\",\"default\":null},{\"name\":\"transportType\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"TransportType\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"TRAIN\",\"BUS\"]}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -83,7 +83,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
   private java.lang.Double distance;
   /** minutes */
   private java.lang.Integer estimatedDuration;
-  private com.ticketsystem.avro.enums.TransportType transportType;
+  private com.ridehub.avro.enums.TransportType transportType;
   private java.lang.Boolean isActive;
   private java.time.Instant createdAt;
   private java.time.Instant updatedAt;
@@ -108,7 +108,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
    * @param createdAt The new value for createdAt
    * @param updatedAt The new value for updatedAt
    */
-  public RouteDTO(java.util.UUID id, java.lang.String routeName, java.lang.String origin, java.lang.String destination, java.lang.Double distance, java.lang.Integer estimatedDuration, com.ticketsystem.avro.enums.TransportType transportType, java.lang.Boolean isActive, java.time.Instant createdAt, java.time.Instant updatedAt) {
+  public RouteDTO(java.util.UUID id, java.lang.String routeName, java.lang.String origin, java.lang.String destination, java.lang.Double distance, java.lang.Integer estimatedDuration, com.ridehub.avro.enums.TransportType transportType, java.lang.Boolean isActive, java.time.Instant createdAt, java.time.Instant updatedAt) {
     this.id = id;
     this.routeName = routeName;
     this.origin = origin;
@@ -156,7 +156,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
     case 3: destination = value$ != null ? value$.toString() : null; break;
     case 4: distance = (java.lang.Double)value$; break;
     case 5: estimatedDuration = (java.lang.Integer)value$; break;
-    case 6: transportType = (com.ticketsystem.avro.enums.TransportType)value$; break;
+    case 6: transportType = (com.ridehub.avro.enums.TransportType)value$; break;
     case 7: isActive = (java.lang.Boolean)value$; break;
     case 8: createdAt = (java.time.Instant)value$; break;
     case 9: updatedAt = (java.time.Instant)value$; break;
@@ -228,7 +228,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'transportType' field.
    * @return The value of the 'transportType' field.
    */
-  public com.ticketsystem.avro.enums.TransportType getTransportType() {
+  public com.ridehub.avro.enums.TransportType getTransportType() {
     return transportType;
   }
 
@@ -268,8 +268,8 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new RouteDTO RecordBuilder.
    * @return A new RouteDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.RouteDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.route.RouteDTO.Builder();
+  public static com.ridehub.avro.route.RouteDTO.Builder newBuilder() {
+    return new com.ridehub.avro.route.RouteDTO.Builder();
   }
 
   /**
@@ -277,11 +277,11 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new RouteDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.RouteDTO.Builder newBuilder(com.ticketsystem.avro.route.RouteDTO.Builder other) {
+  public static com.ridehub.avro.route.RouteDTO.Builder newBuilder(com.ridehub.avro.route.RouteDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.route.RouteDTO.Builder();
+      return new com.ridehub.avro.route.RouteDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.route.RouteDTO.Builder(other);
+      return new com.ridehub.avro.route.RouteDTO.Builder(other);
     }
   }
 
@@ -290,11 +290,11 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new RouteDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.RouteDTO.Builder newBuilder(com.ticketsystem.avro.route.RouteDTO other) {
+  public static com.ridehub.avro.route.RouteDTO.Builder newBuilder(com.ridehub.avro.route.RouteDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.route.RouteDTO.Builder();
+      return new com.ridehub.avro.route.RouteDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.route.RouteDTO.Builder(other);
+      return new com.ridehub.avro.route.RouteDTO.Builder(other);
     }
   }
 
@@ -312,7 +312,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.Double distance;
     /** minutes */
     private java.lang.Integer estimatedDuration;
-    private com.ticketsystem.avro.enums.TransportType transportType;
+    private com.ridehub.avro.enums.TransportType transportType;
     private java.lang.Boolean isActive;
     private java.time.Instant createdAt;
     private java.time.Instant updatedAt;
@@ -326,7 +326,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.route.RouteDTO.Builder other) {
+    private Builder(com.ridehub.avro.route.RouteDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -374,7 +374,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing RouteDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.route.RouteDTO other) {
+    private Builder(com.ridehub.avro.route.RouteDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -432,7 +432,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -452,7 +452,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearId() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -472,7 +472,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'routeName'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setRouteName(java.lang.String value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setRouteName(java.lang.String value) {
       validate(fields()[1], value);
       this.routeName = value;
       fieldSetFlags()[1] = true;
@@ -492,7 +492,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'routeName' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearRouteName() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearRouteName() {
       routeName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -512,7 +512,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'origin'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setOrigin(java.lang.String value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setOrigin(java.lang.String value) {
       validate(fields()[2], value);
       this.origin = value;
       fieldSetFlags()[2] = true;
@@ -532,7 +532,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'origin' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearOrigin() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearOrigin() {
       origin = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -552,7 +552,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'destination'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setDestination(java.lang.String value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setDestination(java.lang.String value) {
       validate(fields()[3], value);
       this.destination = value;
       fieldSetFlags()[3] = true;
@@ -572,7 +572,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'destination' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearDestination() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearDestination() {
       destination = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -592,7 +592,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'distance'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setDistance(java.lang.Double value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setDistance(java.lang.Double value) {
       validate(fields()[4], value);
       this.distance = value;
       fieldSetFlags()[4] = true;
@@ -612,7 +612,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'distance' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearDistance() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearDistance() {
       distance = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -634,7 +634,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'estimatedDuration'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setEstimatedDuration(java.lang.Integer value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setEstimatedDuration(java.lang.Integer value) {
       validate(fields()[5], value);
       this.estimatedDuration = value;
       fieldSetFlags()[5] = true;
@@ -656,7 +656,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * minutes
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearEstimatedDuration() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearEstimatedDuration() {
       estimatedDuration = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -666,7 +666,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'transportType' field.
       * @return The value.
       */
-    public com.ticketsystem.avro.enums.TransportType getTransportType() {
+    public com.ridehub.avro.enums.TransportType getTransportType() {
       return transportType;
     }
 
@@ -676,7 +676,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'transportType'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setTransportType(com.ticketsystem.avro.enums.TransportType value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setTransportType(com.ridehub.avro.enums.TransportType value) {
       validate(fields()[6], value);
       this.transportType = value;
       fieldSetFlags()[6] = true;
@@ -696,7 +696,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'transportType' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearTransportType() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearTransportType() {
       transportType = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -716,7 +716,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'isActive'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setIsActive(java.lang.Boolean value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setIsActive(java.lang.Boolean value) {
       validate(fields()[7], value);
       this.isActive = value;
       fieldSetFlags()[7] = true;
@@ -736,7 +736,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'isActive' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearIsActive() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearIsActive() {
       isActive = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -756,7 +756,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[8], value);
       this.createdAt = value;
       fieldSetFlags()[8] = true;
@@ -776,7 +776,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -796,7 +796,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'updatedAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder setUpdatedAt(java.time.Instant value) {
+    public com.ridehub.avro.route.RouteDTO.Builder setUpdatedAt(java.time.Instant value) {
       validate(fields()[9], value);
       this.updatedAt = value;
       fieldSetFlags()[9] = true;
@@ -816,7 +816,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'updatedAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.RouteDTO.Builder clearUpdatedAt() {
+    public com.ridehub.avro.route.RouteDTO.Builder clearUpdatedAt() {
       updatedAt = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -833,7 +833,7 @@ public class RouteDTO extends org.apache.avro.specific.SpecificRecordBase implem
         record.destination = fieldSetFlags()[3] ? this.destination : (java.lang.String) defaultValue(fields()[3]);
         record.distance = fieldSetFlags()[4] ? this.distance : (java.lang.Double) defaultValue(fields()[4]);
         record.estimatedDuration = fieldSetFlags()[5] ? this.estimatedDuration : (java.lang.Integer) defaultValue(fields()[5]);
-        record.transportType = fieldSetFlags()[6] ? this.transportType : (com.ticketsystem.avro.enums.TransportType) defaultValue(fields()[6]);
+        record.transportType = fieldSetFlags()[6] ? this.transportType : (com.ridehub.avro.enums.TransportType) defaultValue(fields()[6]);
         record.isActive = fieldSetFlags()[7] ? this.isActive : (java.lang.Boolean) defaultValue(fields()[7]);
         record.createdAt = fieldSetFlags()[8] ? this.createdAt : (java.time.Instant) defaultValue(fields()[8]);
         record.updatedAt = fieldSetFlags()[9] ? this.updatedAt : (java.time.Instant) defaultValue(fields()[9]);

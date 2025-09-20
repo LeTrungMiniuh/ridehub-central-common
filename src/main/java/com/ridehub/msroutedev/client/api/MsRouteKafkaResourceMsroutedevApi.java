@@ -1,10 +1,10 @@
-package com.ticketsystem.msroutedev.client.api;
+package com.ridehub.msroutedev.client.api;
 
-import com.ticketsystem.msroutedev.client.invoker.ApiClient;
-import com.ticketsystem.msroutedev.client.invoker.EncodingUtils;
-import com.ticketsystem.msroutedev.client.model.ApiResponse;
+import com.ridehub.msroutedev.client.invoker.ApiClient;
+import com.ridehub.msroutedev.client.invoker.EncodingUtils;
+import com.ridehub.msroutedev.client.model.ApiResponse;
 
-import com.ticketsystem.msroutedev.client.model.ResponseBodyEmitter;
+import com.ridehub.msroutedev.client.model.ResponseBodyEmitter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

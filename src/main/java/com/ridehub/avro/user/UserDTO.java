@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.user;
+package com.ridehub.avro.user;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
   private static final long serialVersionUID = -714191975795619617L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserDTO\",\"namespace\":\"com.ticketsystem.avro.user\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"username\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"passwordHash\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"firstName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"phoneNumber\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dateOfBirth\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"keycloakUserId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userAvatar\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserDTO\",\"namespace\":\"com.ridehub.avro.user\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"username\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"passwordHash\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"firstName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lastName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"phoneNumber\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dateOfBirth\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"keycloakUserId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userAvatar\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -313,8 +313,8 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new UserDTO RecordBuilder.
    * @return A new UserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.user.UserDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.user.UserDTO.Builder();
+  public static com.ridehub.avro.user.UserDTO.Builder newBuilder() {
+    return new com.ridehub.avro.user.UserDTO.Builder();
   }
 
   /**
@@ -322,11 +322,11 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new UserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.user.UserDTO.Builder newBuilder(com.ticketsystem.avro.user.UserDTO.Builder other) {
+  public static com.ridehub.avro.user.UserDTO.Builder newBuilder(com.ridehub.avro.user.UserDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.user.UserDTO.Builder();
+      return new com.ridehub.avro.user.UserDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.user.UserDTO.Builder(other);
+      return new com.ridehub.avro.user.UserDTO.Builder(other);
     }
   }
 
@@ -335,11 +335,11 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new UserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.user.UserDTO.Builder newBuilder(com.ticketsystem.avro.user.UserDTO other) {
+  public static com.ridehub.avro.user.UserDTO.Builder newBuilder(com.ridehub.avro.user.UserDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.user.UserDTO.Builder();
+      return new com.ridehub.avro.user.UserDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.user.UserDTO.Builder(other);
+      return new com.ridehub.avro.user.UserDTO.Builder(other);
     }
   }
 
@@ -373,7 +373,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.user.UserDTO.Builder other) {
+    private Builder(com.ridehub.avro.user.UserDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -433,7 +433,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing UserDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.user.UserDTO other) {
+    private Builder(com.ridehub.avro.user.UserDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -503,7 +503,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.user.UserDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -523,7 +523,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearId() {
+    public com.ridehub.avro.user.UserDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -543,7 +543,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'username'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setUsername(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setUsername(java.lang.String value) {
       validate(fields()[1], value);
       this.username = value;
       fieldSetFlags()[1] = true;
@@ -563,7 +563,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'username' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearUsername() {
+    public com.ridehub.avro.user.UserDTO.Builder clearUsername() {
       username = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -583,7 +583,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setEmail(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setEmail(java.lang.String value) {
       validate(fields()[2], value);
       this.email = value;
       fieldSetFlags()[2] = true;
@@ -603,7 +603,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearEmail() {
+    public com.ridehub.avro.user.UserDTO.Builder clearEmail() {
       email = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -623,7 +623,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'passwordHash'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setPasswordHash(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setPasswordHash(java.lang.String value) {
       validate(fields()[3], value);
       this.passwordHash = value;
       fieldSetFlags()[3] = true;
@@ -643,7 +643,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'passwordHash' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearPasswordHash() {
+    public com.ridehub.avro.user.UserDTO.Builder clearPasswordHash() {
       passwordHash = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -663,7 +663,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'firstName'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setFirstName(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setFirstName(java.lang.String value) {
       validate(fields()[4], value);
       this.firstName = value;
       fieldSetFlags()[4] = true;
@@ -683,7 +683,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'firstName' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearFirstName() {
+    public com.ridehub.avro.user.UserDTO.Builder clearFirstName() {
       firstName = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -703,7 +703,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'lastName'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setLastName(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setLastName(java.lang.String value) {
       validate(fields()[5], value);
       this.lastName = value;
       fieldSetFlags()[5] = true;
@@ -723,7 +723,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'lastName' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearLastName() {
+    public com.ridehub.avro.user.UserDTO.Builder clearLastName() {
       lastName = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -743,7 +743,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'phoneNumber'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setPhoneNumber(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setPhoneNumber(java.lang.String value) {
       validate(fields()[6], value);
       this.phoneNumber = value;
       fieldSetFlags()[6] = true;
@@ -763,7 +763,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'phoneNumber' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearPhoneNumber() {
+    public com.ridehub.avro.user.UserDTO.Builder clearPhoneNumber() {
       phoneNumber = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -783,7 +783,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'dateOfBirth'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setDateOfBirth(java.time.LocalDate value) {
+    public com.ridehub.avro.user.UserDTO.Builder setDateOfBirth(java.time.LocalDate value) {
       validate(fields()[7], value);
       this.dateOfBirth = value;
       fieldSetFlags()[7] = true;
@@ -803,7 +803,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'dateOfBirth' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearDateOfBirth() {
+    public com.ridehub.avro.user.UserDTO.Builder clearDateOfBirth() {
       dateOfBirth = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -823,7 +823,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.user.UserDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[8], value);
       this.createdAt = value;
       fieldSetFlags()[8] = true;
@@ -843,7 +843,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.user.UserDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -863,7 +863,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'updatedAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setUpdatedAt(java.time.Instant value) {
+    public com.ridehub.avro.user.UserDTO.Builder setUpdatedAt(java.time.Instant value) {
       validate(fields()[9], value);
       this.updatedAt = value;
       fieldSetFlags()[9] = true;
@@ -883,7 +883,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'updatedAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearUpdatedAt() {
+    public com.ridehub.avro.user.UserDTO.Builder clearUpdatedAt() {
       updatedAt = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -903,7 +903,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'keycloakUserId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setKeycloakUserId(java.util.UUID value) {
+    public com.ridehub.avro.user.UserDTO.Builder setKeycloakUserId(java.util.UUID value) {
       validate(fields()[10], value);
       this.keycloakUserId = value;
       fieldSetFlags()[10] = true;
@@ -923,7 +923,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'keycloakUserId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearKeycloakUserId() {
+    public com.ridehub.avro.user.UserDTO.Builder clearKeycloakUserId() {
       keycloakUserId = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -943,7 +943,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'userAvatar'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setUserAvatar(java.lang.String value) {
+    public com.ridehub.avro.user.UserDTO.Builder setUserAvatar(java.lang.String value) {
       validate(fields()[11], value);
       this.userAvatar = value;
       fieldSetFlags()[11] = true;
@@ -963,7 +963,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'userAvatar' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearUserAvatar() {
+    public com.ridehub.avro.user.UserDTO.Builder clearUserAvatar() {
       userAvatar = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -983,7 +983,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'isActive'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder setIsActive(java.lang.Boolean value) {
+    public com.ridehub.avro.user.UserDTO.Builder setIsActive(java.lang.Boolean value) {
       validate(fields()[12], value);
       this.isActive = value;
       fieldSetFlags()[12] = true;
@@ -1003,7 +1003,7 @@ public class UserDTO extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'isActive' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.user.UserDTO.Builder clearIsActive() {
+    public com.ridehub.avro.user.UserDTO.Builder clearIsActive() {
       isActive = null;
       fieldSetFlags()[12] = false;
       return this;

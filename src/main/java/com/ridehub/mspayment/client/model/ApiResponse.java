@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.mspayment.client.model;
+package com.ridehub.mspayment.client.model;
 
 import java.util.Map;
 import java.util.Collection;

@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.common;
+package com.ridehub.avro.common;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -17,7 +17,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
   private static final long serialVersionUID = 2122421619383074076L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EventHeader\",\"namespace\":\"com.ticketsystem.avro.common\",\"doc\":\"Standard event envelope header for all domain events.\",\"fields\":[{\"name\":\"eventId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"source\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Originating service (e.g., ms_booking)\"},{\"name\":\"occurredAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"traceId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"schemaVersion\",\"type\":\"int\",\"default\":1}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EventHeader\",\"namespace\":\"com.ridehub.avro.common\",\"doc\":\"Standard event envelope header for all domain events.\",\"fields\":[{\"name\":\"eventId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"source\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Originating service (e.g., ms_booking)\"},{\"name\":\"occurredAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"traceId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"schemaVersion\",\"type\":\"int\",\"default\":1}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -209,8 +209,8 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
    * Creates a new EventHeader RecordBuilder.
    * @return A new EventHeader RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventHeader.Builder newBuilder() {
-    return new com.ticketsystem.avro.common.EventHeader.Builder();
+  public static com.ridehub.avro.common.EventHeader.Builder newBuilder() {
+    return new com.ridehub.avro.common.EventHeader.Builder();
   }
 
   /**
@@ -218,11 +218,11 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing builder to copy.
    * @return A new EventHeader RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventHeader.Builder newBuilder(com.ticketsystem.avro.common.EventHeader.Builder other) {
+  public static com.ridehub.avro.common.EventHeader.Builder newBuilder(com.ridehub.avro.common.EventHeader.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.common.EventHeader.Builder();
+      return new com.ridehub.avro.common.EventHeader.Builder();
     } else {
-      return new com.ticketsystem.avro.common.EventHeader.Builder(other);
+      return new com.ridehub.avro.common.EventHeader.Builder(other);
     }
   }
 
@@ -231,11 +231,11 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing instance to copy.
    * @return A new EventHeader RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventHeader.Builder newBuilder(com.ticketsystem.avro.common.EventHeader other) {
+  public static com.ridehub.avro.common.EventHeader.Builder newBuilder(com.ridehub.avro.common.EventHeader other) {
     if (other == null) {
-      return new com.ticketsystem.avro.common.EventHeader.Builder();
+      return new com.ridehub.avro.common.EventHeader.Builder();
     } else {
-      return new com.ticketsystem.avro.common.EventHeader.Builder(other);
+      return new com.ridehub.avro.common.EventHeader.Builder(other);
     }
   }
 
@@ -262,7 +262,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.common.EventHeader.Builder other) {
+    private Builder(com.ridehub.avro.common.EventHeader.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.eventId)) {
         this.eventId = data().deepCopy(fields()[0].schema(), other.eventId);
@@ -290,7 +290,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing EventHeader instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.common.EventHeader other) {
+    private Builder(com.ridehub.avro.common.EventHeader other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.eventId)) {
         this.eventId = data().deepCopy(fields()[0].schema(), other.eventId);
@@ -328,7 +328,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'eventId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder setEventId(java.util.UUID value) {
+    public com.ridehub.avro.common.EventHeader.Builder setEventId(java.util.UUID value) {
       validate(fields()[0], value);
       this.eventId = value;
       fieldSetFlags()[0] = true;
@@ -348,7 +348,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'eventId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder clearEventId() {
+    public com.ridehub.avro.common.EventHeader.Builder clearEventId() {
       eventId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -370,7 +370,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'source'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder setSource(java.lang.String value) {
+    public com.ridehub.avro.common.EventHeader.Builder setSource(java.lang.String value) {
       validate(fields()[1], value);
       this.source = value;
       fieldSetFlags()[1] = true;
@@ -392,7 +392,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * Originating service (e.g., ms_booking)
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder clearSource() {
+    public com.ridehub.avro.common.EventHeader.Builder clearSource() {
       source = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -412,7 +412,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'occurredAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder setOccurredAt(java.time.Instant value) {
+    public com.ridehub.avro.common.EventHeader.Builder setOccurredAt(java.time.Instant value) {
       validate(fields()[2], value);
       this.occurredAt = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
       fieldSetFlags()[2] = true;
@@ -432,7 +432,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'occurredAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder clearOccurredAt() {
+    public com.ridehub.avro.common.EventHeader.Builder clearOccurredAt() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -451,7 +451,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'traceId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder setTraceId(java.lang.String value) {
+    public com.ridehub.avro.common.EventHeader.Builder setTraceId(java.lang.String value) {
       validate(fields()[3], value);
       this.traceId = value;
       fieldSetFlags()[3] = true;
@@ -471,7 +471,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'traceId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder clearTraceId() {
+    public com.ridehub.avro.common.EventHeader.Builder clearTraceId() {
       traceId = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -491,7 +491,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'schemaVersion'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder setSchemaVersion(int value) {
+    public com.ridehub.avro.common.EventHeader.Builder setSchemaVersion(int value) {
       validate(fields()[4], value);
       this.schemaVersion = value;
       fieldSetFlags()[4] = true;
@@ -511,7 +511,7 @@ public class EventHeader extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'schemaVersion' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventHeader.Builder clearSchemaVersion() {
+    public com.ridehub.avro.common.EventHeader.Builder clearSchemaVersion() {
       fieldSetFlags()[4] = false;
       return this;
     }

@@ -3,11 +3,11 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.enums;
+package com.ridehub.avro.enums;
 @org.apache.avro.specific.AvroGenerated
 public enum TransportType implements org.apache.avro.generic.GenericEnumSymbol<TransportType> {
   TRAIN, BUS  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"TransportType\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"TRAIN\",\"BUS\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"TransportType\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"TRAIN\",\"BUS\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   @Override

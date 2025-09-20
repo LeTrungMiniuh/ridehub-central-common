@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.booking;
+package com.ridehub.avro.booking;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
   private static final long serialVersionUID = -1735666677809209006L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BookingDTO\",\"namespace\":\"com.ticketsystem.avro.booking\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"scheduleId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"ticketIds\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"TextBlob in JDL; serialized list of UUIDs\",\"default\":null},{\"name\":\"totalAmount\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"BookingStatus\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"PENDING\",\"CONFIRMED\",\"CANCELLED\",\"COMPLETED\"]}],\"default\":null},{\"name\":\"passengerDetails\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"contactEmail\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"contactPhone\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bookingReference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"expiresAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BookingDTO\",\"namespace\":\"com.ridehub.avro.booking\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"scheduleId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"ticketIds\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"TextBlob in JDL; serialized list of UUIDs\",\"default\":null},{\"name\":\"totalAmount\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"BookingStatus\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"PENDING\",\"CONFIRMED\",\"CANCELLED\",\"COMPLETED\"]}],\"default\":null},{\"name\":\"passengerDetails\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"contactEmail\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"contactPhone\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bookingReference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"expiresAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -83,7 +83,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
   /** TextBlob in JDL; serialized list of UUIDs */
   private java.lang.String ticketIds;
   private java.math.BigDecimal totalAmount;
-  private com.ticketsystem.avro.enums.BookingStatus status;
+  private com.ridehub.avro.enums.BookingStatus status;
   private java.lang.String passengerDetails;
   private java.lang.String contactEmail;
   private java.lang.String contactPhone;
@@ -115,7 +115,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param updatedAt The new value for updatedAt
    * @param expiresAt The new value for expiresAt
    */
-  public BookingDTO(java.util.UUID id, java.util.UUID userId, java.util.UUID scheduleId, java.lang.String ticketIds, java.math.BigDecimal totalAmount, com.ticketsystem.avro.enums.BookingStatus status, java.lang.String passengerDetails, java.lang.String contactEmail, java.lang.String contactPhone, java.lang.String bookingReference, java.time.Instant createdAt, java.time.Instant updatedAt, java.time.Instant expiresAt) {
+  public BookingDTO(java.util.UUID id, java.util.UUID userId, java.util.UUID scheduleId, java.lang.String ticketIds, java.math.BigDecimal totalAmount, com.ridehub.avro.enums.BookingStatus status, java.lang.String passengerDetails, java.lang.String contactEmail, java.lang.String contactPhone, java.lang.String bookingReference, java.time.Instant createdAt, java.time.Instant updatedAt, java.time.Instant expiresAt) {
     this.id = id;
     this.userId = userId;
     this.scheduleId = scheduleId;
@@ -168,7 +168,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
     case 2: scheduleId = (java.util.UUID)value$; break;
     case 3: ticketIds = value$ != null ? value$.toString() : null; break;
     case 4: totalAmount = (java.math.BigDecimal)value$; break;
-    case 5: status = (com.ticketsystem.avro.enums.BookingStatus)value$; break;
+    case 5: status = (com.ridehub.avro.enums.BookingStatus)value$; break;
     case 6: passengerDetails = value$ != null ? value$.toString() : null; break;
     case 7: contactEmail = value$ != null ? value$.toString() : null; break;
     case 8: contactPhone = value$ != null ? value$.toString() : null; break;
@@ -234,7 +234,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'status' field.
    * @return The value of the 'status' field.
    */
-  public com.ticketsystem.avro.enums.BookingStatus getStatus() {
+  public com.ridehub.avro.enums.BookingStatus getStatus() {
     return status;
   }
 
@@ -314,8 +314,8 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new BookingDTO RecordBuilder.
    * @return A new BookingDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.booking.BookingDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.booking.BookingDTO.Builder();
+  public static com.ridehub.avro.booking.BookingDTO.Builder newBuilder() {
+    return new com.ridehub.avro.booking.BookingDTO.Builder();
   }
 
   /**
@@ -323,11 +323,11 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new BookingDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.booking.BookingDTO.Builder newBuilder(com.ticketsystem.avro.booking.BookingDTO.Builder other) {
+  public static com.ridehub.avro.booking.BookingDTO.Builder newBuilder(com.ridehub.avro.booking.BookingDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.booking.BookingDTO.Builder();
+      return new com.ridehub.avro.booking.BookingDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.booking.BookingDTO.Builder(other);
+      return new com.ridehub.avro.booking.BookingDTO.Builder(other);
     }
   }
 
@@ -336,11 +336,11 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new BookingDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.booking.BookingDTO.Builder newBuilder(com.ticketsystem.avro.booking.BookingDTO other) {
+  public static com.ridehub.avro.booking.BookingDTO.Builder newBuilder(com.ridehub.avro.booking.BookingDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.booking.BookingDTO.Builder();
+      return new com.ridehub.avro.booking.BookingDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.booking.BookingDTO.Builder(other);
+      return new com.ridehub.avro.booking.BookingDTO.Builder(other);
     }
   }
 
@@ -357,7 +357,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
     /** TextBlob in JDL; serialized list of UUIDs */
     private java.lang.String ticketIds;
     private java.math.BigDecimal totalAmount;
-    private com.ticketsystem.avro.enums.BookingStatus status;
+    private com.ridehub.avro.enums.BookingStatus status;
     private java.lang.String passengerDetails;
     private java.lang.String contactEmail;
     private java.lang.String contactPhone;
@@ -375,7 +375,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.booking.BookingDTO.Builder other) {
+    private Builder(com.ridehub.avro.booking.BookingDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -435,7 +435,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing BookingDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.booking.BookingDTO other) {
+    private Builder(com.ridehub.avro.booking.BookingDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -505,7 +505,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -525,7 +525,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearId() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -545,7 +545,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'userId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setUserId(java.util.UUID value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setUserId(java.util.UUID value) {
       validate(fields()[1], value);
       this.userId = value;
       fieldSetFlags()[1] = true;
@@ -565,7 +565,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'userId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearUserId() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearUserId() {
       userId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -585,7 +585,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'scheduleId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setScheduleId(java.util.UUID value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setScheduleId(java.util.UUID value) {
       validate(fields()[2], value);
       this.scheduleId = value;
       fieldSetFlags()[2] = true;
@@ -605,7 +605,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'scheduleId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearScheduleId() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearScheduleId() {
       scheduleId = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -627,7 +627,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'ticketIds'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setTicketIds(java.lang.String value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setTicketIds(java.lang.String value) {
       validate(fields()[3], value);
       this.ticketIds = value;
       fieldSetFlags()[3] = true;
@@ -649,7 +649,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * TextBlob in JDL; serialized list of UUIDs
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearTicketIds() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearTicketIds() {
       ticketIds = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -669,7 +669,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'totalAmount'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setTotalAmount(java.math.BigDecimal value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setTotalAmount(java.math.BigDecimal value) {
       validate(fields()[4], value);
       this.totalAmount = value;
       fieldSetFlags()[4] = true;
@@ -689,7 +689,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'totalAmount' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearTotalAmount() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearTotalAmount() {
       totalAmount = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -699,7 +699,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'status' field.
       * @return The value.
       */
-    public com.ticketsystem.avro.enums.BookingStatus getStatus() {
+    public com.ridehub.avro.enums.BookingStatus getStatus() {
       return status;
     }
 
@@ -709,7 +709,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setStatus(com.ticketsystem.avro.enums.BookingStatus value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setStatus(com.ridehub.avro.enums.BookingStatus value) {
       validate(fields()[5], value);
       this.status = value;
       fieldSetFlags()[5] = true;
@@ -729,7 +729,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearStatus() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearStatus() {
       status = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -749,7 +749,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'passengerDetails'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setPassengerDetails(java.lang.String value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setPassengerDetails(java.lang.String value) {
       validate(fields()[6], value);
       this.passengerDetails = value;
       fieldSetFlags()[6] = true;
@@ -769,7 +769,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'passengerDetails' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearPassengerDetails() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearPassengerDetails() {
       passengerDetails = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -789,7 +789,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'contactEmail'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setContactEmail(java.lang.String value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setContactEmail(java.lang.String value) {
       validate(fields()[7], value);
       this.contactEmail = value;
       fieldSetFlags()[7] = true;
@@ -809,7 +809,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'contactEmail' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearContactEmail() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearContactEmail() {
       contactEmail = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -829,7 +829,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'contactPhone'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setContactPhone(java.lang.String value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setContactPhone(java.lang.String value) {
       validate(fields()[8], value);
       this.contactPhone = value;
       fieldSetFlags()[8] = true;
@@ -849,7 +849,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'contactPhone' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearContactPhone() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearContactPhone() {
       contactPhone = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -869,7 +869,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'bookingReference'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setBookingReference(java.lang.String value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setBookingReference(java.lang.String value) {
       validate(fields()[9], value);
       this.bookingReference = value;
       fieldSetFlags()[9] = true;
@@ -889,7 +889,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'bookingReference' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearBookingReference() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearBookingReference() {
       bookingReference = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -909,7 +909,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[10], value);
       this.createdAt = value;
       fieldSetFlags()[10] = true;
@@ -929,7 +929,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -949,7 +949,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'updatedAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setUpdatedAt(java.time.Instant value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setUpdatedAt(java.time.Instant value) {
       validate(fields()[11], value);
       this.updatedAt = value;
       fieldSetFlags()[11] = true;
@@ -969,7 +969,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'updatedAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearUpdatedAt() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearUpdatedAt() {
       updatedAt = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -989,7 +989,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'expiresAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder setExpiresAt(java.time.Instant value) {
+    public com.ridehub.avro.booking.BookingDTO.Builder setExpiresAt(java.time.Instant value) {
       validate(fields()[12], value);
       this.expiresAt = value;
       fieldSetFlags()[12] = true;
@@ -1009,7 +1009,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'expiresAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.booking.BookingDTO.Builder clearExpiresAt() {
+    public com.ridehub.avro.booking.BookingDTO.Builder clearExpiresAt() {
       expiresAt = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1025,7 +1025,7 @@ public class BookingDTO extends org.apache.avro.specific.SpecificRecordBase impl
         record.scheduleId = fieldSetFlags()[2] ? this.scheduleId : (java.util.UUID) defaultValue(fields()[2]);
         record.ticketIds = fieldSetFlags()[3] ? this.ticketIds : (java.lang.String) defaultValue(fields()[3]);
         record.totalAmount = fieldSetFlags()[4] ? this.totalAmount : (java.math.BigDecimal) defaultValue(fields()[4]);
-        record.status = fieldSetFlags()[5] ? this.status : (com.ticketsystem.avro.enums.BookingStatus) defaultValue(fields()[5]);
+        record.status = fieldSetFlags()[5] ? this.status : (com.ridehub.avro.enums.BookingStatus) defaultValue(fields()[5]);
         record.passengerDetails = fieldSetFlags()[6] ? this.passengerDetails : (java.lang.String) defaultValue(fields()[6]);
         record.contactEmail = fieldSetFlags()[7] ? this.contactEmail : (java.lang.String) defaultValue(fields()[7]);
         record.contactPhone = fieldSetFlags()[8] ? this.contactPhone : (java.lang.String) defaultValue(fields()[8]);

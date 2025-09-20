@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.payment;
+package com.ridehub.avro.payment;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
   private static final long serialVersionUID = -1971698520644315635L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentDTO\",\"namespace\":\"com.ticketsystem.avro.payment\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"bookingId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"amount\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"currency\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"paymentMethod\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"PENDING\",\"COMPLETED\",\"FAILED\",\"REFUNDED\"]}],\"default\":null},{\"name\":\"transactionId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"paymentGatewayResponse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentDTO\",\"namespace\":\"com.ridehub.avro.payment\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"bookingId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"amount\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"currency\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"paymentMethod\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"PENDING\",\"COMPLETED\",\"FAILED\",\"REFUNDED\"]}],\"default\":null},{\"name\":\"transactionId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"paymentGatewayResponse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -83,7 +83,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
   private java.math.BigDecimal amount;
   private java.lang.String currency;
   private java.lang.String paymentMethod;
-  private com.ticketsystem.avro.enums.PaymentStatus status;
+  private com.ridehub.avro.enums.PaymentStatus status;
   private java.lang.String transactionId;
   private java.lang.String paymentGatewayResponse;
   private java.time.Instant createdAt;
@@ -110,7 +110,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param createdAt The new value for createdAt
    * @param updatedAt The new value for updatedAt
    */
-  public PaymentDTO(java.util.UUID id, java.util.UUID bookingId, java.util.UUID userId, java.math.BigDecimal amount, java.lang.String currency, java.lang.String paymentMethod, com.ticketsystem.avro.enums.PaymentStatus status, java.lang.String transactionId, java.lang.String paymentGatewayResponse, java.time.Instant createdAt, java.time.Instant updatedAt) {
+  public PaymentDTO(java.util.UUID id, java.util.UUID bookingId, java.util.UUID userId, java.math.BigDecimal amount, java.lang.String currency, java.lang.String paymentMethod, com.ridehub.avro.enums.PaymentStatus status, java.lang.String transactionId, java.lang.String paymentGatewayResponse, java.time.Instant createdAt, java.time.Instant updatedAt) {
     this.id = id;
     this.bookingId = bookingId;
     this.userId = userId;
@@ -160,7 +160,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
     case 3: amount = (java.math.BigDecimal)value$; break;
     case 4: currency = value$ != null ? value$.toString() : null; break;
     case 5: paymentMethod = value$ != null ? value$.toString() : null; break;
-    case 6: status = (com.ticketsystem.avro.enums.PaymentStatus)value$; break;
+    case 6: status = (com.ridehub.avro.enums.PaymentStatus)value$; break;
     case 7: transactionId = value$ != null ? value$.toString() : null; break;
     case 8: paymentGatewayResponse = value$ != null ? value$.toString() : null; break;
     case 9: createdAt = (java.time.Instant)value$; break;
@@ -233,7 +233,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'status' field.
    * @return The value of the 'status' field.
    */
-  public com.ticketsystem.avro.enums.PaymentStatus getStatus() {
+  public com.ridehub.avro.enums.PaymentStatus getStatus() {
     return status;
   }
 
@@ -283,8 +283,8 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new PaymentDTO RecordBuilder.
    * @return A new PaymentDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.payment.PaymentDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.payment.PaymentDTO.Builder();
+  public static com.ridehub.avro.payment.PaymentDTO.Builder newBuilder() {
+    return new com.ridehub.avro.payment.PaymentDTO.Builder();
   }
 
   /**
@@ -292,11 +292,11 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new PaymentDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.payment.PaymentDTO.Builder newBuilder(com.ticketsystem.avro.payment.PaymentDTO.Builder other) {
+  public static com.ridehub.avro.payment.PaymentDTO.Builder newBuilder(com.ridehub.avro.payment.PaymentDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.payment.PaymentDTO.Builder();
+      return new com.ridehub.avro.payment.PaymentDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.payment.PaymentDTO.Builder(other);
+      return new com.ridehub.avro.payment.PaymentDTO.Builder(other);
     }
   }
 
@@ -305,11 +305,11 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new PaymentDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.payment.PaymentDTO.Builder newBuilder(com.ticketsystem.avro.payment.PaymentDTO other) {
+  public static com.ridehub.avro.payment.PaymentDTO.Builder newBuilder(com.ridehub.avro.payment.PaymentDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.payment.PaymentDTO.Builder();
+      return new com.ridehub.avro.payment.PaymentDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.payment.PaymentDTO.Builder(other);
+      return new com.ridehub.avro.payment.PaymentDTO.Builder(other);
     }
   }
 
@@ -326,7 +326,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
     private java.math.BigDecimal amount;
     private java.lang.String currency;
     private java.lang.String paymentMethod;
-    private com.ticketsystem.avro.enums.PaymentStatus status;
+    private com.ridehub.avro.enums.PaymentStatus status;
     private java.lang.String transactionId;
     private java.lang.String paymentGatewayResponse;
     private java.time.Instant createdAt;
@@ -341,7 +341,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.payment.PaymentDTO.Builder other) {
+    private Builder(com.ridehub.avro.payment.PaymentDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -393,7 +393,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing PaymentDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.payment.PaymentDTO other) {
+    private Builder(com.ridehub.avro.payment.PaymentDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -455,7 +455,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -475,7 +475,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearId() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -495,7 +495,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'bookingId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setBookingId(java.util.UUID value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setBookingId(java.util.UUID value) {
       validate(fields()[1], value);
       this.bookingId = value;
       fieldSetFlags()[1] = true;
@@ -515,7 +515,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'bookingId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearBookingId() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearBookingId() {
       bookingId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -535,7 +535,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'userId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setUserId(java.util.UUID value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setUserId(java.util.UUID value) {
       validate(fields()[2], value);
       this.userId = value;
       fieldSetFlags()[2] = true;
@@ -555,7 +555,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'userId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearUserId() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearUserId() {
       userId = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -575,7 +575,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'amount'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setAmount(java.math.BigDecimal value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setAmount(java.math.BigDecimal value) {
       validate(fields()[3], value);
       this.amount = value;
       fieldSetFlags()[3] = true;
@@ -595,7 +595,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'amount' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearAmount() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearAmount() {
       amount = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -615,7 +615,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'currency'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setCurrency(java.lang.String value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setCurrency(java.lang.String value) {
       validate(fields()[4], value);
       this.currency = value;
       fieldSetFlags()[4] = true;
@@ -635,7 +635,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'currency' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearCurrency() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearCurrency() {
       currency = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -655,7 +655,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'paymentMethod'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setPaymentMethod(java.lang.String value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setPaymentMethod(java.lang.String value) {
       validate(fields()[5], value);
       this.paymentMethod = value;
       fieldSetFlags()[5] = true;
@@ -675,7 +675,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'paymentMethod' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearPaymentMethod() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearPaymentMethod() {
       paymentMethod = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -685,7 +685,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'status' field.
       * @return The value.
       */
-    public com.ticketsystem.avro.enums.PaymentStatus getStatus() {
+    public com.ridehub.avro.enums.PaymentStatus getStatus() {
       return status;
     }
 
@@ -695,7 +695,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setStatus(com.ticketsystem.avro.enums.PaymentStatus value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setStatus(com.ridehub.avro.enums.PaymentStatus value) {
       validate(fields()[6], value);
       this.status = value;
       fieldSetFlags()[6] = true;
@@ -715,7 +715,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearStatus() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearStatus() {
       status = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -735,7 +735,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'transactionId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setTransactionId(java.lang.String value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setTransactionId(java.lang.String value) {
       validate(fields()[7], value);
       this.transactionId = value;
       fieldSetFlags()[7] = true;
@@ -755,7 +755,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'transactionId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearTransactionId() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearTransactionId() {
       transactionId = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -775,7 +775,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'paymentGatewayResponse'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setPaymentGatewayResponse(java.lang.String value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setPaymentGatewayResponse(java.lang.String value) {
       validate(fields()[8], value);
       this.paymentGatewayResponse = value;
       fieldSetFlags()[8] = true;
@@ -795,7 +795,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'paymentGatewayResponse' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearPaymentGatewayResponse() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearPaymentGatewayResponse() {
       paymentGatewayResponse = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -815,7 +815,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[9], value);
       this.createdAt = value;
       fieldSetFlags()[9] = true;
@@ -835,7 +835,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -855,7 +855,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'updatedAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder setUpdatedAt(java.time.Instant value) {
+    public com.ridehub.avro.payment.PaymentDTO.Builder setUpdatedAt(java.time.Instant value) {
       validate(fields()[10], value);
       this.updatedAt = value;
       fieldSetFlags()[10] = true;
@@ -875,7 +875,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'updatedAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.payment.PaymentDTO.Builder clearUpdatedAt() {
+    public com.ridehub.avro.payment.PaymentDTO.Builder clearUpdatedAt() {
       updatedAt = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -892,7 +892,7 @@ public class PaymentDTO extends org.apache.avro.specific.SpecificRecordBase impl
         record.amount = fieldSetFlags()[3] ? this.amount : (java.math.BigDecimal) defaultValue(fields()[3]);
         record.currency = fieldSetFlags()[4] ? this.currency : (java.lang.String) defaultValue(fields()[4]);
         record.paymentMethod = fieldSetFlags()[5] ? this.paymentMethod : (java.lang.String) defaultValue(fields()[5]);
-        record.status = fieldSetFlags()[6] ? this.status : (com.ticketsystem.avro.enums.PaymentStatus) defaultValue(fields()[6]);
+        record.status = fieldSetFlags()[6] ? this.status : (com.ridehub.avro.enums.PaymentStatus) defaultValue(fields()[6]);
         record.transactionId = fieldSetFlags()[7] ? this.transactionId : (java.lang.String) defaultValue(fields()[7]);
         record.paymentGatewayResponse = fieldSetFlags()[8] ? this.paymentGatewayResponse : (java.lang.String) defaultValue(fields()[8]);
         record.createdAt = fieldSetFlags()[9] ? this.createdAt : (java.time.Instant) defaultValue(fields()[9]);

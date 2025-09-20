@@ -1,12 +1,12 @@
-package com.ticketsystem.msroutedev.client.api;
+package com.ridehub.msroutedev.client.api;
 
-import com.ticketsystem.msroutedev.client.invoker.ApiClient;
-import com.ticketsystem.msroutedev.client.invoker.EncodingUtils;
-import com.ticketsystem.msroutedev.client.model.ApiResponse;
+import com.ridehub.msroutedev.client.invoker.ApiClient;
+import com.ridehub.msroutedev.client.invoker.EncodingUtils;
+import com.ridehub.msroutedev.client.model.ApiResponse;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import com.ticketsystem.msroutedev.client.model.ScheduleDTO;
+import com.ridehub.msroutedev.client.model.ScheduleDTO;
 import java.util.UUID;
 
 import java.util.ArrayList;

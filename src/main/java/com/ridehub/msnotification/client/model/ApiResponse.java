@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msnotification.client.model;
+package com.ridehub.msnotification.client.model;
 
 import java.util.Map;
 import java.util.Collection;

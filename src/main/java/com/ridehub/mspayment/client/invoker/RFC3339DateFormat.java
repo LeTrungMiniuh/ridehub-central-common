@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ticketsystem.mspayment.client.invoker;
+package com.ridehub.mspayment.client.invoker;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 

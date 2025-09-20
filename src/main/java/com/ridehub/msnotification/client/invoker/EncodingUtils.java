@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msnotification.client.invoker;
+package com.ridehub.msnotification.client.invoker;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

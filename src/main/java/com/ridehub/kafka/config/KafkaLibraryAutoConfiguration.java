@@ -1,12 +1,12 @@
-package com.ticketsystem.kafka.config;
+package com.ridehub.kafka.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.ticketsystem.kafka.broker.GenericKafkaProducer;
-import com.ticketsystem.kafka.handler.EventDispatcher;
-import com.ticketsystem.kafka.handler.EventHandler;
-import com.ticketsystem.kafka.runner.KafkaJobRunner;
-import com.ticketsystem.kafka.service.KafkaUtilityService;
+import com.ridehub.kafka.broker.GenericKafkaProducer;
+import com.ridehub.kafka.handler.EventDispatcher;
+import com.ridehub.kafka.handler.EventHandler;
+import com.ridehub.kafka.runner.KafkaJobRunner;
+import com.ridehub.kafka.service.KafkaUtilityService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.stream.function.StreamBridge;

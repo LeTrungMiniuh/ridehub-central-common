@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.mspayment.client.invoker;
+package com.ridehub.mspayment.client.invoker;
 
 import java.util.Collection;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package com.ticketsystem.kafka.handler;
+package com.ridehub.kafka.handler;
 
 // wraps any payload with an eventName
 

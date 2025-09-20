@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.route;
+package com.ridehub.avro.route;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
   private static final long serialVersionUID = -1744401181698694843L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ScheduleDTO\",\"namespace\":\"com.ticketsystem.avro.route\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"routeId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"departureTime\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"arrivalTime\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"totalSeats\",\"type\":[\"null\",\"int\"],\"default\":null},{\"name\":\"availableSeats\",\"type\":[\"null\",\"int\"],\"default\":null},{\"name\":\"basePrice\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ScheduleDTO\",\"namespace\":\"com.ridehub.avro.route\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"routeId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"departureTime\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"arrivalTime\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"totalSeats\",\"type\":[\"null\",\"int\"],\"default\":null},{\"name\":\"availableSeats\",\"type\":[\"null\",\"int\"],\"default\":null},{\"name\":\"basePrice\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":18,\"scale\":2}],\"default\":null},{\"name\":\"isActive\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"updatedAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -268,8 +268,8 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
    * Creates a new ScheduleDTO RecordBuilder.
    * @return A new ScheduleDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.ScheduleDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.route.ScheduleDTO.Builder();
+  public static com.ridehub.avro.route.ScheduleDTO.Builder newBuilder() {
+    return new com.ridehub.avro.route.ScheduleDTO.Builder();
   }
 
   /**
@@ -277,11 +277,11 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing builder to copy.
    * @return A new ScheduleDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.ScheduleDTO.Builder newBuilder(com.ticketsystem.avro.route.ScheduleDTO.Builder other) {
+  public static com.ridehub.avro.route.ScheduleDTO.Builder newBuilder(com.ridehub.avro.route.ScheduleDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.route.ScheduleDTO.Builder();
+      return new com.ridehub.avro.route.ScheduleDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.route.ScheduleDTO.Builder(other);
+      return new com.ridehub.avro.route.ScheduleDTO.Builder(other);
     }
   }
 
@@ -290,11 +290,11 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
    * @param other The existing instance to copy.
    * @return A new ScheduleDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.route.ScheduleDTO.Builder newBuilder(com.ticketsystem.avro.route.ScheduleDTO other) {
+  public static com.ridehub.avro.route.ScheduleDTO.Builder newBuilder(com.ridehub.avro.route.ScheduleDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.route.ScheduleDTO.Builder();
+      return new com.ridehub.avro.route.ScheduleDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.route.ScheduleDTO.Builder(other);
+      return new com.ridehub.avro.route.ScheduleDTO.Builder(other);
     }
   }
 
@@ -325,7 +325,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.route.ScheduleDTO.Builder other) {
+    private Builder(com.ridehub.avro.route.ScheduleDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -373,7 +373,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
      * Creates a Builder by copying an existing ScheduleDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.route.ScheduleDTO other) {
+    private Builder(com.ridehub.avro.route.ScheduleDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -431,7 +431,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -451,7 +451,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearId() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -471,7 +471,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'routeId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setRouteId(java.util.UUID value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setRouteId(java.util.UUID value) {
       validate(fields()[1], value);
       this.routeId = value;
       fieldSetFlags()[1] = true;
@@ -491,7 +491,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'routeId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearRouteId() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearRouteId() {
       routeId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -511,7 +511,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'departureTime'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setDepartureTime(java.time.Instant value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setDepartureTime(java.time.Instant value) {
       validate(fields()[2], value);
       this.departureTime = value;
       fieldSetFlags()[2] = true;
@@ -531,7 +531,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'departureTime' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearDepartureTime() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearDepartureTime() {
       departureTime = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -551,7 +551,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'arrivalTime'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setArrivalTime(java.time.Instant value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setArrivalTime(java.time.Instant value) {
       validate(fields()[3], value);
       this.arrivalTime = value;
       fieldSetFlags()[3] = true;
@@ -571,7 +571,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'arrivalTime' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearArrivalTime() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearArrivalTime() {
       arrivalTime = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -591,7 +591,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'totalSeats'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setTotalSeats(java.lang.Integer value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setTotalSeats(java.lang.Integer value) {
       validate(fields()[4], value);
       this.totalSeats = value;
       fieldSetFlags()[4] = true;
@@ -611,7 +611,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'totalSeats' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearTotalSeats() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearTotalSeats() {
       totalSeats = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -631,7 +631,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'availableSeats'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setAvailableSeats(java.lang.Integer value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setAvailableSeats(java.lang.Integer value) {
       validate(fields()[5], value);
       this.availableSeats = value;
       fieldSetFlags()[5] = true;
@@ -651,7 +651,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'availableSeats' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearAvailableSeats() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearAvailableSeats() {
       availableSeats = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -671,7 +671,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'basePrice'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setBasePrice(java.math.BigDecimal value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setBasePrice(java.math.BigDecimal value) {
       validate(fields()[6], value);
       this.basePrice = value;
       fieldSetFlags()[6] = true;
@@ -691,7 +691,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'basePrice' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearBasePrice() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearBasePrice() {
       basePrice = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -711,7 +711,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'isActive'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setIsActive(java.lang.Boolean value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setIsActive(java.lang.Boolean value) {
       validate(fields()[7], value);
       this.isActive = value;
       fieldSetFlags()[7] = true;
@@ -731,7 +731,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'isActive' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearIsActive() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearIsActive() {
       isActive = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -751,7 +751,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[8], value);
       this.createdAt = value;
       fieldSetFlags()[8] = true;
@@ -771,7 +771,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -791,7 +791,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'updatedAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder setUpdatedAt(java.time.Instant value) {
+    public com.ridehub.avro.route.ScheduleDTO.Builder setUpdatedAt(java.time.Instant value) {
       validate(fields()[9], value);
       this.updatedAt = value;
       fieldSetFlags()[9] = true;
@@ -811,7 +811,7 @@ public class ScheduleDTO extends org.apache.avro.specific.SpecificRecordBase imp
       * Clears the value of the 'updatedAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.route.ScheduleDTO.Builder clearUpdatedAt() {
+    public com.ridehub.avro.route.ScheduleDTO.Builder clearUpdatedAt() {
       updatedAt = null;
       fieldSetFlags()[9] = false;
       return this;

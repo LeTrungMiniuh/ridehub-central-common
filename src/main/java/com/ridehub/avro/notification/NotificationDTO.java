@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.notification;
+package com.ridehub.avro.notification;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
   private static final long serialVersionUID = 8856437704621549925L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NotificationDTO\",\"namespace\":\"com.ticketsystem.avro.notification\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"recipientId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"type\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"message\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"isRead\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"relatedEntityType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"relatedEntityId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"scheduledAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NotificationDTO\",\"namespace\":\"com.ridehub.avro.notification\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"recipientId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"type\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"message\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"isRead\",\"type\":[\"null\",\"boolean\"],\"default\":null},{\"name\":\"relatedEntityType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"relatedEntityId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"createdAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"scheduledAt\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -267,8 +267,8 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
    * Creates a new NotificationDTO RecordBuilder.
    * @return A new NotificationDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.notification.NotificationDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.notification.NotificationDTO.Builder();
+  public static com.ridehub.avro.notification.NotificationDTO.Builder newBuilder() {
+    return new com.ridehub.avro.notification.NotificationDTO.Builder();
   }
 
   /**
@@ -276,11 +276,11 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing builder to copy.
    * @return A new NotificationDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.notification.NotificationDTO.Builder newBuilder(com.ticketsystem.avro.notification.NotificationDTO.Builder other) {
+  public static com.ridehub.avro.notification.NotificationDTO.Builder newBuilder(com.ridehub.avro.notification.NotificationDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.notification.NotificationDTO.Builder();
+      return new com.ridehub.avro.notification.NotificationDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.notification.NotificationDTO.Builder(other);
+      return new com.ridehub.avro.notification.NotificationDTO.Builder(other);
     }
   }
 
@@ -289,11 +289,11 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing instance to copy.
    * @return A new NotificationDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.notification.NotificationDTO.Builder newBuilder(com.ticketsystem.avro.notification.NotificationDTO other) {
+  public static com.ridehub.avro.notification.NotificationDTO.Builder newBuilder(com.ridehub.avro.notification.NotificationDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.notification.NotificationDTO.Builder();
+      return new com.ridehub.avro.notification.NotificationDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.notification.NotificationDTO.Builder(other);
+      return new com.ridehub.avro.notification.NotificationDTO.Builder(other);
     }
   }
 
@@ -324,7 +324,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.notification.NotificationDTO.Builder other) {
+    private Builder(com.ridehub.avro.notification.NotificationDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -372,7 +372,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing NotificationDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.notification.NotificationDTO other) {
+    private Builder(com.ridehub.avro.notification.NotificationDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -430,7 +430,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -450,7 +450,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearId() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -470,7 +470,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'recipientId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setRecipientId(java.util.UUID value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setRecipientId(java.util.UUID value) {
       validate(fields()[1], value);
       this.recipientId = value;
       fieldSetFlags()[1] = true;
@@ -490,7 +490,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'recipientId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearRecipientId() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearRecipientId() {
       recipientId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -510,7 +510,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'type'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setType(java.lang.String value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setType(java.lang.String value) {
       validate(fields()[2], value);
       this.type = value;
       fieldSetFlags()[2] = true;
@@ -530,7 +530,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'type' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearType() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearType() {
       type = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -550,7 +550,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'title'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setTitle(java.lang.String value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setTitle(java.lang.String value) {
       validate(fields()[3], value);
       this.title = value;
       fieldSetFlags()[3] = true;
@@ -570,7 +570,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'title' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearTitle() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearTitle() {
       title = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -590,7 +590,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'message'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setMessage(java.lang.String value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setMessage(java.lang.String value) {
       validate(fields()[4], value);
       this.message = value;
       fieldSetFlags()[4] = true;
@@ -610,7 +610,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'message' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearMessage() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearMessage() {
       message = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -630,7 +630,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'isRead'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setIsRead(java.lang.Boolean value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setIsRead(java.lang.Boolean value) {
       validate(fields()[5], value);
       this.isRead = value;
       fieldSetFlags()[5] = true;
@@ -650,7 +650,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'isRead' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearIsRead() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearIsRead() {
       isRead = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -670,7 +670,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'relatedEntityType'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setRelatedEntityType(java.lang.String value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setRelatedEntityType(java.lang.String value) {
       validate(fields()[6], value);
       this.relatedEntityType = value;
       fieldSetFlags()[6] = true;
@@ -690,7 +690,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'relatedEntityType' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearRelatedEntityType() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearRelatedEntityType() {
       relatedEntityType = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -710,7 +710,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'relatedEntityId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setRelatedEntityId(java.util.UUID value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setRelatedEntityId(java.util.UUID value) {
       validate(fields()[7], value);
       this.relatedEntityId = value;
       fieldSetFlags()[7] = true;
@@ -730,7 +730,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'relatedEntityId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearRelatedEntityId() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearRelatedEntityId() {
       relatedEntityId = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -750,7 +750,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setCreatedAt(java.time.Instant value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[8], value);
       this.createdAt = value;
       fieldSetFlags()[8] = true;
@@ -770,7 +770,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearCreatedAt() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -790,7 +790,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'scheduledAt'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder setScheduledAt(java.time.Instant value) {
+    public com.ridehub.avro.notification.NotificationDTO.Builder setScheduledAt(java.time.Instant value) {
       validate(fields()[9], value);
       this.scheduledAt = value;
       fieldSetFlags()[9] = true;
@@ -810,7 +810,7 @@ public class NotificationDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'scheduledAt' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.notification.NotificationDTO.Builder clearScheduledAt() {
+    public com.ridehub.avro.notification.NotificationDTO.Builder clearScheduledAt() {
       scheduledAt = null;
       fieldSetFlags()[9] = false;
       return this;

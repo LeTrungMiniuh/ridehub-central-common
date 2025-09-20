@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ticketsystem.msroutedev.client.invoker;
+package com.ridehub.msroutedev.client.invoker;
 
 import java.io.IOException;
 import java.time.Instant;

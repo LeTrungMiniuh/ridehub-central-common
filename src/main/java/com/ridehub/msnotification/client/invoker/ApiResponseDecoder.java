@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msnotification.client.invoker;
+package com.ridehub.msnotification.client.invoker;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
@@ -25,7 +25,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 
-import com.ticketsystem.msnotification.client.model.ApiResponse;
+import com.ridehub.msnotification.client.model.ApiResponse;
 
 public class ApiResponseDecoder extends JacksonDecoder {
 

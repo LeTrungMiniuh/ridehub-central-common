@@ -3,11 +3,11 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.enums;
+package com.ridehub.avro.enums;
 @org.apache.avro.specific.AvroGenerated
 public enum SeatType implements org.apache.avro.generic.GenericEnumSymbol<SeatType> {
   ECONOMY, BUSINESS, FIRST_CLASS, VIP  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"SeatType\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"ECONOMY\",\"BUSINESS\",\"FIRST_CLASS\",\"VIP\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"SeatType\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"ECONOMY\",\"BUSINESS\",\"FIRST_CLASS\",\"VIP\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   @Override

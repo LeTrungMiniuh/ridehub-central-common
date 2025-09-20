@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.mspayment.client.invoker;
+package com.ridehub.mspayment.client.invoker;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,10 +31,10 @@ import feign.form.FormEncoder;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import feign.slf4j.Slf4jLogger;
-import com.ticketsystem.mspayment.client.invoker.auth.HttpBasicAuth;
-import com.ticketsystem.mspayment.client.invoker.auth.HttpBearerAuth;
-import com.ticketsystem.mspayment.client.invoker.auth.ApiKeyAuth;
-import com.ticketsystem.mspayment.client.invoker.ApiResponseDecoder;
+import com.ridehub.mspayment.client.invoker.auth.HttpBasicAuth;
+import com.ridehub.mspayment.client.invoker.auth.HttpBearerAuth;
+import com.ridehub.mspayment.client.invoker.auth.ApiKeyAuth;
+import com.ridehub.mspayment.client.invoker.ApiResponseDecoder;
 
 
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")

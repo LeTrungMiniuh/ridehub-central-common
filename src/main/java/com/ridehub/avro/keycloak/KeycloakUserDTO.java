@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.keycloak;
+package com.ridehub.avro.keycloak;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
   private static final long serialVersionUID = -4278165454676490069L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KeycloakUserDTO\",\"namespace\":\"com.ticketsystem.avro.keycloak\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"username\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"realmId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KeycloakUserDTO\",\"namespace\":\"com.ridehub.avro.keycloak\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"username\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"realmId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"logicalType\":\"uuid\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -191,8 +191,8 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
    * Creates a new KeycloakUserDTO RecordBuilder.
    * @return A new KeycloakUserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder newBuilder() {
-    return new com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder();
+  public static com.ridehub.avro.keycloak.KeycloakUserDTO.Builder newBuilder() {
+    return new com.ridehub.avro.keycloak.KeycloakUserDTO.Builder();
   }
 
   /**
@@ -200,11 +200,11 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing builder to copy.
    * @return A new KeycloakUserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder newBuilder(com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder other) {
+  public static com.ridehub.avro.keycloak.KeycloakUserDTO.Builder newBuilder(com.ridehub.avro.keycloak.KeycloakUserDTO.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder();
+      return new com.ridehub.avro.keycloak.KeycloakUserDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder(other);
+      return new com.ridehub.avro.keycloak.KeycloakUserDTO.Builder(other);
     }
   }
 
@@ -213,11 +213,11 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing instance to copy.
    * @return A new KeycloakUserDTO RecordBuilder
    */
-  public static com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder newBuilder(com.ticketsystem.avro.keycloak.KeycloakUserDTO other) {
+  public static com.ridehub.avro.keycloak.KeycloakUserDTO.Builder newBuilder(com.ridehub.avro.keycloak.KeycloakUserDTO other) {
     if (other == null) {
-      return new com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder();
+      return new com.ridehub.avro.keycloak.KeycloakUserDTO.Builder();
     } else {
-      return new com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder(other);
+      return new com.ridehub.avro.keycloak.KeycloakUserDTO.Builder(other);
     }
   }
 
@@ -243,7 +243,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder other) {
+    private Builder(com.ridehub.avro.keycloak.KeycloakUserDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -271,7 +271,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing KeycloakUserDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.keycloak.KeycloakUserDTO other) {
+    private Builder(com.ridehub.avro.keycloak.KeycloakUserDTO other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -309,7 +309,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder setId(java.util.UUID value) {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder setId(java.util.UUID value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -329,7 +329,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder clearId() {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -349,7 +349,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'username'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder setUsername(java.lang.String value) {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder setUsername(java.lang.String value) {
       validate(fields()[1], value);
       this.username = value;
       fieldSetFlags()[1] = true;
@@ -369,7 +369,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'username' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder clearUsername() {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder clearUsername() {
       username = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -389,7 +389,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder setEmail(java.lang.String value) {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder setEmail(java.lang.String value) {
       validate(fields()[2], value);
       this.email = value;
       fieldSetFlags()[2] = true;
@@ -409,7 +409,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder clearEmail() {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder clearEmail() {
       email = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -429,7 +429,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'realmId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder setRealmId(java.util.UUID value) {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder setRealmId(java.util.UUID value) {
       validate(fields()[3], value);
       this.realmId = value;
       fieldSetFlags()[3] = true;
@@ -449,7 +449,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'realmId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder clearRealmId() {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder clearRealmId() {
       realmId = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -469,7 +469,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'userId'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder setUserId(java.util.UUID value) {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder setUserId(java.util.UUID value) {
       validate(fields()[4], value);
       this.userId = value;
       fieldSetFlags()[4] = true;
@@ -489,7 +489,7 @@ public class KeycloakUserDTO extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'userId' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.keycloak.KeycloakUserDTO.Builder clearUserId() {
+    public com.ridehub.avro.keycloak.KeycloakUserDTO.Builder clearUserId() {
       userId = null;
       fieldSetFlags()[4] = false;
       return this;

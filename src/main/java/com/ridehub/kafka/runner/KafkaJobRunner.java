@@ -1,5 +1,5 @@
 
-package com.ticketsystem.kafka.runner;
+package com.ridehub.kafka.runner;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Component;
 
-import com.ticketsystem.avro.common.EventEnvelope;
-import com.ticketsystem.kafka.config.KafkaLibraryProperties;
+import com.ridehub.avro.common.EventEnvelope;
+import com.ridehub.kafka.config.KafkaLibraryProperties;
 
 /**
  * Generic job runner for managing Kafka consumer tasks.

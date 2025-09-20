@@ -1,4 +1,4 @@
-package com.ticketsystem.kafka.handler;
+package com.ridehub.kafka.handler;
 
 public interface EventHandler<T> {
     String getEventName(); // e.g. "postReel"

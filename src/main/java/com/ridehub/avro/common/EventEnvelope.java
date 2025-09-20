@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.common;
+package com.ridehub.avro.common;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
@@ -16,7 +16,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
   private static final long serialVersionUID = -3252835946725419643L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EventEnvelope\",\"namespace\":\"com.ticketsystem.avro.common\",\"fields\":[{\"name\":\"eventName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"payload\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"JSON serialized payload of any type\",\"default\":null},{\"name\":\"payloadType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"The class name of the payload type for deserialization\",\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EventEnvelope\",\"namespace\":\"com.ridehub.avro.common\",\"fields\":[{\"name\":\"eventName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"payload\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"JSON serialized payload of any type\",\"default\":null},{\"name\":\"payloadType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"The class name of the payload type for deserialization\",\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -160,8 +160,8 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
    * Creates a new EventEnvelope RecordBuilder.
    * @return A new EventEnvelope RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventEnvelope.Builder newBuilder() {
-    return new com.ticketsystem.avro.common.EventEnvelope.Builder();
+  public static com.ridehub.avro.common.EventEnvelope.Builder newBuilder() {
+    return new com.ridehub.avro.common.EventEnvelope.Builder();
   }
 
   /**
@@ -169,11 +169,11 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing builder to copy.
    * @return A new EventEnvelope RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventEnvelope.Builder newBuilder(com.ticketsystem.avro.common.EventEnvelope.Builder other) {
+  public static com.ridehub.avro.common.EventEnvelope.Builder newBuilder(com.ridehub.avro.common.EventEnvelope.Builder other) {
     if (other == null) {
-      return new com.ticketsystem.avro.common.EventEnvelope.Builder();
+      return new com.ridehub.avro.common.EventEnvelope.Builder();
     } else {
-      return new com.ticketsystem.avro.common.EventEnvelope.Builder(other);
+      return new com.ridehub.avro.common.EventEnvelope.Builder(other);
     }
   }
 
@@ -182,11 +182,11 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing instance to copy.
    * @return A new EventEnvelope RecordBuilder
    */
-  public static com.ticketsystem.avro.common.EventEnvelope.Builder newBuilder(com.ticketsystem.avro.common.EventEnvelope other) {
+  public static com.ridehub.avro.common.EventEnvelope.Builder newBuilder(com.ridehub.avro.common.EventEnvelope other) {
     if (other == null) {
-      return new com.ticketsystem.avro.common.EventEnvelope.Builder();
+      return new com.ridehub.avro.common.EventEnvelope.Builder();
     } else {
-      return new com.ticketsystem.avro.common.EventEnvelope.Builder(other);
+      return new com.ridehub.avro.common.EventEnvelope.Builder(other);
     }
   }
 
@@ -212,7 +212,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ticketsystem.avro.common.EventEnvelope.Builder other) {
+    private Builder(com.ridehub.avro.common.EventEnvelope.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.eventName)) {
         this.eventName = data().deepCopy(fields()[0].schema(), other.eventName);
@@ -232,7 +232,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing EventEnvelope instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ticketsystem.avro.common.EventEnvelope other) {
+    private Builder(com.ridehub.avro.common.EventEnvelope other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.eventName)) {
         this.eventName = data().deepCopy(fields()[0].schema(), other.eventName);
@@ -262,7 +262,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'eventName'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder setEventName(java.lang.String value) {
+    public com.ridehub.avro.common.EventEnvelope.Builder setEventName(java.lang.String value) {
       validate(fields()[0], value);
       this.eventName = value;
       fieldSetFlags()[0] = true;
@@ -282,7 +282,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'eventName' field.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder clearEventName() {
+    public com.ridehub.avro.common.EventEnvelope.Builder clearEventName() {
       eventName = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -304,7 +304,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'payload'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder setPayload(java.lang.String value) {
+    public com.ridehub.avro.common.EventEnvelope.Builder setPayload(java.lang.String value) {
       validate(fields()[1], value);
       this.payload = value;
       fieldSetFlags()[1] = true;
@@ -326,7 +326,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * JSON serialized payload of any type
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder clearPayload() {
+    public com.ridehub.avro.common.EventEnvelope.Builder clearPayload() {
       payload = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -348,7 +348,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'payloadType'.
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder setPayloadType(java.lang.String value) {
+    public com.ridehub.avro.common.EventEnvelope.Builder setPayloadType(java.lang.String value) {
       validate(fields()[2], value);
       this.payloadType = value;
       fieldSetFlags()[2] = true;
@@ -370,7 +370,7 @@ public class EventEnvelope extends org.apache.avro.specific.SpecificRecordBase i
       * The class name of the payload type for deserialization
       * @return This builder.
       */
-    public com.ticketsystem.avro.common.EventEnvelope.Builder clearPayloadType() {
+    public com.ridehub.avro.common.EventEnvelope.Builder clearPayloadType() {
       payloadType = null;
       fieldSetFlags()[2] = false;
       return this;

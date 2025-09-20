@@ -1,4 +1,4 @@
-package com.ticketsystem.kafka.config;
+package com.ridehub.kafka.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

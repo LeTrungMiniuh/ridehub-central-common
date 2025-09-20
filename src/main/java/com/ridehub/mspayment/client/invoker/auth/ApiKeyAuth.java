@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.mspayment.client.invoker.auth;
+package com.ridehub.mspayment.client.invoker.auth;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

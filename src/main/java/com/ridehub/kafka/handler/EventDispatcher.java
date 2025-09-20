@@ -1,4 +1,4 @@
-package com.ticketsystem.kafka.handler;
+package com.ridehub.kafka.handler;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;

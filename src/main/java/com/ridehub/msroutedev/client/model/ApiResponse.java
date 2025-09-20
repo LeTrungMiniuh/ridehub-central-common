@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msroutedev.client.model;
+package com.ridehub.msroutedev.client.model;
 
 import java.util.Map;
 import java.util.Collection;

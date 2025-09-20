@@ -1,12 +1,12 @@
-package com.ticketsystem.mspayment.client.api;
+package com.ridehub.mspayment.client.api;
 
-import com.ticketsystem.mspayment.client.invoker.ApiClient;
-import com.ticketsystem.mspayment.client.invoker.EncodingUtils;
-import com.ticketsystem.mspayment.client.model.ApiResponse;
+import com.ridehub.mspayment.client.invoker.ApiClient;
+import com.ridehub.mspayment.client.invoker.EncodingUtils;
+import com.ridehub.mspayment.client.model.ApiResponse;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import com.ticketsystem.mspayment.client.model.PaymentDTO;
+import com.ridehub.mspayment.client.model.PaymentDTO;
 import java.util.UUID;
 
 import java.util.ArrayList;

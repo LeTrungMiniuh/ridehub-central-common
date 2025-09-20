@@ -1,9 +1,9 @@
-package com.ticketsystem.kafka.service;
+package com.ridehub.kafka.service;
 
-import com.ticketsystem.avro.common.EventEnvelope;
-import com.ticketsystem.kafka.config.KafkaLibraryProperties;
-import com.ticketsystem.kafka.handler.EventDispatcher;
-import com.ticketsystem.kafka.util.AvroConverter;
+import com.ridehub.avro.common.EventEnvelope;
+import com.ridehub.kafka.config.KafkaLibraryProperties;
+import com.ridehub.kafka.handler.EventDispatcher;
+import com.ridehub.kafka.util.AvroConverter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -94,7 +94,7 @@ public class KafkaUtilityService {
                     : null;
 
             // Build envelope for dispatcher and dispatch
-            com.ticketsystem.kafka.handler.EventEnvelope<JsonNode> dispatcherEnvelope = prepareEventEnvelopeForDispatcher(
+            com.ridehub.kafka.handler.EventEnvelope<JsonNode> dispatcherEnvelope = prepareEventEnvelopeForDispatcher(
                     eventName, payload);
 
             dispatcher.dispatch(dispatcherEnvelope);
@@ -161,17 +161,17 @@ public class KafkaUtilityService {
 
     // --- Helper Methods ---
 
-    public com.ticketsystem.kafka.handler.EventEnvelope<JsonNode> prepareEventEnvelopeForDispatcher(
+    public com.ridehub.kafka.handler.EventEnvelope<JsonNode> prepareEventEnvelopeForDispatcher(
             String eventName, Object payload) {
         if (payload == null) {
             CONSUMER_LOG.warn("Payload is null, cannot prepare EventEnvelope for dispatcher for event: {}", eventName);
-            return new com.ticketsystem.kafka.handler.EventEnvelope<>(eventName, null);
+            return new com.ridehub.kafka.handler.EventEnvelope<>(eventName, null);
         }
 
         try {
             String payloadJson = objectMapper.writeValueAsString(payload);
             JsonNode payloadJsonNode = objectMapper.readTree(payloadJson);
-            return new com.ticketsystem.kafka.handler.EventEnvelope<>(eventName, payloadJsonNode);
+            return new com.ridehub.kafka.handler.EventEnvelope<>(eventName, payloadJsonNode);
         } catch (Exception e) {
             CONSUMER_LOG.error("Error serializing payload for dispatcher: {}", e.getMessage(), e);
             throw new RuntimeException("Failed to prepare EventEnvelope for dispatcher", e);

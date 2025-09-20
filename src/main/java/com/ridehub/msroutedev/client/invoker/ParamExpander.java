@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msroutedev.client.invoker;
+package com.ridehub.msroutedev.client.invoker;
 
 import feign.Param;
 

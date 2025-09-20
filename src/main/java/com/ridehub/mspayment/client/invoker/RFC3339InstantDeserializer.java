@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ticketsystem.mspayment.client.invoker;
+package com.ridehub.mspayment.client.invoker;
 
 import java.io.IOException;
 import java.time.Instant;

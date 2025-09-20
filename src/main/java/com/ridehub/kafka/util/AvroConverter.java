@@ -1,8 +1,8 @@
-package com.ticketsystem.kafka.util;
+package com.ridehub.kafka.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.ticketsystem.avro.common.EventEnvelope;
+import com.ridehub.avro.common.EventEnvelope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

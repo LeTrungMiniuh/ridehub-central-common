@@ -11,7 +11,7 @@
  */
 
 
-package com.ticketsystem.msnotification.client.invoker;
+package com.ridehub.msnotification.client.invoker;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,10 +31,10 @@ import feign.form.FormEncoder;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import feign.slf4j.Slf4jLogger;
-import com.ticketsystem.msnotification.client.invoker.auth.HttpBasicAuth;
-import com.ticketsystem.msnotification.client.invoker.auth.HttpBearerAuth;
-import com.ticketsystem.msnotification.client.invoker.auth.ApiKeyAuth;
-import com.ticketsystem.msnotification.client.invoker.ApiResponseDecoder;
+import com.ridehub.msnotification.client.invoker.auth.HttpBasicAuth;
+import com.ridehub.msnotification.client.invoker.auth.HttpBearerAuth;
+import com.ridehub.msnotification.client.invoker.auth.ApiKeyAuth;
+import com.ridehub.msnotification.client.invoker.ApiResponseDecoder;
 
 
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")

@@ -3,11 +3,11 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ticketsystem.avro.enums;
+package com.ridehub.avro.enums;
 @org.apache.avro.specific.AvroGenerated
 public enum PaymentStatus implements org.apache.avro.generic.GenericEnumSymbol<PaymentStatus> {
   PENDING, COMPLETED, FAILED, REFUNDED  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"namespace\":\"com.ticketsystem.avro.enums\",\"symbols\":[\"PENDING\",\"COMPLETED\",\"FAILED\",\"REFUNDED\"]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"namespace\":\"com.ridehub.avro.enums\",\"symbols\":[\"PENDING\",\"COMPLETED\",\"FAILED\",\"REFUNDED\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   @Override
