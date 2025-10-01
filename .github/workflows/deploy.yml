@@ -31,6 +31,7 @@ jobs:
         run: |
           export KEYCLOAK_USERNAME='${{ secrets.KEYCLOAK_USERNAME }}'
           export KEYCLOAK_PASSWORD='${{ secrets.KEYCLOAK_PASSWORD }}'
+          export KEYCLOAK_SECRET='${{ secrets.KEYCLOAK_SECRET }}'
           mvn -v
           # Set version from git tag
           mvn versions:set -DnewVersion=${{ steps.extract_version.outputs.VERSION }}

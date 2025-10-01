@@ -1,5 +1,6 @@
 export KEYCLOAK_USERNAME=''
 export KEYCLOAK_PASSWORD=''
+export KEYCLOAK_SECRET=''
 
 mvn clean package -Prun-openapi
 mvn clean package

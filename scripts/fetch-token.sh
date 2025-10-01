@@ -6,18 +6,22 @@ CLIENT_ID="${2:?Client ID missing}"
 USERNAME="${3:?Username missing}"
 PASSWORD="${4:?Password missing}"
 OUT_FILE="${5:?Output file missing}"
+CLIENT_SECRET="${6:?Client Secret missing}"
 
 # Optional: show where we're posting (uncomment for debugging)
 # echo "Posting to: $TOKEN_URL" >&2
 echo "Hello"
 
 # Request an access token (Resource Owner Password Credentials)
+# expects: TOKEN_URL, CLIENT_ID, CLIENT_SECRET, USERNAME, PASSWORD
 JSON="$(curl -sS --fail-with-body -X POST "$TOKEN_URL" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   --data-urlencode "grant_type=password" \
   --data-urlencode "client_id=${CLIENT_ID}" \
+  --data-urlencode "client_secret=${CLIENT_SECRET}" \
   --data-urlencode "username=${USERNAME}" \
   --data-urlencode "password=${PASSWORD}")"
+
 
 # Extract access_token (jq required)
 ACCESS_TOKEN="$(printf '%s' "$JSON" | jq -r '.access_token')"
