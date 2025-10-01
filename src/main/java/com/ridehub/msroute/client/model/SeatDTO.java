@@ -33,9 +33,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonPropertyOrder({
   SeatDTO.JSON_PROPERTY_ID,
   SeatDTO.JSON_PROPERTY_SEAT_NO,
-  SeatDTO.JSON_PROPERTY_ROW,
-  SeatDTO.JSON_PROPERTY_COL,
+  SeatDTO.JSON_PROPERTY_ROW_NO,
+  SeatDTO.JSON_PROPERTY_COL_NO,
   SeatDTO.JSON_PROPERTY_PRICE_FACTOR,
+  SeatDTO.JSON_PROPERTY_TYPE,
   SeatDTO.JSON_PROPERTY_CREATED_AT,
   SeatDTO.JSON_PROPERTY_UPDATED_AT,
   SeatDTO.JSON_PROPERTY_IS_DELETED,
@@ -53,17 +54,56 @@ public class SeatDTO {
   @jakarta.annotation.Nonnull
   private String seatNo;
 
-  public static final String JSON_PROPERTY_ROW = "row";
+  public static final String JSON_PROPERTY_ROW_NO = "rowNo";
   @jakarta.annotation.Nullable
-  private Integer row;
+  private Integer rowNo;
 
-  public static final String JSON_PROPERTY_COL = "col";
+  public static final String JSON_PROPERTY_COL_NO = "colNo";
   @jakarta.annotation.Nullable
-  private Integer col;
+  private Integer colNo;
 
   public static final String JSON_PROPERTY_PRICE_FACTOR = "priceFactor";
   @jakarta.annotation.Nullable
   private BigDecimal priceFactor;
+
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    SLEEPER(String.valueOf("SLEEPER")),
+    
+    NORMAL(String.valueOf("NORMAL"));
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static TypeEnum fromValue(String value) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_TYPE = "type";
+  @jakarta.annotation.Nullable
+  private TypeEnum type;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -144,55 +184,55 @@ public class SeatDTO {
   }
 
 
-  public SeatDTO row(@jakarta.annotation.Nullable Integer row) {
+  public SeatDTO rowNo(@jakarta.annotation.Nullable Integer rowNo) {
     
-    this.row = row;
+    this.rowNo = rowNo;
     return this;
   }
 
   /**
-   * Get row
-   * @return row
+   * Get rowNo
+   * @return rowNo
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROW)
+  @JsonProperty(JSON_PROPERTY_ROW_NO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getRow() {
-    return row;
+  public Integer getRowNo() {
+    return rowNo;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROW)
+  @JsonProperty(JSON_PROPERTY_ROW_NO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRow(@jakarta.annotation.Nullable Integer row) {
-    this.row = row;
+  public void setRowNo(@jakarta.annotation.Nullable Integer rowNo) {
+    this.rowNo = rowNo;
   }
 
 
-  public SeatDTO col(@jakarta.annotation.Nullable Integer col) {
+  public SeatDTO colNo(@jakarta.annotation.Nullable Integer colNo) {
     
-    this.col = col;
+    this.colNo = colNo;
     return this;
   }
 
   /**
-   * Get col
-   * @return col
+   * Get colNo
+   * @return colNo
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COL)
+  @JsonProperty(JSON_PROPERTY_COL_NO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getCol() {
-    return col;
+  public Integer getColNo() {
+    return colNo;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COL)
+  @JsonProperty(JSON_PROPERTY_COL_NO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCol(@jakarta.annotation.Nullable Integer col) {
-    this.col = col;
+  public void setColNo(@jakarta.annotation.Nullable Integer colNo) {
+    this.colNo = colNo;
   }
 
 
@@ -219,6 +259,32 @@ public class SeatDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPriceFactor(@jakarta.annotation.Nullable BigDecimal priceFactor) {
     this.priceFactor = priceFactor;
+  }
+
+
+  public SeatDTO type(@jakarta.annotation.Nullable TypeEnum type) {
+    
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public TypeEnum getType() {
+    return type;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
+    this.type = type;
   }
 
 
@@ -389,9 +455,10 @@ public class SeatDTO {
     SeatDTO seatDTO = (SeatDTO) o;
     return Objects.equals(this.id, seatDTO.id) &&
         Objects.equals(this.seatNo, seatDTO.seatNo) &&
-        Objects.equals(this.row, seatDTO.row) &&
-        Objects.equals(this.col, seatDTO.col) &&
+        Objects.equals(this.rowNo, seatDTO.rowNo) &&
+        Objects.equals(this.colNo, seatDTO.colNo) &&
         Objects.equals(this.priceFactor, seatDTO.priceFactor) &&
+        Objects.equals(this.type, seatDTO.type) &&
         Objects.equals(this.createdAt, seatDTO.createdAt) &&
         Objects.equals(this.updatedAt, seatDTO.updatedAt) &&
         Objects.equals(this.isDeleted, seatDTO.isDeleted) &&
@@ -402,7 +469,7 @@ public class SeatDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, seatNo, row, col, priceFactor, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, floor);
+    return Objects.hash(id, seatNo, rowNo, colNo, priceFactor, type, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, floor);
   }
 
   @Override
@@ -411,9 +478,10 @@ public class SeatDTO {
     sb.append("class SeatDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    seatNo: ").append(toIndentedString(seatNo)).append("\n");
-    sb.append("    row: ").append(toIndentedString(row)).append("\n");
-    sb.append("    col: ").append(toIndentedString(col)).append("\n");
+    sb.append("    rowNo: ").append(toIndentedString(rowNo)).append("\n");
+    sb.append("    colNo: ").append(toIndentedString(colNo)).append("\n");
     sb.append("    priceFactor: ").append(toIndentedString(priceFactor)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");

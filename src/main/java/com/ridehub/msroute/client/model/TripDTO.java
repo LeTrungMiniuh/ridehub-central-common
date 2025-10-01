@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.ridehub.msroute.client.model.AttendantDTO;
 import com.ridehub.msroute.client.model.DriverDTO;
 import com.ridehub.msroute.client.model.RouteDTO;
+import com.ridehub.msroute.client.model.VehicleDTO;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -43,9 +44,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TripDTO.JSON_PROPERTY_IS_DELETED,
   TripDTO.JSON_PROPERTY_DELETED_AT,
   TripDTO.JSON_PROPERTY_DELETED_BY,
+  TripDTO.JSON_PROPERTY_ROUTE,
+  TripDTO.JSON_PROPERTY_VEHICLE,
   TripDTO.JSON_PROPERTY_DRIVER,
-  TripDTO.JSON_PROPERTY_ATTENDANT,
-  TripDTO.JSON_PROPERTY_ROUTE
+  TripDTO.JSON_PROPERTY_ATTENDANT
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class TripDTO {
@@ -54,7 +56,7 @@ public class TripDTO {
   private Long id;
 
   public static final String JSON_PROPERTY_TRIP_CODE = "tripCode";
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private String tripCode;
 
   public static final String JSON_PROPERTY_DEPARTURE_TIME = "departureTime";
@@ -89,17 +91,21 @@ public class TripDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
+  public static final String JSON_PROPERTY_ROUTE = "route";
+  @jakarta.annotation.Nonnull
+  private RouteDTO route;
+
+  public static final String JSON_PROPERTY_VEHICLE = "vehicle";
+  @jakarta.annotation.Nonnull
+  private VehicleDTO vehicle;
+
   public static final String JSON_PROPERTY_DRIVER = "driver";
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private DriverDTO driver;
 
   public static final String JSON_PROPERTY_ATTENDANT = "attendant";
   @jakarta.annotation.Nullable
   private AttendantDTO attendant;
-
-  public static final String JSON_PROPERTY_ROUTE = "route";
-  @jakarta.annotation.Nonnull
-  private RouteDTO route;
 
   public TripDTO() {
   }
@@ -130,7 +136,7 @@ public class TripDTO {
   }
 
 
-  public TripDTO tripCode(@jakarta.annotation.Nullable String tripCode) {
+  public TripDTO tripCode(@jakarta.annotation.Nonnull String tripCode) {
     
     this.tripCode = tripCode;
     return this;
@@ -140,9 +146,9 @@ public class TripDTO {
    * Get tripCode
    * @return tripCode
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TRIP_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTripCode() {
     return tripCode;
@@ -150,8 +156,8 @@ public class TripDTO {
 
 
   @JsonProperty(JSON_PROPERTY_TRIP_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTripCode(@jakarta.annotation.Nullable String tripCode) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTripCode(@jakarta.annotation.Nonnull String tripCode) {
     this.tripCode = tripCode;
   }
 
@@ -364,7 +370,59 @@ public class TripDTO {
   }
 
 
-  public TripDTO driver(@jakarta.annotation.Nullable DriverDTO driver) {
+  public TripDTO route(@jakarta.annotation.Nonnull RouteDTO route) {
+    
+    this.route = route;
+    return this;
+  }
+
+  /**
+   * Get route
+   * @return route
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ROUTE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public RouteDTO getRoute() {
+    return route;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ROUTE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setRoute(@jakarta.annotation.Nonnull RouteDTO route) {
+    this.route = route;
+  }
+
+
+  public TripDTO vehicle(@jakarta.annotation.Nonnull VehicleDTO vehicle) {
+    
+    this.vehicle = vehicle;
+    return this;
+  }
+
+  /**
+   * Get vehicle
+   * @return vehicle
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VEHICLE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public VehicleDTO getVehicle() {
+    return vehicle;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VEHICLE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setVehicle(@jakarta.annotation.Nonnull VehicleDTO vehicle) {
+    this.vehicle = vehicle;
+  }
+
+
+  public TripDTO driver(@jakarta.annotation.Nonnull DriverDTO driver) {
     
     this.driver = driver;
     return this;
@@ -374,9 +432,9 @@ public class TripDTO {
    * Get driver
    * @return driver
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DRIVER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public DriverDTO getDriver() {
     return driver;
@@ -384,8 +442,8 @@ public class TripDTO {
 
 
   @JsonProperty(JSON_PROPERTY_DRIVER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDriver(@jakarta.annotation.Nullable DriverDTO driver) {
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDriver(@jakarta.annotation.Nonnull DriverDTO driver) {
     this.driver = driver;
   }
 
@@ -416,32 +474,6 @@ public class TripDTO {
   }
 
 
-  public TripDTO route(@jakarta.annotation.Nonnull RouteDTO route) {
-    
-    this.route = route;
-    return this;
-  }
-
-  /**
-   * Get route
-   * @return route
-   */
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ROUTE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public RouteDTO getRoute() {
-    return route;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ROUTE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRoute(@jakarta.annotation.Nonnull RouteDTO route) {
-    this.route = route;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -461,14 +493,15 @@ public class TripDTO {
         Objects.equals(this.isDeleted, tripDTO.isDeleted) &&
         Objects.equals(this.deletedAt, tripDTO.deletedAt) &&
         Objects.equals(this.deletedBy, tripDTO.deletedBy) &&
+        Objects.equals(this.route, tripDTO.route) &&
+        Objects.equals(this.vehicle, tripDTO.vehicle) &&
         Objects.equals(this.driver, tripDTO.driver) &&
-        Objects.equals(this.attendant, tripDTO.attendant) &&
-        Objects.equals(this.route, tripDTO.route);
+        Objects.equals(this.attendant, tripDTO.attendant);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, tripCode, departureTime, arrivalTime, baseFare, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, driver, attendant, route);
+    return Objects.hash(id, tripCode, departureTime, arrivalTime, baseFare, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, route, vehicle, driver, attendant);
   }
 
   @Override
@@ -485,9 +518,10 @@ public class TripDTO {
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
+    sb.append("    route: ").append(toIndentedString(route)).append("\n");
+    sb.append("    vehicle: ").append(toIndentedString(vehicle)).append("\n");
     sb.append("    driver: ").append(toIndentedString(driver)).append("\n");
     sb.append("    attendant: ").append(toIndentedString(attendant)).append("\n");
-    sb.append("    route: ").append(toIndentedString(route)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,6 +1,6 @@
 /*
- * Ms Route API
- * Ms Route API documentation
+ * Ms User API
+ * Ms User API documentation
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: 
@@ -11,7 +11,7 @@
  */
 
 
-package com.ridehub.msroute.client.model;
+package com.ridehub.msuser.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -20,50 +20,47 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msroute.client.model.TripDTO;
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * TripSeatDTO
+ * FileUserDTO
  */
 @JsonPropertyOrder({
-  TripSeatDTO.JSON_PROPERTY_ID,
-  TripSeatDTO.JSON_PROPERTY_SEAT_NO,
-  TripSeatDTO.JSON_PROPERTY_FLOOR_NO,
-  TripSeatDTO.JSON_PROPERTY_BOOKED,
-  TripSeatDTO.JSON_PROPERTY_PRICE_FACTOR,
-  TripSeatDTO.JSON_PROPERTY_CREATED_AT,
-  TripSeatDTO.JSON_PROPERTY_UPDATED_AT,
-  TripSeatDTO.JSON_PROPERTY_IS_DELETED,
-  TripSeatDTO.JSON_PROPERTY_DELETED_AT,
-  TripSeatDTO.JSON_PROPERTY_DELETED_BY,
-  TripSeatDTO.JSON_PROPERTY_TRIP
+  FileUserDTO.JSON_PROPERTY_ID,
+  FileUserDTO.JSON_PROPERTY_BUCKET,
+  FileUserDTO.JSON_PROPERTY_OBJECT_KEY,
+  FileUserDTO.JSON_PROPERTY_CONTENT_TYPE,
+  FileUserDTO.JSON_PROPERTY_SIZE,
+  FileUserDTO.JSON_PROPERTY_CREATED_AT,
+  FileUserDTO.JSON_PROPERTY_UPDATED_AT,
+  FileUserDTO.JSON_PROPERTY_IS_DELETED,
+  FileUserDTO.JSON_PROPERTY_DELETED_AT,
+  FileUserDTO.JSON_PROPERTY_DELETED_BY
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class TripSeatDTO {
+public class FileUserDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
 
-  public static final String JSON_PROPERTY_SEAT_NO = "seatNo";
+  public static final String JSON_PROPERTY_BUCKET = "bucket";
   @jakarta.annotation.Nonnull
-  private String seatNo;
+  private String bucket;
 
-  public static final String JSON_PROPERTY_FLOOR_NO = "floorNo";
+  public static final String JSON_PROPERTY_OBJECT_KEY = "objectKey";
   @jakarta.annotation.Nonnull
-  private Integer floorNo;
+  private String objectKey;
 
-  public static final String JSON_PROPERTY_BOOKED = "booked";
+  public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
   @jakarta.annotation.Nullable
-  private Boolean booked;
+  private String contentType;
 
-  public static final String JSON_PROPERTY_PRICE_FACTOR = "priceFactor";
+  public static final String JSON_PROPERTY_SIZE = "size";
   @jakarta.annotation.Nullable
-  private BigDecimal priceFactor;
+  private Long size;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -85,14 +82,10 @@ public class TripSeatDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_TRIP = "trip";
-  @jakarta.annotation.Nonnull
-  private TripDTO trip;
-
-  public TripSeatDTO() {
+  public FileUserDTO() {
   }
 
-  public TripSeatDTO id(@jakarta.annotation.Nullable Long id) {
+  public FileUserDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -118,111 +111,111 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO seatNo(@jakarta.annotation.Nonnull String seatNo) {
+  public FileUserDTO bucket(@jakarta.annotation.Nonnull String bucket) {
     
-    this.seatNo = seatNo;
+    this.bucket = bucket;
     return this;
   }
 
   /**
-   * Get seatNo
-   * @return seatNo
+   * Get bucket
+   * @return bucket
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SEAT_NO)
+  @JsonProperty(JSON_PROPERTY_BUCKET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getSeatNo() {
-    return seatNo;
+  public String getBucket() {
+    return bucket;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SEAT_NO)
+  @JsonProperty(JSON_PROPERTY_BUCKET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSeatNo(@jakarta.annotation.Nonnull String seatNo) {
-    this.seatNo = seatNo;
+  public void setBucket(@jakarta.annotation.Nonnull String bucket) {
+    this.bucket = bucket;
   }
 
 
-  public TripSeatDTO floorNo(@jakarta.annotation.Nonnull Integer floorNo) {
+  public FileUserDTO objectKey(@jakarta.annotation.Nonnull String objectKey) {
     
-    this.floorNo = floorNo;
+    this.objectKey = objectKey;
     return this;
   }
 
   /**
-   * Get floorNo
-   * @return floorNo
+   * Get objectKey
+   * @return objectKey
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FLOOR_NO)
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Integer getFloorNo() {
-    return floorNo;
+  public String getObjectKey() {
+    return objectKey;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FLOOR_NO)
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFloorNo(@jakarta.annotation.Nonnull Integer floorNo) {
-    this.floorNo = floorNo;
+  public void setObjectKey(@jakarta.annotation.Nonnull String objectKey) {
+    this.objectKey = objectKey;
   }
 
 
-  public TripSeatDTO booked(@jakarta.annotation.Nullable Boolean booked) {
+  public FileUserDTO contentType(@jakarta.annotation.Nullable String contentType) {
     
-    this.booked = booked;
+    this.contentType = contentType;
     return this;
   }
 
   /**
-   * Get booked
-   * @return booked
+   * Get contentType
+   * @return contentType
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BOOKED)
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getBooked() {
-    return booked;
+  public String getContentType() {
+    return contentType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BOOKED)
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBooked(@jakarta.annotation.Nullable Boolean booked) {
-    this.booked = booked;
+  public void setContentType(@jakarta.annotation.Nullable String contentType) {
+    this.contentType = contentType;
   }
 
 
-  public TripSeatDTO priceFactor(@jakarta.annotation.Nullable BigDecimal priceFactor) {
+  public FileUserDTO size(@jakarta.annotation.Nullable Long size) {
     
-    this.priceFactor = priceFactor;
+    this.size = size;
     return this;
   }
 
   /**
-   * Get priceFactor
-   * @return priceFactor
+   * Get size
+   * @return size
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRICE_FACTOR)
+  @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public BigDecimal getPriceFactor() {
-    return priceFactor;
+  public Long getSize() {
+    return size;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRICE_FACTOR)
+  @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPriceFactor(@jakarta.annotation.Nullable BigDecimal priceFactor) {
-    this.priceFactor = priceFactor;
+  public void setSize(@jakarta.annotation.Nullable Long size) {
+    this.size = size;
   }
 
 
-  public TripSeatDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public FileUserDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -248,7 +241,7 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public FileUserDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -274,7 +267,7 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public FileUserDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -300,7 +293,7 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public FileUserDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -326,7 +319,7 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public FileUserDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -352,32 +345,6 @@ public class TripSeatDTO {
   }
 
 
-  public TripSeatDTO trip(@jakarta.annotation.Nonnull TripDTO trip) {
-    
-    this.trip = trip;
-    return this;
-  }
-
-  /**
-   * Get trip
-   * @return trip
-   */
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TRIP)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public TripDTO getTrip() {
-    return trip;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TRIP)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTrip(@jakarta.annotation.Nonnull TripDTO trip) {
-    this.trip = trip;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -386,40 +353,38 @@ public class TripSeatDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TripSeatDTO tripSeatDTO = (TripSeatDTO) o;
-    return Objects.equals(this.id, tripSeatDTO.id) &&
-        Objects.equals(this.seatNo, tripSeatDTO.seatNo) &&
-        Objects.equals(this.floorNo, tripSeatDTO.floorNo) &&
-        Objects.equals(this.booked, tripSeatDTO.booked) &&
-        Objects.equals(this.priceFactor, tripSeatDTO.priceFactor) &&
-        Objects.equals(this.createdAt, tripSeatDTO.createdAt) &&
-        Objects.equals(this.updatedAt, tripSeatDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, tripSeatDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, tripSeatDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, tripSeatDTO.deletedBy) &&
-        Objects.equals(this.trip, tripSeatDTO.trip);
+    FileUserDTO fileUserDTO = (FileUserDTO) o;
+    return Objects.equals(this.id, fileUserDTO.id) &&
+        Objects.equals(this.bucket, fileUserDTO.bucket) &&
+        Objects.equals(this.objectKey, fileUserDTO.objectKey) &&
+        Objects.equals(this.contentType, fileUserDTO.contentType) &&
+        Objects.equals(this.size, fileUserDTO.size) &&
+        Objects.equals(this.createdAt, fileUserDTO.createdAt) &&
+        Objects.equals(this.updatedAt, fileUserDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, fileUserDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, fileUserDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, fileUserDTO.deletedBy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, seatNo, floorNo, booked, priceFactor, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, trip);
+    return Objects.hash(id, bucket, objectKey, contentType, size, createdAt, updatedAt, isDeleted, deletedAt, deletedBy);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TripSeatDTO {\n");
+    sb.append("class FileUserDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    seatNo: ").append(toIndentedString(seatNo)).append("\n");
-    sb.append("    floorNo: ").append(toIndentedString(floorNo)).append("\n");
-    sb.append("    booked: ").append(toIndentedString(booked)).append("\n");
-    sb.append("    priceFactor: ").append(toIndentedString(priceFactor)).append("\n");
+    sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
+    sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    trip: ").append(toIndentedString(trip)).append("\n");
     sb.append("}");
     return sb.toString();
   }

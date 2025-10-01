@@ -20,51 +20,91 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msroute.client.model.AddressDTO;
-import com.ridehub.msroute.client.model.FileRouteDTO;
+import com.ridehub.msroute.client.model.TripDTO;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * StationDTO
+ * SeatLockDTO
  */
 @JsonPropertyOrder({
-  StationDTO.JSON_PROPERTY_ID,
-  StationDTO.JSON_PROPERTY_NAME,
-  StationDTO.JSON_PROPERTY_PHONE_NUMBER,
-  StationDTO.JSON_PROPERTY_DESCRIPTION,
-  StationDTO.JSON_PROPERTY_ACTIVE,
-  StationDTO.JSON_PROPERTY_CREATED_AT,
-  StationDTO.JSON_PROPERTY_UPDATED_AT,
-  StationDTO.JSON_PROPERTY_IS_DELETED,
-  StationDTO.JSON_PROPERTY_DELETED_AT,
-  StationDTO.JSON_PROPERTY_DELETED_BY,
-  StationDTO.JSON_PROPERTY_ADDRESS,
-  StationDTO.JSON_PROPERTY_STATION_IMG
+  SeatLockDTO.JSON_PROPERTY_ID,
+  SeatLockDTO.JSON_PROPERTY_SEAT_NO,
+  SeatLockDTO.JSON_PROPERTY_USER_ID,
+  SeatLockDTO.JSON_PROPERTY_STATUS,
+  SeatLockDTO.JSON_PROPERTY_EXPIRES_AT,
+  SeatLockDTO.JSON_PROPERTY_IDEMPOTENCY_KEY,
+  SeatLockDTO.JSON_PROPERTY_CREATED_AT,
+  SeatLockDTO.JSON_PROPERTY_UPDATED_AT,
+  SeatLockDTO.JSON_PROPERTY_IS_DELETED,
+  SeatLockDTO.JSON_PROPERTY_DELETED_AT,
+  SeatLockDTO.JSON_PROPERTY_DELETED_BY,
+  SeatLockDTO.JSON_PROPERTY_TRIP
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class StationDTO {
+public class SeatLockDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String JSON_PROPERTY_SEAT_NO = "seatNo";
   @jakarta.annotation.Nonnull
-  private String name;
+  private String seatNo;
 
-  public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
+  public static final String JSON_PROPERTY_USER_ID = "userId";
   @jakarta.annotation.Nullable
-  private String phoneNumber;
+  private UUID userId;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  @jakarta.annotation.Nullable
-  private String description;
+  /**
+   * Gets or Sets status
+   */
+  public enum StatusEnum {
+    HELD(String.valueOf("HELD")),
+    
+    EXPIRED(String.valueOf("EXPIRED")),
+    
+    COMMITTED(String.valueOf("COMMITTED"));
 
-  public static final String JSON_PROPERTY_ACTIVE = "active";
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_STATUS = "status";
   @jakarta.annotation.Nonnull
-  private Boolean active;
+  private StatusEnum status;
+
+  public static final String JSON_PROPERTY_EXPIRES_AT = "expiresAt";
+  @jakarta.annotation.Nonnull
+  private OffsetDateTime expiresAt;
+
+  public static final String JSON_PROPERTY_IDEMPOTENCY_KEY = "idempotencyKey";
+  @jakarta.annotation.Nullable
+  private String idempotencyKey;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -86,18 +126,14 @@ public class StationDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_ADDRESS = "address";
+  public static final String JSON_PROPERTY_TRIP = "trip";
   @jakarta.annotation.Nonnull
-  private AddressDTO address;
+  private TripDTO trip;
 
-  public static final String JSON_PROPERTY_STATION_IMG = "stationImg";
-  @jakarta.annotation.Nullable
-  private FileRouteDTO stationImg;
-
-  public StationDTO() {
+  public SeatLockDTO() {
   }
 
-  public StationDTO id(@jakarta.annotation.Nullable Long id) {
+  public SeatLockDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -123,111 +159,137 @@ public class StationDTO {
   }
 
 
-  public StationDTO name(@jakarta.annotation.Nonnull String name) {
+  public SeatLockDTO seatNo(@jakarta.annotation.Nonnull String seatNo) {
     
-    this.name = name;
+    this.seatNo = seatNo;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get seatNo
+   * @return seatNo
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_SEAT_NO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getName() {
-    return name;
+  public String getSeatNo() {
+    return seatNo;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_SEAT_NO)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
+  public void setSeatNo(@jakarta.annotation.Nonnull String seatNo) {
+    this.seatNo = seatNo;
   }
 
 
-  public StationDTO phoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
+  public SeatLockDTO userId(@jakarta.annotation.Nullable UUID userId) {
     
-    this.phoneNumber = phoneNumber;
+    this.userId = userId;
     return this;
   }
 
   /**
-   * Get phoneNumber
-   * @return phoneNumber
+   * Get userId
+   * @return userId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getPhoneNumber() {
-    return phoneNumber;
+  public UUID getUserId() {
+    return userId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PHONE_NUMBER)
+  @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
-    this.phoneNumber = phoneNumber;
+  public void setUserId(@jakarta.annotation.Nullable UUID userId) {
+    this.userId = userId;
   }
 
 
-  public StationDTO description(@jakarta.annotation.Nullable String description) {
+  public SeatLockDTO status(@jakarta.annotation.Nonnull StatusEnum status) {
     
-    this.description = description;
+    this.status = status;
     return this;
   }
 
   /**
-   * Get description
-   * @return description
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getDescription() {
-    return description;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public StationDTO active(@jakarta.annotation.Nonnull Boolean active) {
-    
-    this.active = active;
-    return this;
-  }
-
-  /**
-   * Get active
-   * @return active
+   * Get status
+   * @return status
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public Boolean getActive() {
-    return active;
+  public StatusEnum getStatus() {
+    return status;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ACTIVE)
+  @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setActive(@jakarta.annotation.Nonnull Boolean active) {
-    this.active = active;
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
+    this.status = status;
   }
 
 
-  public StationDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public SeatLockDTO expiresAt(@jakarta.annotation.Nonnull OffsetDateTime expiresAt) {
+    
+    this.expiresAt = expiresAt;
+    return this;
+  }
+
+  /**
+   * Get expiresAt
+   * @return expiresAt
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public OffsetDateTime getExpiresAt() {
+    return expiresAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setExpiresAt(@jakarta.annotation.Nonnull OffsetDateTime expiresAt) {
+    this.expiresAt = expiresAt;
+  }
+
+
+  public SeatLockDTO idempotencyKey(@jakarta.annotation.Nullable String idempotencyKey) {
+    
+    this.idempotencyKey = idempotencyKey;
+    return this;
+  }
+
+  /**
+   * Get idempotencyKey
+   * @return idempotencyKey
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IDEMPOTENCY_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getIdempotencyKey() {
+    return idempotencyKey;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IDEMPOTENCY_KEY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIdempotencyKey(@jakarta.annotation.Nullable String idempotencyKey) {
+    this.idempotencyKey = idempotencyKey;
+  }
+
+
+  public SeatLockDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -253,7 +315,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public SeatLockDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -279,7 +341,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public SeatLockDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -305,7 +367,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public SeatLockDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -331,7 +393,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public SeatLockDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -357,55 +419,29 @@ public class StationDTO {
   }
 
 
-  public StationDTO address(@jakarta.annotation.Nonnull AddressDTO address) {
+  public SeatLockDTO trip(@jakarta.annotation.Nonnull TripDTO trip) {
     
-    this.address = address;
+    this.trip = trip;
     return this;
   }
 
   /**
-   * Get address
-   * @return address
+   * Get trip
+   * @return trip
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(JSON_PROPERTY_TRIP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public AddressDTO getAddress() {
-    return address;
+  public TripDTO getTrip() {
+    return trip;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
+  @JsonProperty(JSON_PROPERTY_TRIP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(@jakarta.annotation.Nonnull AddressDTO address) {
-    this.address = address;
-  }
-
-
-  public StationDTO stationImg(@jakarta.annotation.Nullable FileRouteDTO stationImg) {
-    
-    this.stationImg = stationImg;
-    return this;
-  }
-
-  /**
-   * Get stationImg
-   * @return stationImg
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATION_IMG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public FileRouteDTO getStationImg() {
-    return stationImg;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_STATION_IMG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStationImg(@jakarta.annotation.Nullable FileRouteDTO stationImg) {
-    this.stationImg = stationImg;
+  public void setTrip(@jakarta.annotation.Nonnull TripDTO trip) {
+    this.trip = trip;
   }
 
 
@@ -417,42 +453,42 @@ public class StationDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StationDTO stationDTO = (StationDTO) o;
-    return Objects.equals(this.id, stationDTO.id) &&
-        Objects.equals(this.name, stationDTO.name) &&
-        Objects.equals(this.phoneNumber, stationDTO.phoneNumber) &&
-        Objects.equals(this.description, stationDTO.description) &&
-        Objects.equals(this.active, stationDTO.active) &&
-        Objects.equals(this.createdAt, stationDTO.createdAt) &&
-        Objects.equals(this.updatedAt, stationDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, stationDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, stationDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, stationDTO.deletedBy) &&
-        Objects.equals(this.address, stationDTO.address) &&
-        Objects.equals(this.stationImg, stationDTO.stationImg);
+    SeatLockDTO seatLockDTO = (SeatLockDTO) o;
+    return Objects.equals(this.id, seatLockDTO.id) &&
+        Objects.equals(this.seatNo, seatLockDTO.seatNo) &&
+        Objects.equals(this.userId, seatLockDTO.userId) &&
+        Objects.equals(this.status, seatLockDTO.status) &&
+        Objects.equals(this.expiresAt, seatLockDTO.expiresAt) &&
+        Objects.equals(this.idempotencyKey, seatLockDTO.idempotencyKey) &&
+        Objects.equals(this.createdAt, seatLockDTO.createdAt) &&
+        Objects.equals(this.updatedAt, seatLockDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, seatLockDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, seatLockDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, seatLockDTO.deletedBy) &&
+        Objects.equals(this.trip, seatLockDTO.trip);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, description, active, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, address, stationImg);
+    return Objects.hash(id, seatNo, userId, status, expiresAt, idempotencyKey, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, trip);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StationDTO {\n");
+    sb.append("class SeatLockDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    seatNo: ").append(toIndentedString(seatNo)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    idempotencyKey: ").append(toIndentedString(idempotencyKey)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    stationImg: ").append(toIndentedString(stationImg)).append("\n");
+    sb.append("    trip: ").append(toIndentedString(trip)).append("\n");
     sb.append("}");
     return sb.toString();
   }

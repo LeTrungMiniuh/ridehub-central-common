@@ -7,6 +7,7 @@ import com.ridehub.msuser.client.model.ApiResponse;
 import com.ridehub.msuser.client.model.AppUserDTO;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,13 +31,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param usernameContains  (optional)
-   * @param usernameDoesNotContain  (optional)
-   * @param usernameEquals  (optional)
-   * @param usernameNotEquals  (optional)
-   * @param usernameSpecified  (optional)
-   * @param usernameIn  (optional)
-   * @param usernameNotIn  (optional)
+   * @param keycloakIdEquals  (optional)
+   * @param keycloakIdNotEquals  (optional)
+   * @param keycloakIdSpecified  (optional)
+   * @param keycloakIdIn  (optional)
+   * @param keycloakIdNotIn  (optional)
    * @param emailContains  (optional)
    * @param emailDoesNotContain  (optional)
    * @param emailEquals  (optional)
@@ -74,27 +73,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param dateOfBirthSpecified  (optional)
    * @param dateOfBirthIn  (optional)
    * @param dateOfBirthNotIn  (optional)
-   * @param idNumberContains  (optional)
-   * @param idNumberDoesNotContain  (optional)
-   * @param idNumberEquals  (optional)
-   * @param idNumberNotEquals  (optional)
-   * @param idNumberSpecified  (optional)
-   * @param idNumberIn  (optional)
-   * @param idNumberNotIn  (optional)
-   * @param nationalityContains  (optional)
-   * @param nationalityDoesNotContain  (optional)
-   * @param nationalityEquals  (optional)
-   * @param nationalityNotEquals  (optional)
-   * @param nationalitySpecified  (optional)
-   * @param nationalityIn  (optional)
-   * @param nationalityNotIn  (optional)
-   * @param profileImageContains  (optional)
-   * @param profileImageDoesNotContain  (optional)
-   * @param profileImageEquals  (optional)
-   * @param profileImageNotEquals  (optional)
-   * @param profileImageSpecified  (optional)
-   * @param profileImageIn  (optional)
-   * @param profileImageNotIn  (optional)
    * @param isVerifiedEquals  (optional)
    * @param isVerifiedNotEquals  (optional)
    * @param isVerifiedSpecified  (optional)
@@ -105,15 +83,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param isActiveSpecified  (optional)
    * @param isActiveIn  (optional)
    * @param isActiveNotIn  (optional)
-   * @param createdAtGreaterThan  (optional)
-   * @param createdAtLessThan  (optional)
-   * @param createdAtGreaterThanOrEqual  (optional)
-   * @param createdAtLessThanOrEqual  (optional)
-   * @param createdAtEquals  (optional)
-   * @param createdAtNotEquals  (optional)
-   * @param createdAtSpecified  (optional)
-   * @param createdAtIn  (optional)
-   * @param createdAtNotIn  (optional)
    * @param lastLoginAtGreaterThan  (optional)
    * @param lastLoginAtLessThan  (optional)
    * @param lastLoginAtGreaterThanOrEqual  (optional)
@@ -123,23 +92,60 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param lastLoginAtSpecified  (optional)
    * @param lastLoginAtIn  (optional)
    * @param lastLoginAtNotIn  (optional)
-   * @param preferencesIdGreaterThan  (optional)
-   * @param preferencesIdLessThan  (optional)
-   * @param preferencesIdGreaterThanOrEqual  (optional)
-   * @param preferencesIdLessThanOrEqual  (optional)
-   * @param preferencesIdEquals  (optional)
-   * @param preferencesIdNotEquals  (optional)
-   * @param preferencesIdSpecified  (optional)
-   * @param preferencesIdIn  (optional)
-   * @param preferencesIdNotIn  (optional)
+   * @param createdAtGreaterThan  (optional)
+   * @param createdAtLessThan  (optional)
+   * @param createdAtGreaterThanOrEqual  (optional)
+   * @param createdAtLessThanOrEqual  (optional)
+   * @param createdAtEquals  (optional)
+   * @param createdAtNotEquals  (optional)
+   * @param createdAtSpecified  (optional)
+   * @param createdAtIn  (optional)
+   * @param createdAtNotIn  (optional)
+   * @param updatedAtGreaterThan  (optional)
+   * @param updatedAtLessThan  (optional)
+   * @param updatedAtGreaterThanOrEqual  (optional)
+   * @param updatedAtLessThanOrEqual  (optional)
+   * @param updatedAtEquals  (optional)
+   * @param updatedAtNotEquals  (optional)
+   * @param updatedAtSpecified  (optional)
+   * @param updatedAtIn  (optional)
+   * @param updatedAtNotIn  (optional)
+   * @param isDeletedEquals  (optional)
+   * @param isDeletedNotEquals  (optional)
+   * @param isDeletedSpecified  (optional)
+   * @param isDeletedIn  (optional)
+   * @param isDeletedNotIn  (optional)
+   * @param deletedAtGreaterThan  (optional)
+   * @param deletedAtLessThan  (optional)
+   * @param deletedAtGreaterThanOrEqual  (optional)
+   * @param deletedAtLessThanOrEqual  (optional)
+   * @param deletedAtEquals  (optional)
+   * @param deletedAtNotEquals  (optional)
+   * @param deletedAtSpecified  (optional)
+   * @param deletedAtIn  (optional)
+   * @param deletedAtNotIn  (optional)
+   * @param deletedByEquals  (optional)
+   * @param deletedByNotEquals  (optional)
+   * @param deletedBySpecified  (optional)
+   * @param deletedByIn  (optional)
+   * @param deletedByNotIn  (optional)
+   * @param profileIdGreaterThan  (optional)
+   * @param profileIdLessThan  (optional)
+   * @param profileIdGreaterThanOrEqual  (optional)
+   * @param profileIdLessThanOrEqual  (optional)
+   * @param profileIdEquals  (optional)
+   * @param profileIdNotEquals  (optional)
+   * @param profileIdSpecified  (optional)
+   * @param profileIdIn  (optional)
+   * @param profileIdNotIn  (optional)
    * @param distinct  (optional)
    * @return Long
    */
-  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  Long countAppUsers(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("usernameContains") @jakarta.annotation.Nullable String usernameContains, @Param("usernameDoesNotContain") @jakarta.annotation.Nullable String usernameDoesNotContain, @Param("usernameEquals") @jakarta.annotation.Nullable String usernameEquals, @Param("usernameNotEquals") @jakarta.annotation.Nullable String usernameNotEquals, @Param("usernameSpecified") @jakarta.annotation.Nullable Boolean usernameSpecified, @Param("usernameIn") @jakarta.annotation.Nullable List<String> usernameIn, @Param("usernameNotIn") @jakarta.annotation.Nullable List<String> usernameNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("idNumberContains") @jakarta.annotation.Nullable String idNumberContains, @Param("idNumberDoesNotContain") @jakarta.annotation.Nullable String idNumberDoesNotContain, @Param("idNumberEquals") @jakarta.annotation.Nullable String idNumberEquals, @Param("idNumberNotEquals") @jakarta.annotation.Nullable String idNumberNotEquals, @Param("idNumberSpecified") @jakarta.annotation.Nullable Boolean idNumberSpecified, @Param("idNumberIn") @jakarta.annotation.Nullable List<String> idNumberIn, @Param("idNumberNotIn") @jakarta.annotation.Nullable List<String> idNumberNotIn, @Param("nationalityContains") @jakarta.annotation.Nullable String nationalityContains, @Param("nationalityDoesNotContain") @jakarta.annotation.Nullable String nationalityDoesNotContain, @Param("nationalityEquals") @jakarta.annotation.Nullable String nationalityEquals, @Param("nationalityNotEquals") @jakarta.annotation.Nullable String nationalityNotEquals, @Param("nationalitySpecified") @jakarta.annotation.Nullable Boolean nationalitySpecified, @Param("nationalityIn") @jakarta.annotation.Nullable List<String> nationalityIn, @Param("nationalityNotIn") @jakarta.annotation.Nullable List<String> nationalityNotIn, @Param("profileImageContains") @jakarta.annotation.Nullable String profileImageContains, @Param("profileImageDoesNotContain") @jakarta.annotation.Nullable String profileImageDoesNotContain, @Param("profileImageEquals") @jakarta.annotation.Nullable String profileImageEquals, @Param("profileImageNotEquals") @jakarta.annotation.Nullable String profileImageNotEquals, @Param("profileImageSpecified") @jakarta.annotation.Nullable Boolean profileImageSpecified, @Param("profileImageIn") @jakarta.annotation.Nullable List<String> profileImageIn, @Param("profileImageNotIn") @jakarta.annotation.Nullable List<String> profileImageNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("preferencesIdGreaterThan") @jakarta.annotation.Nullable Long preferencesIdGreaterThan, @Param("preferencesIdLessThan") @jakarta.annotation.Nullable Long preferencesIdLessThan, @Param("preferencesIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdGreaterThanOrEqual, @Param("preferencesIdLessThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdLessThanOrEqual, @Param("preferencesIdEquals") @jakarta.annotation.Nullable Long preferencesIdEquals, @Param("preferencesIdNotEquals") @jakarta.annotation.Nullable Long preferencesIdNotEquals, @Param("preferencesIdSpecified") @jakarta.annotation.Nullable Boolean preferencesIdSpecified, @Param("preferencesIdIn") @jakarta.annotation.Nullable List<Long> preferencesIdIn, @Param("preferencesIdNotIn") @jakarta.annotation.Nullable List<Long> preferencesIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  Long countAppUsers(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("keycloakIdEquals") @jakarta.annotation.Nullable UUID keycloakIdEquals, @Param("keycloakIdNotEquals") @jakarta.annotation.Nullable UUID keycloakIdNotEquals, @Param("keycloakIdSpecified") @jakarta.annotation.Nullable Boolean keycloakIdSpecified, @Param("keycloakIdIn") @jakarta.annotation.Nullable List<UUID> keycloakIdIn, @Param("keycloakIdNotIn") @jakarta.annotation.Nullable List<UUID> keycloakIdNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("profileIdGreaterThan") @jakarta.annotation.Nullable Long profileIdGreaterThan, @Param("profileIdLessThan") @jakarta.annotation.Nullable Long profileIdLessThan, @Param("profileIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long profileIdGreaterThanOrEqual, @Param("profileIdLessThanOrEqual") @jakarta.annotation.Nullable Long profileIdLessThanOrEqual, @Param("profileIdEquals") @jakarta.annotation.Nullable Long profileIdEquals, @Param("profileIdNotEquals") @jakarta.annotation.Nullable Long profileIdNotEquals, @Param("profileIdSpecified") @jakarta.annotation.Nullable Boolean profileIdSpecified, @Param("profileIdIn") @jakarta.annotation.Nullable List<Long> profileIdIn, @Param("profileIdNotIn") @jakarta.annotation.Nullable List<Long> profileIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -154,13 +160,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param usernameContains  (optional)
-   * @param usernameDoesNotContain  (optional)
-   * @param usernameEquals  (optional)
-   * @param usernameNotEquals  (optional)
-   * @param usernameSpecified  (optional)
-   * @param usernameIn  (optional)
-   * @param usernameNotIn  (optional)
+   * @param keycloakIdEquals  (optional)
+   * @param keycloakIdNotEquals  (optional)
+   * @param keycloakIdSpecified  (optional)
+   * @param keycloakIdIn  (optional)
+   * @param keycloakIdNotIn  (optional)
    * @param emailContains  (optional)
    * @param emailDoesNotContain  (optional)
    * @param emailEquals  (optional)
@@ -198,27 +202,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param dateOfBirthSpecified  (optional)
    * @param dateOfBirthIn  (optional)
    * @param dateOfBirthNotIn  (optional)
-   * @param idNumberContains  (optional)
-   * @param idNumberDoesNotContain  (optional)
-   * @param idNumberEquals  (optional)
-   * @param idNumberNotEquals  (optional)
-   * @param idNumberSpecified  (optional)
-   * @param idNumberIn  (optional)
-   * @param idNumberNotIn  (optional)
-   * @param nationalityContains  (optional)
-   * @param nationalityDoesNotContain  (optional)
-   * @param nationalityEquals  (optional)
-   * @param nationalityNotEquals  (optional)
-   * @param nationalitySpecified  (optional)
-   * @param nationalityIn  (optional)
-   * @param nationalityNotIn  (optional)
-   * @param profileImageContains  (optional)
-   * @param profileImageDoesNotContain  (optional)
-   * @param profileImageEquals  (optional)
-   * @param profileImageNotEquals  (optional)
-   * @param profileImageSpecified  (optional)
-   * @param profileImageIn  (optional)
-   * @param profileImageNotIn  (optional)
    * @param isVerifiedEquals  (optional)
    * @param isVerifiedNotEquals  (optional)
    * @param isVerifiedSpecified  (optional)
@@ -229,15 +212,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param isActiveSpecified  (optional)
    * @param isActiveIn  (optional)
    * @param isActiveNotIn  (optional)
-   * @param createdAtGreaterThan  (optional)
-   * @param createdAtLessThan  (optional)
-   * @param createdAtGreaterThanOrEqual  (optional)
-   * @param createdAtLessThanOrEqual  (optional)
-   * @param createdAtEquals  (optional)
-   * @param createdAtNotEquals  (optional)
-   * @param createdAtSpecified  (optional)
-   * @param createdAtIn  (optional)
-   * @param createdAtNotIn  (optional)
    * @param lastLoginAtGreaterThan  (optional)
    * @param lastLoginAtLessThan  (optional)
    * @param lastLoginAtGreaterThanOrEqual  (optional)
@@ -247,23 +221,60 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param lastLoginAtSpecified  (optional)
    * @param lastLoginAtIn  (optional)
    * @param lastLoginAtNotIn  (optional)
-   * @param preferencesIdGreaterThan  (optional)
-   * @param preferencesIdLessThan  (optional)
-   * @param preferencesIdGreaterThanOrEqual  (optional)
-   * @param preferencesIdLessThanOrEqual  (optional)
-   * @param preferencesIdEquals  (optional)
-   * @param preferencesIdNotEquals  (optional)
-   * @param preferencesIdSpecified  (optional)
-   * @param preferencesIdIn  (optional)
-   * @param preferencesIdNotIn  (optional)
+   * @param createdAtGreaterThan  (optional)
+   * @param createdAtLessThan  (optional)
+   * @param createdAtGreaterThanOrEqual  (optional)
+   * @param createdAtLessThanOrEqual  (optional)
+   * @param createdAtEquals  (optional)
+   * @param createdAtNotEquals  (optional)
+   * @param createdAtSpecified  (optional)
+   * @param createdAtIn  (optional)
+   * @param createdAtNotIn  (optional)
+   * @param updatedAtGreaterThan  (optional)
+   * @param updatedAtLessThan  (optional)
+   * @param updatedAtGreaterThanOrEqual  (optional)
+   * @param updatedAtLessThanOrEqual  (optional)
+   * @param updatedAtEquals  (optional)
+   * @param updatedAtNotEquals  (optional)
+   * @param updatedAtSpecified  (optional)
+   * @param updatedAtIn  (optional)
+   * @param updatedAtNotIn  (optional)
+   * @param isDeletedEquals  (optional)
+   * @param isDeletedNotEquals  (optional)
+   * @param isDeletedSpecified  (optional)
+   * @param isDeletedIn  (optional)
+   * @param isDeletedNotIn  (optional)
+   * @param deletedAtGreaterThan  (optional)
+   * @param deletedAtLessThan  (optional)
+   * @param deletedAtGreaterThanOrEqual  (optional)
+   * @param deletedAtLessThanOrEqual  (optional)
+   * @param deletedAtEquals  (optional)
+   * @param deletedAtNotEquals  (optional)
+   * @param deletedAtSpecified  (optional)
+   * @param deletedAtIn  (optional)
+   * @param deletedAtNotIn  (optional)
+   * @param deletedByEquals  (optional)
+   * @param deletedByNotEquals  (optional)
+   * @param deletedBySpecified  (optional)
+   * @param deletedByIn  (optional)
+   * @param deletedByNotIn  (optional)
+   * @param profileIdGreaterThan  (optional)
+   * @param profileIdLessThan  (optional)
+   * @param profileIdGreaterThanOrEqual  (optional)
+   * @param profileIdLessThanOrEqual  (optional)
+   * @param profileIdEquals  (optional)
+   * @param profileIdNotEquals  (optional)
+   * @param profileIdSpecified  (optional)
+   * @param profileIdIn  (optional)
+   * @param profileIdNotIn  (optional)
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<Long> countAppUsersWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("usernameContains") @jakarta.annotation.Nullable String usernameContains, @Param("usernameDoesNotContain") @jakarta.annotation.Nullable String usernameDoesNotContain, @Param("usernameEquals") @jakarta.annotation.Nullable String usernameEquals, @Param("usernameNotEquals") @jakarta.annotation.Nullable String usernameNotEquals, @Param("usernameSpecified") @jakarta.annotation.Nullable Boolean usernameSpecified, @Param("usernameIn") @jakarta.annotation.Nullable List<String> usernameIn, @Param("usernameNotIn") @jakarta.annotation.Nullable List<String> usernameNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("idNumberContains") @jakarta.annotation.Nullable String idNumberContains, @Param("idNumberDoesNotContain") @jakarta.annotation.Nullable String idNumberDoesNotContain, @Param("idNumberEquals") @jakarta.annotation.Nullable String idNumberEquals, @Param("idNumberNotEquals") @jakarta.annotation.Nullable String idNumberNotEquals, @Param("idNumberSpecified") @jakarta.annotation.Nullable Boolean idNumberSpecified, @Param("idNumberIn") @jakarta.annotation.Nullable List<String> idNumberIn, @Param("idNumberNotIn") @jakarta.annotation.Nullable List<String> idNumberNotIn, @Param("nationalityContains") @jakarta.annotation.Nullable String nationalityContains, @Param("nationalityDoesNotContain") @jakarta.annotation.Nullable String nationalityDoesNotContain, @Param("nationalityEquals") @jakarta.annotation.Nullable String nationalityEquals, @Param("nationalityNotEquals") @jakarta.annotation.Nullable String nationalityNotEquals, @Param("nationalitySpecified") @jakarta.annotation.Nullable Boolean nationalitySpecified, @Param("nationalityIn") @jakarta.annotation.Nullable List<String> nationalityIn, @Param("nationalityNotIn") @jakarta.annotation.Nullable List<String> nationalityNotIn, @Param("profileImageContains") @jakarta.annotation.Nullable String profileImageContains, @Param("profileImageDoesNotContain") @jakarta.annotation.Nullable String profileImageDoesNotContain, @Param("profileImageEquals") @jakarta.annotation.Nullable String profileImageEquals, @Param("profileImageNotEquals") @jakarta.annotation.Nullable String profileImageNotEquals, @Param("profileImageSpecified") @jakarta.annotation.Nullable Boolean profileImageSpecified, @Param("profileImageIn") @jakarta.annotation.Nullable List<String> profileImageIn, @Param("profileImageNotIn") @jakarta.annotation.Nullable List<String> profileImageNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("preferencesIdGreaterThan") @jakarta.annotation.Nullable Long preferencesIdGreaterThan, @Param("preferencesIdLessThan") @jakarta.annotation.Nullable Long preferencesIdLessThan, @Param("preferencesIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdGreaterThanOrEqual, @Param("preferencesIdLessThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdLessThanOrEqual, @Param("preferencesIdEquals") @jakarta.annotation.Nullable Long preferencesIdEquals, @Param("preferencesIdNotEquals") @jakarta.annotation.Nullable Long preferencesIdNotEquals, @Param("preferencesIdSpecified") @jakarta.annotation.Nullable Boolean preferencesIdSpecified, @Param("preferencesIdIn") @jakarta.annotation.Nullable List<Long> preferencesIdIn, @Param("preferencesIdNotIn") @jakarta.annotation.Nullable List<Long> preferencesIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<Long> countAppUsersWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("keycloakIdEquals") @jakarta.annotation.Nullable UUID keycloakIdEquals, @Param("keycloakIdNotEquals") @jakarta.annotation.Nullable UUID keycloakIdNotEquals, @Param("keycloakIdSpecified") @jakarta.annotation.Nullable Boolean keycloakIdSpecified, @Param("keycloakIdIn") @jakarta.annotation.Nullable List<UUID> keycloakIdIn, @Param("keycloakIdNotIn") @jakarta.annotation.Nullable List<UUID> keycloakIdNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("profileIdGreaterThan") @jakarta.annotation.Nullable Long profileIdGreaterThan, @Param("profileIdLessThan") @jakarta.annotation.Nullable Long profileIdLessThan, @Param("profileIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long profileIdGreaterThanOrEqual, @Param("profileIdLessThanOrEqual") @jakarta.annotation.Nullable Long profileIdLessThanOrEqual, @Param("profileIdEquals") @jakarta.annotation.Nullable Long profileIdEquals, @Param("profileIdNotEquals") @jakarta.annotation.Nullable Long profileIdNotEquals, @Param("profileIdSpecified") @jakarta.annotation.Nullable Boolean profileIdSpecified, @Param("profileIdIn") @jakarta.annotation.Nullable List<Long> profileIdIn, @Param("profileIdNotIn") @jakarta.annotation.Nullable List<Long> profileIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -286,13 +297,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>usernameContains -  (optional)</li>
-   *   <li>usernameDoesNotContain -  (optional)</li>
-   *   <li>usernameEquals -  (optional)</li>
-   *   <li>usernameNotEquals -  (optional)</li>
-   *   <li>usernameSpecified -  (optional)</li>
-   *   <li>usernameIn -  (optional)</li>
-   *   <li>usernameNotIn -  (optional)</li>
+   *   <li>keycloakIdEquals -  (optional)</li>
+   *   <li>keycloakIdNotEquals -  (optional)</li>
+   *   <li>keycloakIdSpecified -  (optional)</li>
+   *   <li>keycloakIdIn -  (optional)</li>
+   *   <li>keycloakIdNotIn -  (optional)</li>
    *   <li>emailContains -  (optional)</li>
    *   <li>emailDoesNotContain -  (optional)</li>
    *   <li>emailEquals -  (optional)</li>
@@ -330,27 +339,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>dateOfBirthSpecified -  (optional)</li>
    *   <li>dateOfBirthIn -  (optional)</li>
    *   <li>dateOfBirthNotIn -  (optional)</li>
-   *   <li>idNumberContains -  (optional)</li>
-   *   <li>idNumberDoesNotContain -  (optional)</li>
-   *   <li>idNumberEquals -  (optional)</li>
-   *   <li>idNumberNotEquals -  (optional)</li>
-   *   <li>idNumberSpecified -  (optional)</li>
-   *   <li>idNumberIn -  (optional)</li>
-   *   <li>idNumberNotIn -  (optional)</li>
-   *   <li>nationalityContains -  (optional)</li>
-   *   <li>nationalityDoesNotContain -  (optional)</li>
-   *   <li>nationalityEquals -  (optional)</li>
-   *   <li>nationalityNotEquals -  (optional)</li>
-   *   <li>nationalitySpecified -  (optional)</li>
-   *   <li>nationalityIn -  (optional)</li>
-   *   <li>nationalityNotIn -  (optional)</li>
-   *   <li>profileImageContains -  (optional)</li>
-   *   <li>profileImageDoesNotContain -  (optional)</li>
-   *   <li>profileImageEquals -  (optional)</li>
-   *   <li>profileImageNotEquals -  (optional)</li>
-   *   <li>profileImageSpecified -  (optional)</li>
-   *   <li>profileImageIn -  (optional)</li>
-   *   <li>profileImageNotIn -  (optional)</li>
    *   <li>isVerifiedEquals -  (optional)</li>
    *   <li>isVerifiedNotEquals -  (optional)</li>
    *   <li>isVerifiedSpecified -  (optional)</li>
@@ -361,15 +349,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>isActiveSpecified -  (optional)</li>
    *   <li>isActiveIn -  (optional)</li>
    *   <li>isActiveNotIn -  (optional)</li>
-   *   <li>createdAtGreaterThan -  (optional)</li>
-   *   <li>createdAtLessThan -  (optional)</li>
-   *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
-   *   <li>createdAtLessThanOrEqual -  (optional)</li>
-   *   <li>createdAtEquals -  (optional)</li>
-   *   <li>createdAtNotEquals -  (optional)</li>
-   *   <li>createdAtSpecified -  (optional)</li>
-   *   <li>createdAtIn -  (optional)</li>
-   *   <li>createdAtNotIn -  (optional)</li>
    *   <li>lastLoginAtGreaterThan -  (optional)</li>
    *   <li>lastLoginAtLessThan -  (optional)</li>
    *   <li>lastLoginAtGreaterThanOrEqual -  (optional)</li>
@@ -379,20 +358,57 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>lastLoginAtSpecified -  (optional)</li>
    *   <li>lastLoginAtIn -  (optional)</li>
    *   <li>lastLoginAtNotIn -  (optional)</li>
-   *   <li>preferencesIdGreaterThan -  (optional)</li>
-   *   <li>preferencesIdLessThan -  (optional)</li>
-   *   <li>preferencesIdGreaterThanOrEqual -  (optional)</li>
-   *   <li>preferencesIdLessThanOrEqual -  (optional)</li>
-   *   <li>preferencesIdEquals -  (optional)</li>
-   *   <li>preferencesIdNotEquals -  (optional)</li>
-   *   <li>preferencesIdSpecified -  (optional)</li>
-   *   <li>preferencesIdIn -  (optional)</li>
-   *   <li>preferencesIdNotIn -  (optional)</li>
+   *   <li>createdAtGreaterThan -  (optional)</li>
+   *   <li>createdAtLessThan -  (optional)</li>
+   *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>createdAtLessThanOrEqual -  (optional)</li>
+   *   <li>createdAtEquals -  (optional)</li>
+   *   <li>createdAtNotEquals -  (optional)</li>
+   *   <li>createdAtSpecified -  (optional)</li>
+   *   <li>createdAtIn -  (optional)</li>
+   *   <li>createdAtNotIn -  (optional)</li>
+   *   <li>updatedAtGreaterThan -  (optional)</li>
+   *   <li>updatedAtLessThan -  (optional)</li>
+   *   <li>updatedAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>updatedAtLessThanOrEqual -  (optional)</li>
+   *   <li>updatedAtEquals -  (optional)</li>
+   *   <li>updatedAtNotEquals -  (optional)</li>
+   *   <li>updatedAtSpecified -  (optional)</li>
+   *   <li>updatedAtIn -  (optional)</li>
+   *   <li>updatedAtNotIn -  (optional)</li>
+   *   <li>isDeletedEquals -  (optional)</li>
+   *   <li>isDeletedNotEquals -  (optional)</li>
+   *   <li>isDeletedSpecified -  (optional)</li>
+   *   <li>isDeletedIn -  (optional)</li>
+   *   <li>isDeletedNotIn -  (optional)</li>
+   *   <li>deletedAtGreaterThan -  (optional)</li>
+   *   <li>deletedAtLessThan -  (optional)</li>
+   *   <li>deletedAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>deletedAtLessThanOrEqual -  (optional)</li>
+   *   <li>deletedAtEquals -  (optional)</li>
+   *   <li>deletedAtNotEquals -  (optional)</li>
+   *   <li>deletedAtSpecified -  (optional)</li>
+   *   <li>deletedAtIn -  (optional)</li>
+   *   <li>deletedAtNotIn -  (optional)</li>
+   *   <li>deletedByEquals -  (optional)</li>
+   *   <li>deletedByNotEquals -  (optional)</li>
+   *   <li>deletedBySpecified -  (optional)</li>
+   *   <li>deletedByIn -  (optional)</li>
+   *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>profileIdGreaterThan -  (optional)</li>
+   *   <li>profileIdLessThan -  (optional)</li>
+   *   <li>profileIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>profileIdLessThanOrEqual -  (optional)</li>
+   *   <li>profileIdEquals -  (optional)</li>
+   *   <li>profileIdNotEquals -  (optional)</li>
+   *   <li>profileIdSpecified -  (optional)</li>
+   *   <li>profileIdIn -  (optional)</li>
+   *   <li>profileIdNotIn -  (optional)</li>
    *   <li>distinct -  (optional)</li>
    *   </ul>
    * @return Long
    */
-  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -415,13 +431,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>usernameContains -  (optional)</li>
-          *   <li>usernameDoesNotContain -  (optional)</li>
-          *   <li>usernameEquals -  (optional)</li>
-          *   <li>usernameNotEquals -  (optional)</li>
-          *   <li>usernameSpecified -  (optional)</li>
-          *   <li>usernameIn -  (optional)</li>
-          *   <li>usernameNotIn -  (optional)</li>
+          *   <li>keycloakIdEquals -  (optional)</li>
+          *   <li>keycloakIdNotEquals -  (optional)</li>
+          *   <li>keycloakIdSpecified -  (optional)</li>
+          *   <li>keycloakIdIn -  (optional)</li>
+          *   <li>keycloakIdNotIn -  (optional)</li>
           *   <li>emailContains -  (optional)</li>
           *   <li>emailDoesNotContain -  (optional)</li>
           *   <li>emailEquals -  (optional)</li>
@@ -459,27 +473,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>dateOfBirthSpecified -  (optional)</li>
           *   <li>dateOfBirthIn -  (optional)</li>
           *   <li>dateOfBirthNotIn -  (optional)</li>
-          *   <li>idNumberContains -  (optional)</li>
-          *   <li>idNumberDoesNotContain -  (optional)</li>
-          *   <li>idNumberEquals -  (optional)</li>
-          *   <li>idNumberNotEquals -  (optional)</li>
-          *   <li>idNumberSpecified -  (optional)</li>
-          *   <li>idNumberIn -  (optional)</li>
-          *   <li>idNumberNotIn -  (optional)</li>
-          *   <li>nationalityContains -  (optional)</li>
-          *   <li>nationalityDoesNotContain -  (optional)</li>
-          *   <li>nationalityEquals -  (optional)</li>
-          *   <li>nationalityNotEquals -  (optional)</li>
-          *   <li>nationalitySpecified -  (optional)</li>
-          *   <li>nationalityIn -  (optional)</li>
-          *   <li>nationalityNotIn -  (optional)</li>
-          *   <li>profileImageContains -  (optional)</li>
-          *   <li>profileImageDoesNotContain -  (optional)</li>
-          *   <li>profileImageEquals -  (optional)</li>
-          *   <li>profileImageNotEquals -  (optional)</li>
-          *   <li>profileImageSpecified -  (optional)</li>
-          *   <li>profileImageIn -  (optional)</li>
-          *   <li>profileImageNotIn -  (optional)</li>
           *   <li>isVerifiedEquals -  (optional)</li>
           *   <li>isVerifiedNotEquals -  (optional)</li>
           *   <li>isVerifiedSpecified -  (optional)</li>
@@ -490,15 +483,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>isActiveSpecified -  (optional)</li>
           *   <li>isActiveIn -  (optional)</li>
           *   <li>isActiveNotIn -  (optional)</li>
-          *   <li>createdAtGreaterThan -  (optional)</li>
-          *   <li>createdAtLessThan -  (optional)</li>
-          *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
-          *   <li>createdAtLessThanOrEqual -  (optional)</li>
-          *   <li>createdAtEquals -  (optional)</li>
-          *   <li>createdAtNotEquals -  (optional)</li>
-          *   <li>createdAtSpecified -  (optional)</li>
-          *   <li>createdAtIn -  (optional)</li>
-          *   <li>createdAtNotIn -  (optional)</li>
           *   <li>lastLoginAtGreaterThan -  (optional)</li>
           *   <li>lastLoginAtLessThan -  (optional)</li>
           *   <li>lastLoginAtGreaterThanOrEqual -  (optional)</li>
@@ -508,20 +492,57 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>lastLoginAtSpecified -  (optional)</li>
           *   <li>lastLoginAtIn -  (optional)</li>
           *   <li>lastLoginAtNotIn -  (optional)</li>
-          *   <li>preferencesIdGreaterThan -  (optional)</li>
-          *   <li>preferencesIdLessThan -  (optional)</li>
-          *   <li>preferencesIdGreaterThanOrEqual -  (optional)</li>
-          *   <li>preferencesIdLessThanOrEqual -  (optional)</li>
-          *   <li>preferencesIdEquals -  (optional)</li>
-          *   <li>preferencesIdNotEquals -  (optional)</li>
-          *   <li>preferencesIdSpecified -  (optional)</li>
-          *   <li>preferencesIdIn -  (optional)</li>
-          *   <li>preferencesIdNotIn -  (optional)</li>
+          *   <li>createdAtGreaterThan -  (optional)</li>
+          *   <li>createdAtLessThan -  (optional)</li>
+          *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>createdAtLessThanOrEqual -  (optional)</li>
+          *   <li>createdAtEquals -  (optional)</li>
+          *   <li>createdAtNotEquals -  (optional)</li>
+          *   <li>createdAtSpecified -  (optional)</li>
+          *   <li>createdAtIn -  (optional)</li>
+          *   <li>createdAtNotIn -  (optional)</li>
+          *   <li>updatedAtGreaterThan -  (optional)</li>
+          *   <li>updatedAtLessThan -  (optional)</li>
+          *   <li>updatedAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>updatedAtLessThanOrEqual -  (optional)</li>
+          *   <li>updatedAtEquals -  (optional)</li>
+          *   <li>updatedAtNotEquals -  (optional)</li>
+          *   <li>updatedAtSpecified -  (optional)</li>
+          *   <li>updatedAtIn -  (optional)</li>
+          *   <li>updatedAtNotIn -  (optional)</li>
+          *   <li>isDeletedEquals -  (optional)</li>
+          *   <li>isDeletedNotEquals -  (optional)</li>
+          *   <li>isDeletedSpecified -  (optional)</li>
+          *   <li>isDeletedIn -  (optional)</li>
+          *   <li>isDeletedNotIn -  (optional)</li>
+          *   <li>deletedAtGreaterThan -  (optional)</li>
+          *   <li>deletedAtLessThan -  (optional)</li>
+          *   <li>deletedAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>deletedAtLessThanOrEqual -  (optional)</li>
+          *   <li>deletedAtEquals -  (optional)</li>
+          *   <li>deletedAtNotEquals -  (optional)</li>
+          *   <li>deletedAtSpecified -  (optional)</li>
+          *   <li>deletedAtIn -  (optional)</li>
+          *   <li>deletedAtNotIn -  (optional)</li>
+          *   <li>deletedByEquals -  (optional)</li>
+          *   <li>deletedByNotEquals -  (optional)</li>
+          *   <li>deletedBySpecified -  (optional)</li>
+          *   <li>deletedByIn -  (optional)</li>
+          *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>profileIdGreaterThan -  (optional)</li>
+          *   <li>profileIdLessThan -  (optional)</li>
+          *   <li>profileIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>profileIdLessThanOrEqual -  (optional)</li>
+          *   <li>profileIdEquals -  (optional)</li>
+          *   <li>profileIdNotEquals -  (optional)</li>
+          *   <li>profileIdSpecified -  (optional)</li>
+          *   <li>profileIdIn -  (optional)</li>
+          *   <li>profileIdNotIn -  (optional)</li>
           *   <li>distinct -  (optional)</li>
       *   </ul>
           * @return Long
       */
-      @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/app-users/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -569,32 +590,24 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams usernameContains(@jakarta.annotation.Nullable final String value) {
-      put("username.contains", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams keycloakIdEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("keycloakId.equals", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams usernameDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("username.doesNotContain", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams keycloakIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("keycloakId.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams usernameEquals(@jakarta.annotation.Nullable final String value) {
-      put("username.equals", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams keycloakIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("keycloakId.specified", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams usernameNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("username.notEquals", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams keycloakIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("keycloakId.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams usernameSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("username.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams usernameIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("username.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams usernameNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("username.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public CountAppUsersQueryParams keycloakIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("keycloakId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountAppUsersQueryParams emailContains(@jakarta.annotation.Nullable final String value) {
@@ -745,90 +758,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("dateOfBirth.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams idNumberContains(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberEquals(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("idNumber.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("idNumber.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams idNumberNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("idNumber.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityContains(@jakarta.annotation.Nullable final String value) {
-      put("nationality.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("nationality.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityEquals(@jakarta.annotation.Nullable final String value) {
-      put("nationality.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("nationality.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalitySpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("nationality.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("nationality.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams nationalityNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("nationality.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageContains(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageEquals(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("profileImage.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("profileImage.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams profileImageNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("profileImage.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
     public CountAppUsersQueryParams isVerifiedEquals(@jakarta.annotation.Nullable final Boolean value) {
       put("isVerified.equals", EncodingUtils.encode(value));
       return this;
@@ -869,42 +798,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("isActive.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("createdAt.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
-      put("createdAt.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountAppUsersQueryParams createdAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
-      put("createdAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
     public CountAppUsersQueryParams lastLoginAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
       put("lastLoginAt.greaterThan", EncodingUtils.encode(value));
       return this;
@@ -941,40 +834,188 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("lastLoginAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.greaterThan", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdLessThan(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.lessThan", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.greaterThanOrEqual", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.lessThanOrEqual", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdEquals(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.equals", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.equals", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdNotEquals(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.notEquals", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("preferencesId.specified", EncodingUtils.encode(value));
+    public CountAppUsersQueryParams createdAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("createdAt.specified", EncodingUtils.encode(value));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdIn(@jakarta.annotation.Nullable final List<Long> value) {
-      put("preferencesId.in", EncodingUtils.encodeCollection(value, "multi"));
+    public CountAppUsersQueryParams createdAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("createdAt.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountAppUsersQueryParams preferencesIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
-      put("preferencesId.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public CountAppUsersQueryParams createdAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("createdAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("updatedAt.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("updatedAt.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams updatedAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("updatedAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams isDeletedEquals(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams isDeletedNotEquals(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams isDeletedSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams isDeletedIn(@jakarta.annotation.Nullable final List<Boolean> value) {
+      put("isDeleted.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams isDeletedNotIn(@jakarta.annotation.Nullable final List<Boolean> value) {
+      put("isDeleted.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("deletedAt.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("deletedAt.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("deletedAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedByEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("deletedBy.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedByNotEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("deletedBy.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedBySpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("deletedBy.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedByIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("deletedBy.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams deletedByNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("profileId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("profileId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountAppUsersQueryParams profileIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("profileId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountAppUsersQueryParams distinct(@jakarta.annotation.Nullable final Boolean value) {
@@ -1049,13 +1090,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param usernameContains  (optional)
-   * @param usernameDoesNotContain  (optional)
-   * @param usernameEquals  (optional)
-   * @param usernameNotEquals  (optional)
-   * @param usernameSpecified  (optional)
-   * @param usernameIn  (optional)
-   * @param usernameNotIn  (optional)
+   * @param keycloakIdEquals  (optional)
+   * @param keycloakIdNotEquals  (optional)
+   * @param keycloakIdSpecified  (optional)
+   * @param keycloakIdIn  (optional)
+   * @param keycloakIdNotIn  (optional)
    * @param emailContains  (optional)
    * @param emailDoesNotContain  (optional)
    * @param emailEquals  (optional)
@@ -1093,27 +1132,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param dateOfBirthSpecified  (optional)
    * @param dateOfBirthIn  (optional)
    * @param dateOfBirthNotIn  (optional)
-   * @param idNumberContains  (optional)
-   * @param idNumberDoesNotContain  (optional)
-   * @param idNumberEquals  (optional)
-   * @param idNumberNotEquals  (optional)
-   * @param idNumberSpecified  (optional)
-   * @param idNumberIn  (optional)
-   * @param idNumberNotIn  (optional)
-   * @param nationalityContains  (optional)
-   * @param nationalityDoesNotContain  (optional)
-   * @param nationalityEquals  (optional)
-   * @param nationalityNotEquals  (optional)
-   * @param nationalitySpecified  (optional)
-   * @param nationalityIn  (optional)
-   * @param nationalityNotIn  (optional)
-   * @param profileImageContains  (optional)
-   * @param profileImageDoesNotContain  (optional)
-   * @param profileImageEquals  (optional)
-   * @param profileImageNotEquals  (optional)
-   * @param profileImageSpecified  (optional)
-   * @param profileImageIn  (optional)
-   * @param profileImageNotIn  (optional)
    * @param isVerifiedEquals  (optional)
    * @param isVerifiedNotEquals  (optional)
    * @param isVerifiedSpecified  (optional)
@@ -1124,15 +1142,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param isActiveSpecified  (optional)
    * @param isActiveIn  (optional)
    * @param isActiveNotIn  (optional)
-   * @param createdAtGreaterThan  (optional)
-   * @param createdAtLessThan  (optional)
-   * @param createdAtGreaterThanOrEqual  (optional)
-   * @param createdAtLessThanOrEqual  (optional)
-   * @param createdAtEquals  (optional)
-   * @param createdAtNotEquals  (optional)
-   * @param createdAtSpecified  (optional)
-   * @param createdAtIn  (optional)
-   * @param createdAtNotIn  (optional)
    * @param lastLoginAtGreaterThan  (optional)
    * @param lastLoginAtLessThan  (optional)
    * @param lastLoginAtGreaterThanOrEqual  (optional)
@@ -1142,23 +1151,60 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param lastLoginAtSpecified  (optional)
    * @param lastLoginAtIn  (optional)
    * @param lastLoginAtNotIn  (optional)
-   * @param preferencesIdGreaterThan  (optional)
-   * @param preferencesIdLessThan  (optional)
-   * @param preferencesIdGreaterThanOrEqual  (optional)
-   * @param preferencesIdLessThanOrEqual  (optional)
-   * @param preferencesIdEquals  (optional)
-   * @param preferencesIdNotEquals  (optional)
-   * @param preferencesIdSpecified  (optional)
-   * @param preferencesIdIn  (optional)
-   * @param preferencesIdNotIn  (optional)
+   * @param createdAtGreaterThan  (optional)
+   * @param createdAtLessThan  (optional)
+   * @param createdAtGreaterThanOrEqual  (optional)
+   * @param createdAtLessThanOrEqual  (optional)
+   * @param createdAtEquals  (optional)
+   * @param createdAtNotEquals  (optional)
+   * @param createdAtSpecified  (optional)
+   * @param createdAtIn  (optional)
+   * @param createdAtNotIn  (optional)
+   * @param updatedAtGreaterThan  (optional)
+   * @param updatedAtLessThan  (optional)
+   * @param updatedAtGreaterThanOrEqual  (optional)
+   * @param updatedAtLessThanOrEqual  (optional)
+   * @param updatedAtEquals  (optional)
+   * @param updatedAtNotEquals  (optional)
+   * @param updatedAtSpecified  (optional)
+   * @param updatedAtIn  (optional)
+   * @param updatedAtNotIn  (optional)
+   * @param isDeletedEquals  (optional)
+   * @param isDeletedNotEquals  (optional)
+   * @param isDeletedSpecified  (optional)
+   * @param isDeletedIn  (optional)
+   * @param isDeletedNotIn  (optional)
+   * @param deletedAtGreaterThan  (optional)
+   * @param deletedAtLessThan  (optional)
+   * @param deletedAtGreaterThanOrEqual  (optional)
+   * @param deletedAtLessThanOrEqual  (optional)
+   * @param deletedAtEquals  (optional)
+   * @param deletedAtNotEquals  (optional)
+   * @param deletedAtSpecified  (optional)
+   * @param deletedAtIn  (optional)
+   * @param deletedAtNotIn  (optional)
+   * @param deletedByEquals  (optional)
+   * @param deletedByNotEquals  (optional)
+   * @param deletedBySpecified  (optional)
+   * @param deletedByIn  (optional)
+   * @param deletedByNotIn  (optional)
+   * @param profileIdGreaterThan  (optional)
+   * @param profileIdLessThan  (optional)
+   * @param profileIdGreaterThanOrEqual  (optional)
+   * @param profileIdLessThanOrEqual  (optional)
+   * @param profileIdEquals  (optional)
+   * @param profileIdNotEquals  (optional)
+   * @param profileIdSpecified  (optional)
+   * @param profileIdIn  (optional)
+   * @param profileIdNotIn  (optional)
    * @param distinct  (optional)
    * @return List&lt;AppUserDTO&gt;
    */
-  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  List<AppUserDTO> getAllAppUsers(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("usernameContains") @jakarta.annotation.Nullable String usernameContains, @Param("usernameDoesNotContain") @jakarta.annotation.Nullable String usernameDoesNotContain, @Param("usernameEquals") @jakarta.annotation.Nullable String usernameEquals, @Param("usernameNotEquals") @jakarta.annotation.Nullable String usernameNotEquals, @Param("usernameSpecified") @jakarta.annotation.Nullable Boolean usernameSpecified, @Param("usernameIn") @jakarta.annotation.Nullable List<String> usernameIn, @Param("usernameNotIn") @jakarta.annotation.Nullable List<String> usernameNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("idNumberContains") @jakarta.annotation.Nullable String idNumberContains, @Param("idNumberDoesNotContain") @jakarta.annotation.Nullable String idNumberDoesNotContain, @Param("idNumberEquals") @jakarta.annotation.Nullable String idNumberEquals, @Param("idNumberNotEquals") @jakarta.annotation.Nullable String idNumberNotEquals, @Param("idNumberSpecified") @jakarta.annotation.Nullable Boolean idNumberSpecified, @Param("idNumberIn") @jakarta.annotation.Nullable List<String> idNumberIn, @Param("idNumberNotIn") @jakarta.annotation.Nullable List<String> idNumberNotIn, @Param("nationalityContains") @jakarta.annotation.Nullable String nationalityContains, @Param("nationalityDoesNotContain") @jakarta.annotation.Nullable String nationalityDoesNotContain, @Param("nationalityEquals") @jakarta.annotation.Nullable String nationalityEquals, @Param("nationalityNotEquals") @jakarta.annotation.Nullable String nationalityNotEquals, @Param("nationalitySpecified") @jakarta.annotation.Nullable Boolean nationalitySpecified, @Param("nationalityIn") @jakarta.annotation.Nullable List<String> nationalityIn, @Param("nationalityNotIn") @jakarta.annotation.Nullable List<String> nationalityNotIn, @Param("profileImageContains") @jakarta.annotation.Nullable String profileImageContains, @Param("profileImageDoesNotContain") @jakarta.annotation.Nullable String profileImageDoesNotContain, @Param("profileImageEquals") @jakarta.annotation.Nullable String profileImageEquals, @Param("profileImageNotEquals") @jakarta.annotation.Nullable String profileImageNotEquals, @Param("profileImageSpecified") @jakarta.annotation.Nullable Boolean profileImageSpecified, @Param("profileImageIn") @jakarta.annotation.Nullable List<String> profileImageIn, @Param("profileImageNotIn") @jakarta.annotation.Nullable List<String> profileImageNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("preferencesIdGreaterThan") @jakarta.annotation.Nullable Long preferencesIdGreaterThan, @Param("preferencesIdLessThan") @jakarta.annotation.Nullable Long preferencesIdLessThan, @Param("preferencesIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdGreaterThanOrEqual, @Param("preferencesIdLessThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdLessThanOrEqual, @Param("preferencesIdEquals") @jakarta.annotation.Nullable Long preferencesIdEquals, @Param("preferencesIdNotEquals") @jakarta.annotation.Nullable Long preferencesIdNotEquals, @Param("preferencesIdSpecified") @jakarta.annotation.Nullable Boolean preferencesIdSpecified, @Param("preferencesIdIn") @jakarta.annotation.Nullable List<Long> preferencesIdIn, @Param("preferencesIdNotIn") @jakarta.annotation.Nullable List<Long> preferencesIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  List<AppUserDTO> getAllAppUsers(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("keycloakIdEquals") @jakarta.annotation.Nullable UUID keycloakIdEquals, @Param("keycloakIdNotEquals") @jakarta.annotation.Nullable UUID keycloakIdNotEquals, @Param("keycloakIdSpecified") @jakarta.annotation.Nullable Boolean keycloakIdSpecified, @Param("keycloakIdIn") @jakarta.annotation.Nullable List<UUID> keycloakIdIn, @Param("keycloakIdNotIn") @jakarta.annotation.Nullable List<UUID> keycloakIdNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("profileIdGreaterThan") @jakarta.annotation.Nullable Long profileIdGreaterThan, @Param("profileIdLessThan") @jakarta.annotation.Nullable Long profileIdLessThan, @Param("profileIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long profileIdGreaterThanOrEqual, @Param("profileIdLessThanOrEqual") @jakarta.annotation.Nullable Long profileIdLessThanOrEqual, @Param("profileIdEquals") @jakarta.annotation.Nullable Long profileIdEquals, @Param("profileIdNotEquals") @jakarta.annotation.Nullable Long profileIdNotEquals, @Param("profileIdSpecified") @jakarta.annotation.Nullable Boolean profileIdSpecified, @Param("profileIdIn") @jakarta.annotation.Nullable List<Long> profileIdIn, @Param("profileIdNotIn") @jakarta.annotation.Nullable List<Long> profileIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -1173,13 +1219,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param usernameContains  (optional)
-   * @param usernameDoesNotContain  (optional)
-   * @param usernameEquals  (optional)
-   * @param usernameNotEquals  (optional)
-   * @param usernameSpecified  (optional)
-   * @param usernameIn  (optional)
-   * @param usernameNotIn  (optional)
+   * @param keycloakIdEquals  (optional)
+   * @param keycloakIdNotEquals  (optional)
+   * @param keycloakIdSpecified  (optional)
+   * @param keycloakIdIn  (optional)
+   * @param keycloakIdNotIn  (optional)
    * @param emailContains  (optional)
    * @param emailDoesNotContain  (optional)
    * @param emailEquals  (optional)
@@ -1217,27 +1261,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param dateOfBirthSpecified  (optional)
    * @param dateOfBirthIn  (optional)
    * @param dateOfBirthNotIn  (optional)
-   * @param idNumberContains  (optional)
-   * @param idNumberDoesNotContain  (optional)
-   * @param idNumberEquals  (optional)
-   * @param idNumberNotEquals  (optional)
-   * @param idNumberSpecified  (optional)
-   * @param idNumberIn  (optional)
-   * @param idNumberNotIn  (optional)
-   * @param nationalityContains  (optional)
-   * @param nationalityDoesNotContain  (optional)
-   * @param nationalityEquals  (optional)
-   * @param nationalityNotEquals  (optional)
-   * @param nationalitySpecified  (optional)
-   * @param nationalityIn  (optional)
-   * @param nationalityNotIn  (optional)
-   * @param profileImageContains  (optional)
-   * @param profileImageDoesNotContain  (optional)
-   * @param profileImageEquals  (optional)
-   * @param profileImageNotEquals  (optional)
-   * @param profileImageSpecified  (optional)
-   * @param profileImageIn  (optional)
-   * @param profileImageNotIn  (optional)
    * @param isVerifiedEquals  (optional)
    * @param isVerifiedNotEquals  (optional)
    * @param isVerifiedSpecified  (optional)
@@ -1248,15 +1271,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param isActiveSpecified  (optional)
    * @param isActiveIn  (optional)
    * @param isActiveNotIn  (optional)
-   * @param createdAtGreaterThan  (optional)
-   * @param createdAtLessThan  (optional)
-   * @param createdAtGreaterThanOrEqual  (optional)
-   * @param createdAtLessThanOrEqual  (optional)
-   * @param createdAtEquals  (optional)
-   * @param createdAtNotEquals  (optional)
-   * @param createdAtSpecified  (optional)
-   * @param createdAtIn  (optional)
-   * @param createdAtNotIn  (optional)
    * @param lastLoginAtGreaterThan  (optional)
    * @param lastLoginAtLessThan  (optional)
    * @param lastLoginAtGreaterThanOrEqual  (optional)
@@ -1266,23 +1280,60 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    * @param lastLoginAtSpecified  (optional)
    * @param lastLoginAtIn  (optional)
    * @param lastLoginAtNotIn  (optional)
-   * @param preferencesIdGreaterThan  (optional)
-   * @param preferencesIdLessThan  (optional)
-   * @param preferencesIdGreaterThanOrEqual  (optional)
-   * @param preferencesIdLessThanOrEqual  (optional)
-   * @param preferencesIdEquals  (optional)
-   * @param preferencesIdNotEquals  (optional)
-   * @param preferencesIdSpecified  (optional)
-   * @param preferencesIdIn  (optional)
-   * @param preferencesIdNotIn  (optional)
+   * @param createdAtGreaterThan  (optional)
+   * @param createdAtLessThan  (optional)
+   * @param createdAtGreaterThanOrEqual  (optional)
+   * @param createdAtLessThanOrEqual  (optional)
+   * @param createdAtEquals  (optional)
+   * @param createdAtNotEquals  (optional)
+   * @param createdAtSpecified  (optional)
+   * @param createdAtIn  (optional)
+   * @param createdAtNotIn  (optional)
+   * @param updatedAtGreaterThan  (optional)
+   * @param updatedAtLessThan  (optional)
+   * @param updatedAtGreaterThanOrEqual  (optional)
+   * @param updatedAtLessThanOrEqual  (optional)
+   * @param updatedAtEquals  (optional)
+   * @param updatedAtNotEquals  (optional)
+   * @param updatedAtSpecified  (optional)
+   * @param updatedAtIn  (optional)
+   * @param updatedAtNotIn  (optional)
+   * @param isDeletedEquals  (optional)
+   * @param isDeletedNotEquals  (optional)
+   * @param isDeletedSpecified  (optional)
+   * @param isDeletedIn  (optional)
+   * @param isDeletedNotIn  (optional)
+   * @param deletedAtGreaterThan  (optional)
+   * @param deletedAtLessThan  (optional)
+   * @param deletedAtGreaterThanOrEqual  (optional)
+   * @param deletedAtLessThanOrEqual  (optional)
+   * @param deletedAtEquals  (optional)
+   * @param deletedAtNotEquals  (optional)
+   * @param deletedAtSpecified  (optional)
+   * @param deletedAtIn  (optional)
+   * @param deletedAtNotIn  (optional)
+   * @param deletedByEquals  (optional)
+   * @param deletedByNotEquals  (optional)
+   * @param deletedBySpecified  (optional)
+   * @param deletedByIn  (optional)
+   * @param deletedByNotIn  (optional)
+   * @param profileIdGreaterThan  (optional)
+   * @param profileIdLessThan  (optional)
+   * @param profileIdGreaterThanOrEqual  (optional)
+   * @param profileIdLessThanOrEqual  (optional)
+   * @param profileIdEquals  (optional)
+   * @param profileIdNotEquals  (optional)
+   * @param profileIdSpecified  (optional)
+   * @param profileIdIn  (optional)
+   * @param profileIdNotIn  (optional)
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<List<AppUserDTO>> getAllAppUsersWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("usernameContains") @jakarta.annotation.Nullable String usernameContains, @Param("usernameDoesNotContain") @jakarta.annotation.Nullable String usernameDoesNotContain, @Param("usernameEquals") @jakarta.annotation.Nullable String usernameEquals, @Param("usernameNotEquals") @jakarta.annotation.Nullable String usernameNotEquals, @Param("usernameSpecified") @jakarta.annotation.Nullable Boolean usernameSpecified, @Param("usernameIn") @jakarta.annotation.Nullable List<String> usernameIn, @Param("usernameNotIn") @jakarta.annotation.Nullable List<String> usernameNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("idNumberContains") @jakarta.annotation.Nullable String idNumberContains, @Param("idNumberDoesNotContain") @jakarta.annotation.Nullable String idNumberDoesNotContain, @Param("idNumberEquals") @jakarta.annotation.Nullable String idNumberEquals, @Param("idNumberNotEquals") @jakarta.annotation.Nullable String idNumberNotEquals, @Param("idNumberSpecified") @jakarta.annotation.Nullable Boolean idNumberSpecified, @Param("idNumberIn") @jakarta.annotation.Nullable List<String> idNumberIn, @Param("idNumberNotIn") @jakarta.annotation.Nullable List<String> idNumberNotIn, @Param("nationalityContains") @jakarta.annotation.Nullable String nationalityContains, @Param("nationalityDoesNotContain") @jakarta.annotation.Nullable String nationalityDoesNotContain, @Param("nationalityEquals") @jakarta.annotation.Nullable String nationalityEquals, @Param("nationalityNotEquals") @jakarta.annotation.Nullable String nationalityNotEquals, @Param("nationalitySpecified") @jakarta.annotation.Nullable Boolean nationalitySpecified, @Param("nationalityIn") @jakarta.annotation.Nullable List<String> nationalityIn, @Param("nationalityNotIn") @jakarta.annotation.Nullable List<String> nationalityNotIn, @Param("profileImageContains") @jakarta.annotation.Nullable String profileImageContains, @Param("profileImageDoesNotContain") @jakarta.annotation.Nullable String profileImageDoesNotContain, @Param("profileImageEquals") @jakarta.annotation.Nullable String profileImageEquals, @Param("profileImageNotEquals") @jakarta.annotation.Nullable String profileImageNotEquals, @Param("profileImageSpecified") @jakarta.annotation.Nullable Boolean profileImageSpecified, @Param("profileImageIn") @jakarta.annotation.Nullable List<String> profileImageIn, @Param("profileImageNotIn") @jakarta.annotation.Nullable List<String> profileImageNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("preferencesIdGreaterThan") @jakarta.annotation.Nullable Long preferencesIdGreaterThan, @Param("preferencesIdLessThan") @jakarta.annotation.Nullable Long preferencesIdLessThan, @Param("preferencesIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdGreaterThanOrEqual, @Param("preferencesIdLessThanOrEqual") @jakarta.annotation.Nullable Long preferencesIdLessThanOrEqual, @Param("preferencesIdEquals") @jakarta.annotation.Nullable Long preferencesIdEquals, @Param("preferencesIdNotEquals") @jakarta.annotation.Nullable Long preferencesIdNotEquals, @Param("preferencesIdSpecified") @jakarta.annotation.Nullable Boolean preferencesIdSpecified, @Param("preferencesIdIn") @jakarta.annotation.Nullable List<Long> preferencesIdIn, @Param("preferencesIdNotIn") @jakarta.annotation.Nullable List<Long> preferencesIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<List<AppUserDTO>> getAllAppUsersWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("keycloakIdEquals") @jakarta.annotation.Nullable UUID keycloakIdEquals, @Param("keycloakIdNotEquals") @jakarta.annotation.Nullable UUID keycloakIdNotEquals, @Param("keycloakIdSpecified") @jakarta.annotation.Nullable Boolean keycloakIdSpecified, @Param("keycloakIdIn") @jakarta.annotation.Nullable List<UUID> keycloakIdIn, @Param("keycloakIdNotIn") @jakarta.annotation.Nullable List<UUID> keycloakIdNotIn, @Param("emailContains") @jakarta.annotation.Nullable String emailContains, @Param("emailDoesNotContain") @jakarta.annotation.Nullable String emailDoesNotContain, @Param("emailEquals") @jakarta.annotation.Nullable String emailEquals, @Param("emailNotEquals") @jakarta.annotation.Nullable String emailNotEquals, @Param("emailSpecified") @jakarta.annotation.Nullable Boolean emailSpecified, @Param("emailIn") @jakarta.annotation.Nullable List<String> emailIn, @Param("emailNotIn") @jakarta.annotation.Nullable List<String> emailNotIn, @Param("phoneNumberContains") @jakarta.annotation.Nullable String phoneNumberContains, @Param("phoneNumberDoesNotContain") @jakarta.annotation.Nullable String phoneNumberDoesNotContain, @Param("phoneNumberEquals") @jakarta.annotation.Nullable String phoneNumberEquals, @Param("phoneNumberNotEquals") @jakarta.annotation.Nullable String phoneNumberNotEquals, @Param("phoneNumberSpecified") @jakarta.annotation.Nullable Boolean phoneNumberSpecified, @Param("phoneNumberIn") @jakarta.annotation.Nullable List<String> phoneNumberIn, @Param("phoneNumberNotIn") @jakarta.annotation.Nullable List<String> phoneNumberNotIn, @Param("firstNameContains") @jakarta.annotation.Nullable String firstNameContains, @Param("firstNameDoesNotContain") @jakarta.annotation.Nullable String firstNameDoesNotContain, @Param("firstNameEquals") @jakarta.annotation.Nullable String firstNameEquals, @Param("firstNameNotEquals") @jakarta.annotation.Nullable String firstNameNotEquals, @Param("firstNameSpecified") @jakarta.annotation.Nullable Boolean firstNameSpecified, @Param("firstNameIn") @jakarta.annotation.Nullable List<String> firstNameIn, @Param("firstNameNotIn") @jakarta.annotation.Nullable List<String> firstNameNotIn, @Param("lastNameContains") @jakarta.annotation.Nullable String lastNameContains, @Param("lastNameDoesNotContain") @jakarta.annotation.Nullable String lastNameDoesNotContain, @Param("lastNameEquals") @jakarta.annotation.Nullable String lastNameEquals, @Param("lastNameNotEquals") @jakarta.annotation.Nullable String lastNameNotEquals, @Param("lastNameSpecified") @jakarta.annotation.Nullable Boolean lastNameSpecified, @Param("lastNameIn") @jakarta.annotation.Nullable List<String> lastNameIn, @Param("lastNameNotIn") @jakarta.annotation.Nullable List<String> lastNameNotIn, @Param("dateOfBirthGreaterThan") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThan, @Param("dateOfBirthLessThan") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThan, @Param("dateOfBirthGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthGreaterThanOrEqual, @Param("dateOfBirthLessThanOrEqual") @jakarta.annotation.Nullable LocalDate dateOfBirthLessThanOrEqual, @Param("dateOfBirthEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthEquals, @Param("dateOfBirthNotEquals") @jakarta.annotation.Nullable LocalDate dateOfBirthNotEquals, @Param("dateOfBirthSpecified") @jakarta.annotation.Nullable Boolean dateOfBirthSpecified, @Param("dateOfBirthIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthIn, @Param("dateOfBirthNotIn") @jakarta.annotation.Nullable List<LocalDate> dateOfBirthNotIn, @Param("isVerifiedEquals") @jakarta.annotation.Nullable Boolean isVerifiedEquals, @Param("isVerifiedNotEquals") @jakarta.annotation.Nullable Boolean isVerifiedNotEquals, @Param("isVerifiedSpecified") @jakarta.annotation.Nullable Boolean isVerifiedSpecified, @Param("isVerifiedIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedIn, @Param("isVerifiedNotIn") @jakarta.annotation.Nullable List<Boolean> isVerifiedNotIn, @Param("isActiveEquals") @jakarta.annotation.Nullable Boolean isActiveEquals, @Param("isActiveNotEquals") @jakarta.annotation.Nullable Boolean isActiveNotEquals, @Param("isActiveSpecified") @jakarta.annotation.Nullable Boolean isActiveSpecified, @Param("isActiveIn") @jakarta.annotation.Nullable List<Boolean> isActiveIn, @Param("isActiveNotIn") @jakarta.annotation.Nullable List<Boolean> isActiveNotIn, @Param("lastLoginAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThan, @Param("lastLoginAtLessThan") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThan, @Param("lastLoginAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtGreaterThanOrEqual, @Param("lastLoginAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtLessThanOrEqual, @Param("lastLoginAtEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtEquals, @Param("lastLoginAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime lastLoginAtNotEquals, @Param("lastLoginAtSpecified") @jakarta.annotation.Nullable Boolean lastLoginAtSpecified, @Param("lastLoginAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtIn, @Param("lastLoginAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> lastLoginAtNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("profileIdGreaterThan") @jakarta.annotation.Nullable Long profileIdGreaterThan, @Param("profileIdLessThan") @jakarta.annotation.Nullable Long profileIdLessThan, @Param("profileIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long profileIdGreaterThanOrEqual, @Param("profileIdLessThanOrEqual") @jakarta.annotation.Nullable Long profileIdLessThanOrEqual, @Param("profileIdEquals") @jakarta.annotation.Nullable Long profileIdEquals, @Param("profileIdNotEquals") @jakarta.annotation.Nullable Long profileIdNotEquals, @Param("profileIdSpecified") @jakarta.annotation.Nullable Boolean profileIdSpecified, @Param("profileIdIn") @jakarta.annotation.Nullable List<Long> profileIdIn, @Param("profileIdNotIn") @jakarta.annotation.Nullable List<Long> profileIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -1305,13 +1356,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>usernameContains -  (optional)</li>
-   *   <li>usernameDoesNotContain -  (optional)</li>
-   *   <li>usernameEquals -  (optional)</li>
-   *   <li>usernameNotEquals -  (optional)</li>
-   *   <li>usernameSpecified -  (optional)</li>
-   *   <li>usernameIn -  (optional)</li>
-   *   <li>usernameNotIn -  (optional)</li>
+   *   <li>keycloakIdEquals -  (optional)</li>
+   *   <li>keycloakIdNotEquals -  (optional)</li>
+   *   <li>keycloakIdSpecified -  (optional)</li>
+   *   <li>keycloakIdIn -  (optional)</li>
+   *   <li>keycloakIdNotIn -  (optional)</li>
    *   <li>emailContains -  (optional)</li>
    *   <li>emailDoesNotContain -  (optional)</li>
    *   <li>emailEquals -  (optional)</li>
@@ -1349,27 +1398,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>dateOfBirthSpecified -  (optional)</li>
    *   <li>dateOfBirthIn -  (optional)</li>
    *   <li>dateOfBirthNotIn -  (optional)</li>
-   *   <li>idNumberContains -  (optional)</li>
-   *   <li>idNumberDoesNotContain -  (optional)</li>
-   *   <li>idNumberEquals -  (optional)</li>
-   *   <li>idNumberNotEquals -  (optional)</li>
-   *   <li>idNumberSpecified -  (optional)</li>
-   *   <li>idNumberIn -  (optional)</li>
-   *   <li>idNumberNotIn -  (optional)</li>
-   *   <li>nationalityContains -  (optional)</li>
-   *   <li>nationalityDoesNotContain -  (optional)</li>
-   *   <li>nationalityEquals -  (optional)</li>
-   *   <li>nationalityNotEquals -  (optional)</li>
-   *   <li>nationalitySpecified -  (optional)</li>
-   *   <li>nationalityIn -  (optional)</li>
-   *   <li>nationalityNotIn -  (optional)</li>
-   *   <li>profileImageContains -  (optional)</li>
-   *   <li>profileImageDoesNotContain -  (optional)</li>
-   *   <li>profileImageEquals -  (optional)</li>
-   *   <li>profileImageNotEquals -  (optional)</li>
-   *   <li>profileImageSpecified -  (optional)</li>
-   *   <li>profileImageIn -  (optional)</li>
-   *   <li>profileImageNotIn -  (optional)</li>
    *   <li>isVerifiedEquals -  (optional)</li>
    *   <li>isVerifiedNotEquals -  (optional)</li>
    *   <li>isVerifiedSpecified -  (optional)</li>
@@ -1380,15 +1408,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>isActiveSpecified -  (optional)</li>
    *   <li>isActiveIn -  (optional)</li>
    *   <li>isActiveNotIn -  (optional)</li>
-   *   <li>createdAtGreaterThan -  (optional)</li>
-   *   <li>createdAtLessThan -  (optional)</li>
-   *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
-   *   <li>createdAtLessThanOrEqual -  (optional)</li>
-   *   <li>createdAtEquals -  (optional)</li>
-   *   <li>createdAtNotEquals -  (optional)</li>
-   *   <li>createdAtSpecified -  (optional)</li>
-   *   <li>createdAtIn -  (optional)</li>
-   *   <li>createdAtNotIn -  (optional)</li>
    *   <li>lastLoginAtGreaterThan -  (optional)</li>
    *   <li>lastLoginAtLessThan -  (optional)</li>
    *   <li>lastLoginAtGreaterThanOrEqual -  (optional)</li>
@@ -1398,20 +1417,57 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
    *   <li>lastLoginAtSpecified -  (optional)</li>
    *   <li>lastLoginAtIn -  (optional)</li>
    *   <li>lastLoginAtNotIn -  (optional)</li>
-   *   <li>preferencesIdGreaterThan -  (optional)</li>
-   *   <li>preferencesIdLessThan -  (optional)</li>
-   *   <li>preferencesIdGreaterThanOrEqual -  (optional)</li>
-   *   <li>preferencesIdLessThanOrEqual -  (optional)</li>
-   *   <li>preferencesIdEquals -  (optional)</li>
-   *   <li>preferencesIdNotEquals -  (optional)</li>
-   *   <li>preferencesIdSpecified -  (optional)</li>
-   *   <li>preferencesIdIn -  (optional)</li>
-   *   <li>preferencesIdNotIn -  (optional)</li>
+   *   <li>createdAtGreaterThan -  (optional)</li>
+   *   <li>createdAtLessThan -  (optional)</li>
+   *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>createdAtLessThanOrEqual -  (optional)</li>
+   *   <li>createdAtEquals -  (optional)</li>
+   *   <li>createdAtNotEquals -  (optional)</li>
+   *   <li>createdAtSpecified -  (optional)</li>
+   *   <li>createdAtIn -  (optional)</li>
+   *   <li>createdAtNotIn -  (optional)</li>
+   *   <li>updatedAtGreaterThan -  (optional)</li>
+   *   <li>updatedAtLessThan -  (optional)</li>
+   *   <li>updatedAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>updatedAtLessThanOrEqual -  (optional)</li>
+   *   <li>updatedAtEquals -  (optional)</li>
+   *   <li>updatedAtNotEquals -  (optional)</li>
+   *   <li>updatedAtSpecified -  (optional)</li>
+   *   <li>updatedAtIn -  (optional)</li>
+   *   <li>updatedAtNotIn -  (optional)</li>
+   *   <li>isDeletedEquals -  (optional)</li>
+   *   <li>isDeletedNotEquals -  (optional)</li>
+   *   <li>isDeletedSpecified -  (optional)</li>
+   *   <li>isDeletedIn -  (optional)</li>
+   *   <li>isDeletedNotIn -  (optional)</li>
+   *   <li>deletedAtGreaterThan -  (optional)</li>
+   *   <li>deletedAtLessThan -  (optional)</li>
+   *   <li>deletedAtGreaterThanOrEqual -  (optional)</li>
+   *   <li>deletedAtLessThanOrEqual -  (optional)</li>
+   *   <li>deletedAtEquals -  (optional)</li>
+   *   <li>deletedAtNotEquals -  (optional)</li>
+   *   <li>deletedAtSpecified -  (optional)</li>
+   *   <li>deletedAtIn -  (optional)</li>
+   *   <li>deletedAtNotIn -  (optional)</li>
+   *   <li>deletedByEquals -  (optional)</li>
+   *   <li>deletedByNotEquals -  (optional)</li>
+   *   <li>deletedBySpecified -  (optional)</li>
+   *   <li>deletedByIn -  (optional)</li>
+   *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>profileIdGreaterThan -  (optional)</li>
+   *   <li>profileIdLessThan -  (optional)</li>
+   *   <li>profileIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>profileIdLessThanOrEqual -  (optional)</li>
+   *   <li>profileIdEquals -  (optional)</li>
+   *   <li>profileIdNotEquals -  (optional)</li>
+   *   <li>profileIdSpecified -  (optional)</li>
+   *   <li>profileIdIn -  (optional)</li>
+   *   <li>profileIdNotIn -  (optional)</li>
    *   <li>distinct -  (optional)</li>
    *   </ul>
    * @return List&lt;AppUserDTO&gt;
    */
-  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -1434,13 +1490,11 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>usernameContains -  (optional)</li>
-          *   <li>usernameDoesNotContain -  (optional)</li>
-          *   <li>usernameEquals -  (optional)</li>
-          *   <li>usernameNotEquals -  (optional)</li>
-          *   <li>usernameSpecified -  (optional)</li>
-          *   <li>usernameIn -  (optional)</li>
-          *   <li>usernameNotIn -  (optional)</li>
+          *   <li>keycloakIdEquals -  (optional)</li>
+          *   <li>keycloakIdNotEquals -  (optional)</li>
+          *   <li>keycloakIdSpecified -  (optional)</li>
+          *   <li>keycloakIdIn -  (optional)</li>
+          *   <li>keycloakIdNotIn -  (optional)</li>
           *   <li>emailContains -  (optional)</li>
           *   <li>emailDoesNotContain -  (optional)</li>
           *   <li>emailEquals -  (optional)</li>
@@ -1478,27 +1532,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>dateOfBirthSpecified -  (optional)</li>
           *   <li>dateOfBirthIn -  (optional)</li>
           *   <li>dateOfBirthNotIn -  (optional)</li>
-          *   <li>idNumberContains -  (optional)</li>
-          *   <li>idNumberDoesNotContain -  (optional)</li>
-          *   <li>idNumberEquals -  (optional)</li>
-          *   <li>idNumberNotEquals -  (optional)</li>
-          *   <li>idNumberSpecified -  (optional)</li>
-          *   <li>idNumberIn -  (optional)</li>
-          *   <li>idNumberNotIn -  (optional)</li>
-          *   <li>nationalityContains -  (optional)</li>
-          *   <li>nationalityDoesNotContain -  (optional)</li>
-          *   <li>nationalityEquals -  (optional)</li>
-          *   <li>nationalityNotEquals -  (optional)</li>
-          *   <li>nationalitySpecified -  (optional)</li>
-          *   <li>nationalityIn -  (optional)</li>
-          *   <li>nationalityNotIn -  (optional)</li>
-          *   <li>profileImageContains -  (optional)</li>
-          *   <li>profileImageDoesNotContain -  (optional)</li>
-          *   <li>profileImageEquals -  (optional)</li>
-          *   <li>profileImageNotEquals -  (optional)</li>
-          *   <li>profileImageSpecified -  (optional)</li>
-          *   <li>profileImageIn -  (optional)</li>
-          *   <li>profileImageNotIn -  (optional)</li>
           *   <li>isVerifiedEquals -  (optional)</li>
           *   <li>isVerifiedNotEquals -  (optional)</li>
           *   <li>isVerifiedSpecified -  (optional)</li>
@@ -1509,15 +1542,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>isActiveSpecified -  (optional)</li>
           *   <li>isActiveIn -  (optional)</li>
           *   <li>isActiveNotIn -  (optional)</li>
-          *   <li>createdAtGreaterThan -  (optional)</li>
-          *   <li>createdAtLessThan -  (optional)</li>
-          *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
-          *   <li>createdAtLessThanOrEqual -  (optional)</li>
-          *   <li>createdAtEquals -  (optional)</li>
-          *   <li>createdAtNotEquals -  (optional)</li>
-          *   <li>createdAtSpecified -  (optional)</li>
-          *   <li>createdAtIn -  (optional)</li>
-          *   <li>createdAtNotIn -  (optional)</li>
           *   <li>lastLoginAtGreaterThan -  (optional)</li>
           *   <li>lastLoginAtLessThan -  (optional)</li>
           *   <li>lastLoginAtGreaterThanOrEqual -  (optional)</li>
@@ -1527,20 +1551,57 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
           *   <li>lastLoginAtSpecified -  (optional)</li>
           *   <li>lastLoginAtIn -  (optional)</li>
           *   <li>lastLoginAtNotIn -  (optional)</li>
-          *   <li>preferencesIdGreaterThan -  (optional)</li>
-          *   <li>preferencesIdLessThan -  (optional)</li>
-          *   <li>preferencesIdGreaterThanOrEqual -  (optional)</li>
-          *   <li>preferencesIdLessThanOrEqual -  (optional)</li>
-          *   <li>preferencesIdEquals -  (optional)</li>
-          *   <li>preferencesIdNotEquals -  (optional)</li>
-          *   <li>preferencesIdSpecified -  (optional)</li>
-          *   <li>preferencesIdIn -  (optional)</li>
-          *   <li>preferencesIdNotIn -  (optional)</li>
+          *   <li>createdAtGreaterThan -  (optional)</li>
+          *   <li>createdAtLessThan -  (optional)</li>
+          *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>createdAtLessThanOrEqual -  (optional)</li>
+          *   <li>createdAtEquals -  (optional)</li>
+          *   <li>createdAtNotEquals -  (optional)</li>
+          *   <li>createdAtSpecified -  (optional)</li>
+          *   <li>createdAtIn -  (optional)</li>
+          *   <li>createdAtNotIn -  (optional)</li>
+          *   <li>updatedAtGreaterThan -  (optional)</li>
+          *   <li>updatedAtLessThan -  (optional)</li>
+          *   <li>updatedAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>updatedAtLessThanOrEqual -  (optional)</li>
+          *   <li>updatedAtEquals -  (optional)</li>
+          *   <li>updatedAtNotEquals -  (optional)</li>
+          *   <li>updatedAtSpecified -  (optional)</li>
+          *   <li>updatedAtIn -  (optional)</li>
+          *   <li>updatedAtNotIn -  (optional)</li>
+          *   <li>isDeletedEquals -  (optional)</li>
+          *   <li>isDeletedNotEquals -  (optional)</li>
+          *   <li>isDeletedSpecified -  (optional)</li>
+          *   <li>isDeletedIn -  (optional)</li>
+          *   <li>isDeletedNotIn -  (optional)</li>
+          *   <li>deletedAtGreaterThan -  (optional)</li>
+          *   <li>deletedAtLessThan -  (optional)</li>
+          *   <li>deletedAtGreaterThanOrEqual -  (optional)</li>
+          *   <li>deletedAtLessThanOrEqual -  (optional)</li>
+          *   <li>deletedAtEquals -  (optional)</li>
+          *   <li>deletedAtNotEquals -  (optional)</li>
+          *   <li>deletedAtSpecified -  (optional)</li>
+          *   <li>deletedAtIn -  (optional)</li>
+          *   <li>deletedAtNotIn -  (optional)</li>
+          *   <li>deletedByEquals -  (optional)</li>
+          *   <li>deletedByNotEquals -  (optional)</li>
+          *   <li>deletedBySpecified -  (optional)</li>
+          *   <li>deletedByIn -  (optional)</li>
+          *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>profileIdGreaterThan -  (optional)</li>
+          *   <li>profileIdLessThan -  (optional)</li>
+          *   <li>profileIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>profileIdLessThanOrEqual -  (optional)</li>
+          *   <li>profileIdEquals -  (optional)</li>
+          *   <li>profileIdNotEquals -  (optional)</li>
+          *   <li>profileIdSpecified -  (optional)</li>
+          *   <li>profileIdIn -  (optional)</li>
+          *   <li>profileIdNotIn -  (optional)</li>
           *   <li>distinct -  (optional)</li>
       *   </ul>
           * @return List&lt;AppUserDTO&gt;
       */
-      @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&username.contains={usernameContains}&username.doesNotContain={usernameDoesNotContain}&username.equals={usernameEquals}&username.notEquals={usernameNotEquals}&username.specified={usernameSpecified}&username.in={usernameIn}&username.notIn={usernameNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&idNumber.contains={idNumberContains}&idNumber.doesNotContain={idNumberDoesNotContain}&idNumber.equals={idNumberEquals}&idNumber.notEquals={idNumberNotEquals}&idNumber.specified={idNumberSpecified}&idNumber.in={idNumberIn}&idNumber.notIn={idNumberNotIn}&nationality.contains={nationalityContains}&nationality.doesNotContain={nationalityDoesNotContain}&nationality.equals={nationalityEquals}&nationality.notEquals={nationalityNotEquals}&nationality.specified={nationalitySpecified}&nationality.in={nationalityIn}&nationality.notIn={nationalityNotIn}&profileImage.contains={profileImageContains}&profileImage.doesNotContain={profileImageDoesNotContain}&profileImage.equals={profileImageEquals}&profileImage.notEquals={profileImageNotEquals}&profileImage.specified={profileImageSpecified}&profileImage.in={profileImageIn}&profileImage.notIn={profileImageNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&preferencesId.greaterThan={preferencesIdGreaterThan}&preferencesId.lessThan={preferencesIdLessThan}&preferencesId.greaterThanOrEqual={preferencesIdGreaterThanOrEqual}&preferencesId.lessThanOrEqual={preferencesIdLessThanOrEqual}&preferencesId.equals={preferencesIdEquals}&preferencesId.notEquals={preferencesIdNotEquals}&preferencesId.specified={preferencesIdSpecified}&preferencesId.in={preferencesIdIn}&preferencesId.notIn={preferencesIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/app-users?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&keycloakId.equals={keycloakIdEquals}&keycloakId.notEquals={keycloakIdNotEquals}&keycloakId.specified={keycloakIdSpecified}&keycloakId.in={keycloakIdIn}&keycloakId.notIn={keycloakIdNotIn}&email.contains={emailContains}&email.doesNotContain={emailDoesNotContain}&email.equals={emailEquals}&email.notEquals={emailNotEquals}&email.specified={emailSpecified}&email.in={emailIn}&email.notIn={emailNotIn}&phoneNumber.contains={phoneNumberContains}&phoneNumber.doesNotContain={phoneNumberDoesNotContain}&phoneNumber.equals={phoneNumberEquals}&phoneNumber.notEquals={phoneNumberNotEquals}&phoneNumber.specified={phoneNumberSpecified}&phoneNumber.in={phoneNumberIn}&phoneNumber.notIn={phoneNumberNotIn}&firstName.contains={firstNameContains}&firstName.doesNotContain={firstNameDoesNotContain}&firstName.equals={firstNameEquals}&firstName.notEquals={firstNameNotEquals}&firstName.specified={firstNameSpecified}&firstName.in={firstNameIn}&firstName.notIn={firstNameNotIn}&lastName.contains={lastNameContains}&lastName.doesNotContain={lastNameDoesNotContain}&lastName.equals={lastNameEquals}&lastName.notEquals={lastNameNotEquals}&lastName.specified={lastNameSpecified}&lastName.in={lastNameIn}&lastName.notIn={lastNameNotIn}&dateOfBirth.greaterThan={dateOfBirthGreaterThan}&dateOfBirth.lessThan={dateOfBirthLessThan}&dateOfBirth.greaterThanOrEqual={dateOfBirthGreaterThanOrEqual}&dateOfBirth.lessThanOrEqual={dateOfBirthLessThanOrEqual}&dateOfBirth.equals={dateOfBirthEquals}&dateOfBirth.notEquals={dateOfBirthNotEquals}&dateOfBirth.specified={dateOfBirthSpecified}&dateOfBirth.in={dateOfBirthIn}&dateOfBirth.notIn={dateOfBirthNotIn}&isVerified.equals={isVerifiedEquals}&isVerified.notEquals={isVerifiedNotEquals}&isVerified.specified={isVerifiedSpecified}&isVerified.in={isVerifiedIn}&isVerified.notIn={isVerifiedNotIn}&isActive.equals={isActiveEquals}&isActive.notEquals={isActiveNotEquals}&isActive.specified={isActiveSpecified}&isActive.in={isActiveIn}&isActive.notIn={isActiveNotIn}&lastLoginAt.greaterThan={lastLoginAtGreaterThan}&lastLoginAt.lessThan={lastLoginAtLessThan}&lastLoginAt.greaterThanOrEqual={lastLoginAtGreaterThanOrEqual}&lastLoginAt.lessThanOrEqual={lastLoginAtLessThanOrEqual}&lastLoginAt.equals={lastLoginAtEquals}&lastLoginAt.notEquals={lastLoginAtNotEquals}&lastLoginAt.specified={lastLoginAtSpecified}&lastLoginAt.in={lastLoginAtIn}&lastLoginAt.notIn={lastLoginAtNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&profileId.greaterThan={profileIdGreaterThan}&profileId.lessThan={profileIdLessThan}&profileId.greaterThanOrEqual={profileIdGreaterThanOrEqual}&profileId.lessThanOrEqual={profileIdLessThanOrEqual}&profileId.equals={profileIdEquals}&profileId.notEquals={profileIdNotEquals}&profileId.specified={profileIdSpecified}&profileId.in={profileIdIn}&profileId.notIn={profileIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -1588,32 +1649,24 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams usernameContains(@jakarta.annotation.Nullable final String value) {
-      put("username.contains", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams keycloakIdEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("keycloakId.equals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams usernameDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("username.doesNotContain", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams keycloakIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("keycloakId.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams usernameEquals(@jakarta.annotation.Nullable final String value) {
-      put("username.equals", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams keycloakIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("keycloakId.specified", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams usernameNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("username.notEquals", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams keycloakIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("keycloakId.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams usernameSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("username.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams usernameIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("username.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams usernameNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("username.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllAppUsersQueryParams keycloakIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("keycloakId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllAppUsersQueryParams emailContains(@jakarta.annotation.Nullable final String value) {
@@ -1764,90 +1817,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("dateOfBirth.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams idNumberContains(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberEquals(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("idNumber.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("idNumber.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("idNumber.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams idNumberNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("idNumber.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityContains(@jakarta.annotation.Nullable final String value) {
-      put("nationality.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("nationality.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityEquals(@jakarta.annotation.Nullable final String value) {
-      put("nationality.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("nationality.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalitySpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("nationality.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("nationality.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams nationalityNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("nationality.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageContains(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.contains", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageDoesNotContain(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.doesNotContain", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageEquals(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageNotEquals(@jakarta.annotation.Nullable final String value) {
-      put("profileImage.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("profileImage.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("profileImage.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams profileImageNotIn(@jakarta.annotation.Nullable final List<String> value) {
-      put("profileImage.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
     public GetAllAppUsersQueryParams isVerifiedEquals(@jakarta.annotation.Nullable final Boolean value) {
       put("isVerified.equals", EncodingUtils.encode(value));
       return this;
@@ -1888,42 +1857,6 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("isActive.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
-      put("createdAt.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("createdAt.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
-      put("createdAt.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllAppUsersQueryParams createdAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
-      put("createdAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
     public GetAllAppUsersQueryParams lastLoginAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
       put("lastLoginAt.greaterThan", EncodingUtils.encode(value));
       return this;
@@ -1960,40 +1893,188 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
       put("lastLoginAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.greaterThan", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdLessThan(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.lessThan", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.greaterThanOrEqual", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.lessThanOrEqual", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdEquals(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.equals", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.equals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdNotEquals(@jakarta.annotation.Nullable final Long value) {
-      put("preferencesId.notEquals", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("createdAt.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("preferencesId.specified", EncodingUtils.encode(value));
+    public GetAllAppUsersQueryParams createdAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("createdAt.specified", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdIn(@jakarta.annotation.Nullable final List<Long> value) {
-      put("preferencesId.in", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllAppUsersQueryParams createdAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("createdAt.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllAppUsersQueryParams preferencesIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
-      put("preferencesId.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllAppUsersQueryParams createdAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("createdAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("updatedAt.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("updatedAt.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("updatedAt.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams updatedAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("updatedAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams isDeletedEquals(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams isDeletedNotEquals(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams isDeletedSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("isDeleted.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams isDeletedIn(@jakarta.annotation.Nullable final List<Boolean> value) {
+      put("isDeleted.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams isDeletedNotIn(@jakarta.annotation.Nullable final List<Boolean> value) {
+      put("isDeleted.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtLessThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtGreaterThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtLessThanOrEqual(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtNotEquals(@jakarta.annotation.Nullable final OffsetDateTime value) {
+      put("deletedAt.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("deletedAt.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("deletedAt.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedAtNotIn(@jakarta.annotation.Nullable final List<OffsetDateTime> value) {
+      put("deletedAt.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedByEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("deletedBy.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedByNotEquals(@jakarta.annotation.Nullable final UUID value) {
+      put("deletedBy.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedBySpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("deletedBy.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedByIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("deletedBy.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams deletedByNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
+      put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("profileId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("profileId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("profileId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllAppUsersQueryParams profileIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("profileId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllAppUsersQueryParams distinct(@jakarta.annotation.Nullable final Boolean value) {

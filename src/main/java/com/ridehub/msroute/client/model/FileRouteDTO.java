@@ -20,34 +20,47 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msroute.client.model.FileRouteDTO;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * SeatMapDTO
+ * FileRouteDTO
  */
 @JsonPropertyOrder({
-  SeatMapDTO.JSON_PROPERTY_ID,
-  SeatMapDTO.JSON_PROPERTY_NAME,
-  SeatMapDTO.JSON_PROPERTY_CREATED_AT,
-  SeatMapDTO.JSON_PROPERTY_UPDATED_AT,
-  SeatMapDTO.JSON_PROPERTY_IS_DELETED,
-  SeatMapDTO.JSON_PROPERTY_DELETED_AT,
-  SeatMapDTO.JSON_PROPERTY_DELETED_BY,
-  SeatMapDTO.JSON_PROPERTY_SEAT_MAP_IMG
+  FileRouteDTO.JSON_PROPERTY_ID,
+  FileRouteDTO.JSON_PROPERTY_BUCKET,
+  FileRouteDTO.JSON_PROPERTY_OBJECT_KEY,
+  FileRouteDTO.JSON_PROPERTY_CONTENT_TYPE,
+  FileRouteDTO.JSON_PROPERTY_SIZE,
+  FileRouteDTO.JSON_PROPERTY_CREATED_AT,
+  FileRouteDTO.JSON_PROPERTY_UPDATED_AT,
+  FileRouteDTO.JSON_PROPERTY_IS_DELETED,
+  FileRouteDTO.JSON_PROPERTY_DELETED_AT,
+  FileRouteDTO.JSON_PROPERTY_DELETED_BY
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class SeatMapDTO {
+public class FileRouteDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String JSON_PROPERTY_BUCKET = "bucket";
   @jakarta.annotation.Nonnull
-  private String name;
+  private String bucket;
+
+  public static final String JSON_PROPERTY_OBJECT_KEY = "objectKey";
+  @jakarta.annotation.Nonnull
+  private String objectKey;
+
+  public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
+  @jakarta.annotation.Nullable
+  private String contentType;
+
+  public static final String JSON_PROPERTY_SIZE = "size";
+  @jakarta.annotation.Nullable
+  private Long size;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -69,14 +82,10 @@ public class SeatMapDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_SEAT_MAP_IMG = "seatMapImg";
-  @jakarta.annotation.Nullable
-  private FileRouteDTO seatMapImg;
-
-  public SeatMapDTO() {
+  public FileRouteDTO() {
   }
 
-  public SeatMapDTO id(@jakarta.annotation.Nullable Long id) {
+  public FileRouteDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -102,33 +111,111 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO name(@jakarta.annotation.Nonnull String name) {
+  public FileRouteDTO bucket(@jakarta.annotation.Nonnull String bucket) {
     
-    this.name = name;
+    this.bucket = bucket;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get bucket
+   * @return bucket
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_BUCKET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getName() {
-    return name;
+  public String getBucket() {
+    return bucket;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_BUCKET)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
+  public void setBucket(@jakarta.annotation.Nonnull String bucket) {
+    this.bucket = bucket;
   }
 
 
-  public SeatMapDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public FileRouteDTO objectKey(@jakarta.annotation.Nonnull String objectKey) {
+    
+    this.objectKey = objectKey;
+    return this;
+  }
+
+  /**
+   * Get objectKey
+   * @return objectKey
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getObjectKey() {
+    return objectKey;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setObjectKey(@jakarta.annotation.Nonnull String objectKey) {
+    this.objectKey = objectKey;
+  }
+
+
+  public FileRouteDTO contentType(@jakarta.annotation.Nullable String contentType) {
+    
+    this.contentType = contentType;
+    return this;
+  }
+
+  /**
+   * Get contentType
+   * @return contentType
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContentType() {
+    return contentType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContentType(@jakarta.annotation.Nullable String contentType) {
+    this.contentType = contentType;
+  }
+
+
+  public FileRouteDTO size(@jakarta.annotation.Nullable Long size) {
+    
+    this.size = size;
+    return this;
+  }
+
+  /**
+   * Get size
+   * @return size
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getSize() {
+    return size;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSize(@jakarta.annotation.Nullable Long size) {
+    this.size = size;
+  }
+
+
+  public FileRouteDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -154,7 +241,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public FileRouteDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -180,7 +267,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public FileRouteDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -206,7 +293,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public FileRouteDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -232,7 +319,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public FileRouteDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -258,32 +345,6 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO seatMapImg(@jakarta.annotation.Nullable FileRouteDTO seatMapImg) {
-    
-    this.seatMapImg = seatMapImg;
-    return this;
-  }
-
-  /**
-   * Get seatMapImg
-   * @return seatMapImg
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEAT_MAP_IMG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public FileRouteDTO getSeatMapImg() {
-    return seatMapImg;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SEAT_MAP_IMG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSeatMapImg(@jakarta.annotation.Nullable FileRouteDTO seatMapImg) {
-    this.seatMapImg = seatMapImg;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -292,34 +353,38 @@ public class SeatMapDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SeatMapDTO seatMapDTO = (SeatMapDTO) o;
-    return Objects.equals(this.id, seatMapDTO.id) &&
-        Objects.equals(this.name, seatMapDTO.name) &&
-        Objects.equals(this.createdAt, seatMapDTO.createdAt) &&
-        Objects.equals(this.updatedAt, seatMapDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, seatMapDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, seatMapDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, seatMapDTO.deletedBy) &&
-        Objects.equals(this.seatMapImg, seatMapDTO.seatMapImg);
+    FileRouteDTO fileRouteDTO = (FileRouteDTO) o;
+    return Objects.equals(this.id, fileRouteDTO.id) &&
+        Objects.equals(this.bucket, fileRouteDTO.bucket) &&
+        Objects.equals(this.objectKey, fileRouteDTO.objectKey) &&
+        Objects.equals(this.contentType, fileRouteDTO.contentType) &&
+        Objects.equals(this.size, fileRouteDTO.size) &&
+        Objects.equals(this.createdAt, fileRouteDTO.createdAt) &&
+        Objects.equals(this.updatedAt, fileRouteDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, fileRouteDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, fileRouteDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, fileRouteDTO.deletedBy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, seatMapImg);
+    return Objects.hash(id, bucket, objectKey, contentType, size, createdAt, updatedAt, isDeleted, deletedAt, deletedBy);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SeatMapDTO {\n");
+    sb.append("class FileRouteDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
+    sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    seatMapImg: ").append(toIndentedString(seatMapImg)).append("\n");
     sb.append("}");
     return sb.toString();
   }

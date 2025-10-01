@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msroute.client.model.StationDTO;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -28,22 +27,24 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * RouteDTO
+ * RouteStationResponseDTO
  */
 @JsonPropertyOrder({
-  RouteDTO.JSON_PROPERTY_ID,
-  RouteDTO.JSON_PROPERTY_ROUTE_CODE,
-  RouteDTO.JSON_PROPERTY_DISTANCE_KM,
-  RouteDTO.JSON_PROPERTY_CREATED_AT,
-  RouteDTO.JSON_PROPERTY_UPDATED_AT,
-  RouteDTO.JSON_PROPERTY_IS_DELETED,
-  RouteDTO.JSON_PROPERTY_DELETED_AT,
-  RouteDTO.JSON_PROPERTY_DELETED_BY,
-  RouteDTO.JSON_PROPERTY_ORIGIN,
-  RouteDTO.JSON_PROPERTY_DESTINATION
+  RouteStationResponseDTO.JSON_PROPERTY_ID,
+  RouteStationResponseDTO.JSON_PROPERTY_ROUTE_CODE,
+  RouteStationResponseDTO.JSON_PROPERTY_DISTANCE_KM,
+  RouteStationResponseDTO.JSON_PROPERTY_CREATED_AT,
+  RouteStationResponseDTO.JSON_PROPERTY_UPDATED_AT,
+  RouteStationResponseDTO.JSON_PROPERTY_IS_DELETED,
+  RouteStationResponseDTO.JSON_PROPERTY_DELETED_AT,
+  RouteStationResponseDTO.JSON_PROPERTY_DELETED_BY,
+  RouteStationResponseDTO.JSON_PROPERTY_ORIGIN_ID,
+  RouteStationResponseDTO.JSON_PROPERTY_ORIGIN_NAME,
+  RouteStationResponseDTO.JSON_PROPERTY_DESTINATION_ID,
+  RouteStationResponseDTO.JSON_PROPERTY_DESTINATION_NAME
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class RouteDTO {
+public class RouteStationResponseDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
@@ -76,18 +77,26 @@ public class RouteDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_ORIGIN = "origin";
+  public static final String JSON_PROPERTY_ORIGIN_ID = "originId";
   @jakarta.annotation.Nonnull
-  private StationDTO origin;
+  private Long originId;
 
-  public static final String JSON_PROPERTY_DESTINATION = "destination";
+  public static final String JSON_PROPERTY_ORIGIN_NAME = "originName";
   @jakarta.annotation.Nonnull
-  private StationDTO destination;
+  private String originName;
 
-  public RouteDTO() {
+  public static final String JSON_PROPERTY_DESTINATION_ID = "destinationId";
+  @jakarta.annotation.Nonnull
+  private Long destinationId;
+
+  public static final String JSON_PROPERTY_DESTINATION_NAME = "destinationName";
+  @jakarta.annotation.Nonnull
+  private String destinationName;
+
+  public RouteStationResponseDTO() {
   }
 
-  public RouteDTO id(@jakarta.annotation.Nullable Long id) {
+  public RouteStationResponseDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -113,7 +122,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO routeCode(@jakarta.annotation.Nonnull String routeCode) {
+  public RouteStationResponseDTO routeCode(@jakarta.annotation.Nonnull String routeCode) {
     
     this.routeCode = routeCode;
     return this;
@@ -139,7 +148,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO distanceKm(@jakarta.annotation.Nullable BigDecimal distanceKm) {
+  public RouteStationResponseDTO distanceKm(@jakarta.annotation.Nullable BigDecimal distanceKm) {
     
     this.distanceKm = distanceKm;
     return this;
@@ -165,7 +174,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public RouteStationResponseDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -191,7 +200,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public RouteStationResponseDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -217,7 +226,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public RouteStationResponseDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -243,7 +252,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public RouteStationResponseDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -269,7 +278,7 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public RouteStationResponseDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -295,55 +304,107 @@ public class RouteDTO {
   }
 
 
-  public RouteDTO origin(@jakarta.annotation.Nonnull StationDTO origin) {
+  public RouteStationResponseDTO originId(@jakarta.annotation.Nonnull Long originId) {
     
-    this.origin = origin;
+    this.originId = originId;
     return this;
   }
 
   /**
-   * Get origin
-   * @return origin
+   * Get originId
+   * @return originId
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ORIGIN)
+  @JsonProperty(JSON_PROPERTY_ORIGIN_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public StationDTO getOrigin() {
-    return origin;
+  public Long getOriginId() {
+    return originId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ORIGIN)
+  @JsonProperty(JSON_PROPERTY_ORIGIN_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOrigin(@jakarta.annotation.Nonnull StationDTO origin) {
-    this.origin = origin;
+  public void setOriginId(@jakarta.annotation.Nonnull Long originId) {
+    this.originId = originId;
   }
 
 
-  public RouteDTO destination(@jakarta.annotation.Nonnull StationDTO destination) {
+  public RouteStationResponseDTO originName(@jakarta.annotation.Nonnull String originName) {
     
-    this.destination = destination;
+    this.originName = originName;
     return this;
   }
 
   /**
-   * Get destination
-   * @return destination
+   * Get originName
+   * @return originName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DESTINATION)
+  @JsonProperty(JSON_PROPERTY_ORIGIN_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public StationDTO getDestination() {
-    return destination;
+  public String getOriginName() {
+    return originName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESTINATION)
+  @JsonProperty(JSON_PROPERTY_ORIGIN_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDestination(@jakarta.annotation.Nonnull StationDTO destination) {
-    this.destination = destination;
+  public void setOriginName(@jakarta.annotation.Nonnull String originName) {
+    this.originName = originName;
+  }
+
+
+  public RouteStationResponseDTO destinationId(@jakarta.annotation.Nonnull Long destinationId) {
+    
+    this.destinationId = destinationId;
+    return this;
+  }
+
+  /**
+   * Get destinationId
+   * @return destinationId
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_DESTINATION_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Long getDestinationId() {
+    return destinationId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DESTINATION_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDestinationId(@jakarta.annotation.Nonnull Long destinationId) {
+    this.destinationId = destinationId;
+  }
+
+
+  public RouteStationResponseDTO destinationName(@jakarta.annotation.Nonnull String destinationName) {
+    
+    this.destinationName = destinationName;
+    return this;
+  }
+
+  /**
+   * Get destinationName
+   * @return destinationName
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_DESTINATION_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getDestinationName() {
+    return destinationName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DESTINATION_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDestinationName(@jakarta.annotation.Nonnull String destinationName) {
+    this.destinationName = destinationName;
   }
 
 
@@ -355,28 +416,30 @@ public class RouteDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RouteDTO routeDTO = (RouteDTO) o;
-    return Objects.equals(this.id, routeDTO.id) &&
-        Objects.equals(this.routeCode, routeDTO.routeCode) &&
-        Objects.equals(this.distanceKm, routeDTO.distanceKm) &&
-        Objects.equals(this.createdAt, routeDTO.createdAt) &&
-        Objects.equals(this.updatedAt, routeDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, routeDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, routeDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, routeDTO.deletedBy) &&
-        Objects.equals(this.origin, routeDTO.origin) &&
-        Objects.equals(this.destination, routeDTO.destination);
+    RouteStationResponseDTO routeStationResponseDTO = (RouteStationResponseDTO) o;
+    return Objects.equals(this.id, routeStationResponseDTO.id) &&
+        Objects.equals(this.routeCode, routeStationResponseDTO.routeCode) &&
+        Objects.equals(this.distanceKm, routeStationResponseDTO.distanceKm) &&
+        Objects.equals(this.createdAt, routeStationResponseDTO.createdAt) &&
+        Objects.equals(this.updatedAt, routeStationResponseDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, routeStationResponseDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, routeStationResponseDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, routeStationResponseDTO.deletedBy) &&
+        Objects.equals(this.originId, routeStationResponseDTO.originId) &&
+        Objects.equals(this.originName, routeStationResponseDTO.originName) &&
+        Objects.equals(this.destinationId, routeStationResponseDTO.destinationId) &&
+        Objects.equals(this.destinationName, routeStationResponseDTO.destinationName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, routeCode, distanceKm, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, origin, destination);
+    return Objects.hash(id, routeCode, distanceKm, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, originId, originName, destinationId, destinationName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RouteDTO {\n");
+    sb.append("class RouteStationResponseDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    routeCode: ").append(toIndentedString(routeCode)).append("\n");
     sb.append("    distanceKm: ").append(toIndentedString(distanceKm)).append("\n");
@@ -385,8 +448,10 @@ public class RouteDTO {
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
-    sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+    sb.append("    originId: ").append(toIndentedString(originId)).append("\n");
+    sb.append("    originName: ").append(toIndentedString(originName)).append("\n");
+    sb.append("    destinationId: ").append(toIndentedString(destinationId)).append("\n");
+    sb.append("    destinationName: ").append(toIndentedString(destinationName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

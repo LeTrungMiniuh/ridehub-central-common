@@ -20,9 +20,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msuser.client.model.UserPreferencesDTO;
+import com.ridehub.msuser.client.model.ProfileDTO;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -31,20 +32,21 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonPropertyOrder({
   AppUserDTO.JSON_PROPERTY_ID,
-  AppUserDTO.JSON_PROPERTY_USERNAME,
+  AppUserDTO.JSON_PROPERTY_KEYCLOAK_ID,
   AppUserDTO.JSON_PROPERTY_EMAIL,
   AppUserDTO.JSON_PROPERTY_PHONE_NUMBER,
   AppUserDTO.JSON_PROPERTY_FIRST_NAME,
   AppUserDTO.JSON_PROPERTY_LAST_NAME,
   AppUserDTO.JSON_PROPERTY_DATE_OF_BIRTH,
-  AppUserDTO.JSON_PROPERTY_ID_NUMBER,
-  AppUserDTO.JSON_PROPERTY_NATIONALITY,
-  AppUserDTO.JSON_PROPERTY_PROFILE_IMAGE,
   AppUserDTO.JSON_PROPERTY_IS_VERIFIED,
   AppUserDTO.JSON_PROPERTY_IS_ACTIVE,
-  AppUserDTO.JSON_PROPERTY_CREATED_AT,
   AppUserDTO.JSON_PROPERTY_LAST_LOGIN_AT,
-  AppUserDTO.JSON_PROPERTY_PREFERENCES
+  AppUserDTO.JSON_PROPERTY_CREATED_AT,
+  AppUserDTO.JSON_PROPERTY_UPDATED_AT,
+  AppUserDTO.JSON_PROPERTY_IS_DELETED,
+  AppUserDTO.JSON_PROPERTY_DELETED_AT,
+  AppUserDTO.JSON_PROPERTY_DELETED_BY,
+  AppUserDTO.JSON_PROPERTY_PROFILE
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class AppUserDTO {
@@ -52,9 +54,9 @@ public class AppUserDTO {
   @jakarta.annotation.Nullable
   private Long id;
 
-  public static final String JSON_PROPERTY_USERNAME = "username";
+  public static final String JSON_PROPERTY_KEYCLOAK_ID = "keycloakId";
   @jakarta.annotation.Nonnull
-  private String username;
+  private UUID keycloakId;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   @jakarta.annotation.Nonnull
@@ -76,18 +78,6 @@ public class AppUserDTO {
   @jakarta.annotation.Nullable
   private LocalDate dateOfBirth;
 
-  public static final String JSON_PROPERTY_ID_NUMBER = "idNumber";
-  @jakarta.annotation.Nullable
-  private String idNumber;
-
-  public static final String JSON_PROPERTY_NATIONALITY = "nationality";
-  @jakarta.annotation.Nullable
-  private String nationality;
-
-  public static final String JSON_PROPERTY_PROFILE_IMAGE = "profileImage";
-  @jakarta.annotation.Nullable
-  private String profileImage;
-
   public static final String JSON_PROPERTY_IS_VERIFIED = "isVerified";
   @jakarta.annotation.Nullable
   private Boolean isVerified;
@@ -96,17 +86,33 @@ public class AppUserDTO {
   @jakarta.annotation.Nonnull
   private Boolean isActive;
 
-  public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
-  @jakarta.annotation.Nonnull
-  private OffsetDateTime createdAt;
-
   public static final String JSON_PROPERTY_LAST_LOGIN_AT = "lastLoginAt";
   @jakarta.annotation.Nullable
   private OffsetDateTime lastLoginAt;
 
-  public static final String JSON_PROPERTY_PREFERENCES = "preferences";
+  public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
+  @jakarta.annotation.Nonnull
+  private OffsetDateTime createdAt;
+
+  public static final String JSON_PROPERTY_UPDATED_AT = "updatedAt";
   @jakarta.annotation.Nullable
-  private UserPreferencesDTO preferences;
+  private OffsetDateTime updatedAt;
+
+  public static final String JSON_PROPERTY_IS_DELETED = "isDeleted";
+  @jakarta.annotation.Nullable
+  private Boolean isDeleted;
+
+  public static final String JSON_PROPERTY_DELETED_AT = "deletedAt";
+  @jakarta.annotation.Nullable
+  private OffsetDateTime deletedAt;
+
+  public static final String JSON_PROPERTY_DELETED_BY = "deletedBy";
+  @jakarta.annotation.Nullable
+  private UUID deletedBy;
+
+  public static final String JSON_PROPERTY_PROFILE = "profile";
+  @jakarta.annotation.Nullable
+  private ProfileDTO profile;
 
   public AppUserDTO() {
   }
@@ -137,29 +143,29 @@ public class AppUserDTO {
   }
 
 
-  public AppUserDTO username(@jakarta.annotation.Nonnull String username) {
+  public AppUserDTO keycloakId(@jakarta.annotation.Nonnull UUID keycloakId) {
     
-    this.username = username;
+    this.keycloakId = keycloakId;
     return this;
   }
 
   /**
-   * Get username
-   * @return username
+   * Get keycloakId
+   * @return keycloakId
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_USERNAME)
+  @JsonProperty(JSON_PROPERTY_KEYCLOAK_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getUsername() {
-    return username;
+  public UUID getKeycloakId() {
+    return keycloakId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_USERNAME)
+  @JsonProperty(JSON_PROPERTY_KEYCLOAK_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUsername(@jakarta.annotation.Nonnull String username) {
-    this.username = username;
+  public void setKeycloakId(@jakarta.annotation.Nonnull UUID keycloakId) {
+    this.keycloakId = keycloakId;
   }
 
 
@@ -293,84 +299,6 @@ public class AppUserDTO {
   }
 
 
-  public AppUserDTO idNumber(@jakarta.annotation.Nullable String idNumber) {
-    
-    this.idNumber = idNumber;
-    return this;
-  }
-
-  /**
-   * Get idNumber
-   * @return idNumber
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getIdNumber() {
-    return idNumber;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ID_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIdNumber(@jakarta.annotation.Nullable String idNumber) {
-    this.idNumber = idNumber;
-  }
-
-
-  public AppUserDTO nationality(@jakarta.annotation.Nullable String nationality) {
-    
-    this.nationality = nationality;
-    return this;
-  }
-
-  /**
-   * Get nationality
-   * @return nationality
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getNationality() {
-    return nationality;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_NATIONALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setNationality(@jakarta.annotation.Nullable String nationality) {
-    this.nationality = nationality;
-  }
-
-
-  public AppUserDTO profileImage(@jakarta.annotation.Nullable String profileImage) {
-    
-    this.profileImage = profileImage;
-    return this;
-  }
-
-  /**
-   * Get profileImage
-   * @return profileImage
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROFILE_IMAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getProfileImage() {
-    return profileImage;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PROFILE_IMAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProfileImage(@jakarta.annotation.Nullable String profileImage) {
-    this.profileImage = profileImage;
-  }
-
-
   public AppUserDTO isVerified(@jakarta.annotation.Nullable Boolean isVerified) {
     
     this.isVerified = isVerified;
@@ -423,32 +351,6 @@ public class AppUserDTO {
   }
 
 
-  public AppUserDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
-    
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Get createdAt
-   * @return createdAt
-   */
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public OffsetDateTime getCreatedAt() {
-    return createdAt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
   public AppUserDTO lastLoginAt(@jakarta.annotation.Nullable OffsetDateTime lastLoginAt) {
     
     this.lastLoginAt = lastLoginAt;
@@ -475,29 +377,159 @@ public class AppUserDTO {
   }
 
 
-  public AppUserDTO preferences(@jakarta.annotation.Nullable UserPreferencesDTO preferences) {
+  public AppUserDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
-    this.preferences = preferences;
+    this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * Get preferences
-   * @return preferences
+   * Get createdAt
+   * @return createdAt
    */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PREFERENCES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public UserPreferencesDTO getPreferences() {
-    return preferences;
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PREFERENCES)
+  @JsonProperty(JSON_PROPERTY_CREATED_AT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCreatedAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public AppUserDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+    
+    this.updatedAt = updatedAt;
+    return this;
+  }
+
+  /**
+   * Get updatedAt
+   * @return updatedAt
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPreferences(@jakarta.annotation.Nullable UserPreferencesDTO preferences) {
-    this.preferences = preferences;
+
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_UPDATED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUpdatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+
+  public AppUserDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+    
+    this.isDeleted = isDeleted;
+    return this;
+  }
+
+  /**
+   * Get isDeleted
+   * @return isDeleted
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IS_DELETED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsDeleted() {
+    return isDeleted;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IS_DELETED)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIsDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+    this.isDeleted = isDeleted;
+  }
+
+
+  public AppUserDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+    
+    this.deletedAt = deletedAt;
+    return this;
+  }
+
+  /**
+   * Get deletedAt
+   * @return deletedAt
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DELETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getDeletedAt() {
+    return deletedAt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DELETED_AT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+    this.deletedAt = deletedAt;
+  }
+
+
+  public AppUserDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+    
+    this.deletedBy = deletedBy;
+    return this;
+  }
+
+  /**
+   * Get deletedBy
+   * @return deletedBy
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DELETED_BY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public UUID getDeletedBy() {
+    return deletedBy;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DELETED_BY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+    this.deletedBy = deletedBy;
+  }
+
+
+  public AppUserDTO profile(@jakarta.annotation.Nullable ProfileDTO profile) {
+    
+    this.profile = profile;
+    return this;
+  }
+
+  /**
+   * Get profile
+   * @return profile
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROFILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public ProfileDTO getProfile() {
+    return profile;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PROFILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProfile(@jakarta.annotation.Nullable ProfileDTO profile) {
+    this.profile = profile;
   }
 
 
@@ -511,25 +543,26 @@ public class AppUserDTO {
     }
     AppUserDTO appUserDTO = (AppUserDTO) o;
     return Objects.equals(this.id, appUserDTO.id) &&
-        Objects.equals(this.username, appUserDTO.username) &&
+        Objects.equals(this.keycloakId, appUserDTO.keycloakId) &&
         Objects.equals(this.email, appUserDTO.email) &&
         Objects.equals(this.phoneNumber, appUserDTO.phoneNumber) &&
         Objects.equals(this.firstName, appUserDTO.firstName) &&
         Objects.equals(this.lastName, appUserDTO.lastName) &&
         Objects.equals(this.dateOfBirth, appUserDTO.dateOfBirth) &&
-        Objects.equals(this.idNumber, appUserDTO.idNumber) &&
-        Objects.equals(this.nationality, appUserDTO.nationality) &&
-        Objects.equals(this.profileImage, appUserDTO.profileImage) &&
         Objects.equals(this.isVerified, appUserDTO.isVerified) &&
         Objects.equals(this.isActive, appUserDTO.isActive) &&
-        Objects.equals(this.createdAt, appUserDTO.createdAt) &&
         Objects.equals(this.lastLoginAt, appUserDTO.lastLoginAt) &&
-        Objects.equals(this.preferences, appUserDTO.preferences);
+        Objects.equals(this.createdAt, appUserDTO.createdAt) &&
+        Objects.equals(this.updatedAt, appUserDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, appUserDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, appUserDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, appUserDTO.deletedBy) &&
+        Objects.equals(this.profile, appUserDTO.profile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, email, phoneNumber, firstName, lastName, dateOfBirth, idNumber, nationality, profileImage, isVerified, isActive, createdAt, lastLoginAt, preferences);
+    return Objects.hash(id, keycloakId, email, phoneNumber, firstName, lastName, dateOfBirth, isVerified, isActive, lastLoginAt, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, profile);
   }
 
   @Override
@@ -537,20 +570,21 @@ public class AppUserDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class AppUserDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    keycloakId: ").append(toIndentedString(keycloakId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    idNumber: ").append(toIndentedString(idNumber)).append("\n");
-    sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
-    sb.append("    profileImage: ").append(toIndentedString(profileImage)).append("\n");
     sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    lastLoginAt: ").append(toIndentedString(lastLoginAt)).append("\n");
-    sb.append("    preferences: ").append(toIndentedString(preferences)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
+    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
+    sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
+    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

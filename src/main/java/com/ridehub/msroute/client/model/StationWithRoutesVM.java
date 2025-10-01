@@ -22,36 +22,42 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.ridehub.msroute.client.model.AddressDTO;
 import com.ridehub.msroute.client.model.FileRouteDTO;
+import com.ridehub.msroute.client.model.RouteDTO;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * StationDTO
+ * StationWithRoutesVM
  */
 @JsonPropertyOrder({
-  StationDTO.JSON_PROPERTY_ID,
-  StationDTO.JSON_PROPERTY_NAME,
-  StationDTO.JSON_PROPERTY_PHONE_NUMBER,
-  StationDTO.JSON_PROPERTY_DESCRIPTION,
-  StationDTO.JSON_PROPERTY_ACTIVE,
-  StationDTO.JSON_PROPERTY_CREATED_AT,
-  StationDTO.JSON_PROPERTY_UPDATED_AT,
-  StationDTO.JSON_PROPERTY_IS_DELETED,
-  StationDTO.JSON_PROPERTY_DELETED_AT,
-  StationDTO.JSON_PROPERTY_DELETED_BY,
-  StationDTO.JSON_PROPERTY_ADDRESS,
-  StationDTO.JSON_PROPERTY_STATION_IMG
+  StationWithRoutesVM.JSON_PROPERTY_ID,
+  StationWithRoutesVM.JSON_PROPERTY_NAME,
+  StationWithRoutesVM.JSON_PROPERTY_PHONE_NUMBER,
+  StationWithRoutesVM.JSON_PROPERTY_DESCRIPTION,
+  StationWithRoutesVM.JSON_PROPERTY_ACTIVE,
+  StationWithRoutesVM.JSON_PROPERTY_CREATED_AT,
+  StationWithRoutesVM.JSON_PROPERTY_UPDATED_AT,
+  StationWithRoutesVM.JSON_PROPERTY_IS_DELETED,
+  StationWithRoutesVM.JSON_PROPERTY_DELETED_AT,
+  StationWithRoutesVM.JSON_PROPERTY_DELETED_BY,
+  StationWithRoutesVM.JSON_PROPERTY_ADDRESS,
+  StationWithRoutesVM.JSON_PROPERTY_STATION_IMG,
+  StationWithRoutesVM.JSON_PROPERTY_ROUTES,
+  StationWithRoutesVM.JSON_PROPERTY_ROUTRES_COUNT
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class StationDTO {
+public class StationWithRoutesVM {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
 
   public static final String JSON_PROPERTY_NAME = "name";
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phoneNumber";
@@ -63,11 +69,11 @@ public class StationDTO {
   private String description;
 
   public static final String JSON_PROPERTY_ACTIVE = "active";
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private Boolean active;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String JSON_PROPERTY_UPDATED_AT = "updatedAt";
@@ -87,17 +93,25 @@ public class StationDTO {
   private UUID deletedBy;
 
   public static final String JSON_PROPERTY_ADDRESS = "address";
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private AddressDTO address;
 
   public static final String JSON_PROPERTY_STATION_IMG = "stationImg";
   @jakarta.annotation.Nullable
   private FileRouteDTO stationImg;
 
-  public StationDTO() {
+  public static final String JSON_PROPERTY_ROUTES = "routes";
+  @jakarta.annotation.Nullable
+  private List<RouteDTO> routes = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_ROUTRES_COUNT = "routresCount";
+  @jakarta.annotation.Nullable
+  private Long routresCount;
+
+  public StationWithRoutesVM() {
   }
 
-  public StationDTO id(@jakarta.annotation.Nullable Long id) {
+  public StationWithRoutesVM id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -123,7 +137,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO name(@jakarta.annotation.Nonnull String name) {
+  public StationWithRoutesVM name(@jakarta.annotation.Nullable String name) {
     
     this.name = name;
     return this;
@@ -133,9 +147,9 @@ public class StationDTO {
    * Get name
    * @return name
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getName() {
     return name;
@@ -143,13 +157,13 @@ public class StationDTO {
 
 
   @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@jakarta.annotation.Nonnull String name) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public StationDTO phoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
+  public StationWithRoutesVM phoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
     
     this.phoneNumber = phoneNumber;
     return this;
@@ -175,7 +189,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO description(@jakarta.annotation.Nullable String description) {
+  public StationWithRoutesVM description(@jakarta.annotation.Nullable String description) {
     
     this.description = description;
     return this;
@@ -201,7 +215,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO active(@jakarta.annotation.Nonnull Boolean active) {
+  public StationWithRoutesVM active(@jakarta.annotation.Nullable Boolean active) {
     
     this.active = active;
     return this;
@@ -211,9 +225,9 @@ public class StationDTO {
    * Get active
    * @return active
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getActive() {
     return active;
@@ -221,13 +235,13 @@ public class StationDTO {
 
 
   @JsonProperty(JSON_PROPERTY_ACTIVE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setActive(@jakarta.annotation.Nonnull Boolean active) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setActive(@jakarta.annotation.Nullable Boolean active) {
     this.active = active;
   }
 
 
-  public StationDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public StationWithRoutesVM createdAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -237,9 +251,9 @@ public class StationDTO {
    * Get createdAt
    * @return createdAt
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -247,13 +261,13 @@ public class StationDTO {
 
 
   @JsonProperty(JSON_PROPERTY_CREATED_AT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCreatedAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreatedAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public StationDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public StationWithRoutesVM updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -279,7 +293,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public StationWithRoutesVM isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -305,7 +319,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public StationWithRoutesVM deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -331,7 +345,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public StationWithRoutesVM deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -357,7 +371,7 @@ public class StationDTO {
   }
 
 
-  public StationDTO address(@jakarta.annotation.Nonnull AddressDTO address) {
+  public StationWithRoutesVM address(@jakarta.annotation.Nullable AddressDTO address) {
     
     this.address = address;
     return this;
@@ -367,9 +381,9 @@ public class StationDTO {
    * Get address
    * @return address
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public AddressDTO getAddress() {
     return address;
@@ -377,13 +391,13 @@ public class StationDTO {
 
 
   @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAddress(@jakarta.annotation.Nonnull AddressDTO address) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAddress(@jakarta.annotation.Nullable AddressDTO address) {
     this.address = address;
   }
 
 
-  public StationDTO stationImg(@jakarta.annotation.Nullable FileRouteDTO stationImg) {
+  public StationWithRoutesVM stationImg(@jakarta.annotation.Nullable FileRouteDTO stationImg) {
     
     this.stationImg = stationImg;
     return this;
@@ -409,6 +423,66 @@ public class StationDTO {
   }
 
 
+  public StationWithRoutesVM routes(@jakarta.annotation.Nullable List<RouteDTO> routes) {
+    
+    this.routes = routes;
+    return this;
+  }
+
+  public StationWithRoutesVM addRoutesItem(RouteDTO routesItem) {
+    if (this.routes == null) {
+      this.routes = new ArrayList<>();
+    }
+    this.routes.add(routesItem);
+    return this;
+  }
+
+  /**
+   * Get routes
+   * @return routes
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ROUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<RouteDTO> getRoutes() {
+    return routes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ROUTES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRoutes(@jakarta.annotation.Nullable List<RouteDTO> routes) {
+    this.routes = routes;
+  }
+
+
+  public StationWithRoutesVM routresCount(@jakarta.annotation.Nullable Long routresCount) {
+    
+    this.routresCount = routresCount;
+    return this;
+  }
+
+  /**
+   * Get routresCount
+   * @return routresCount
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ROUTRES_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getRoutresCount() {
+    return routresCount;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ROUTRES_COUNT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRoutresCount(@jakarta.annotation.Nullable Long routresCount) {
+    this.routresCount = routresCount;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -417,30 +491,32 @@ public class StationDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StationDTO stationDTO = (StationDTO) o;
-    return Objects.equals(this.id, stationDTO.id) &&
-        Objects.equals(this.name, stationDTO.name) &&
-        Objects.equals(this.phoneNumber, stationDTO.phoneNumber) &&
-        Objects.equals(this.description, stationDTO.description) &&
-        Objects.equals(this.active, stationDTO.active) &&
-        Objects.equals(this.createdAt, stationDTO.createdAt) &&
-        Objects.equals(this.updatedAt, stationDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, stationDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, stationDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, stationDTO.deletedBy) &&
-        Objects.equals(this.address, stationDTO.address) &&
-        Objects.equals(this.stationImg, stationDTO.stationImg);
+    StationWithRoutesVM stationWithRoutesVM = (StationWithRoutesVM) o;
+    return Objects.equals(this.id, stationWithRoutesVM.id) &&
+        Objects.equals(this.name, stationWithRoutesVM.name) &&
+        Objects.equals(this.phoneNumber, stationWithRoutesVM.phoneNumber) &&
+        Objects.equals(this.description, stationWithRoutesVM.description) &&
+        Objects.equals(this.active, stationWithRoutesVM.active) &&
+        Objects.equals(this.createdAt, stationWithRoutesVM.createdAt) &&
+        Objects.equals(this.updatedAt, stationWithRoutesVM.updatedAt) &&
+        Objects.equals(this.isDeleted, stationWithRoutesVM.isDeleted) &&
+        Objects.equals(this.deletedAt, stationWithRoutesVM.deletedAt) &&
+        Objects.equals(this.deletedBy, stationWithRoutesVM.deletedBy) &&
+        Objects.equals(this.address, stationWithRoutesVM.address) &&
+        Objects.equals(this.stationImg, stationWithRoutesVM.stationImg) &&
+        Objects.equals(this.routes, stationWithRoutesVM.routes) &&
+        Objects.equals(this.routresCount, stationWithRoutesVM.routresCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, description, active, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, address, stationImg);
+    return Objects.hash(id, name, phoneNumber, description, active, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, address, stationImg, routes, routresCount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StationDTO {\n");
+    sb.append("class StationWithRoutesVM {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
@@ -453,6 +529,8 @@ public class StationDTO {
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    stationImg: ").append(toIndentedString(stationImg)).append("\n");
+    sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
+    sb.append("    routresCount: ").append(toIndentedString(routresCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -38,24 +38,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param seatNoSpecified  (optional)
    * @param seatNoIn  (optional)
    * @param seatNoNotIn  (optional)
-   * @param rowGreaterThan  (optional)
-   * @param rowLessThan  (optional)
-   * @param rowGreaterThanOrEqual  (optional)
-   * @param rowLessThanOrEqual  (optional)
-   * @param rowEquals  (optional)
-   * @param rowNotEquals  (optional)
-   * @param rowSpecified  (optional)
-   * @param rowIn  (optional)
-   * @param rowNotIn  (optional)
-   * @param colGreaterThan  (optional)
-   * @param colLessThan  (optional)
-   * @param colGreaterThanOrEqual  (optional)
-   * @param colLessThanOrEqual  (optional)
-   * @param colEquals  (optional)
-   * @param colNotEquals  (optional)
-   * @param colSpecified  (optional)
-   * @param colIn  (optional)
-   * @param colNotIn  (optional)
+   * @param rowNoGreaterThan  (optional)
+   * @param rowNoLessThan  (optional)
+   * @param rowNoGreaterThanOrEqual  (optional)
+   * @param rowNoLessThanOrEqual  (optional)
+   * @param rowNoEquals  (optional)
+   * @param rowNoNotEquals  (optional)
+   * @param rowNoSpecified  (optional)
+   * @param rowNoIn  (optional)
+   * @param rowNoNotIn  (optional)
+   * @param colNoGreaterThan  (optional)
+   * @param colNoLessThan  (optional)
+   * @param colNoGreaterThanOrEqual  (optional)
+   * @param colNoLessThanOrEqual  (optional)
+   * @param colNoEquals  (optional)
+   * @param colNoNotEquals  (optional)
+   * @param colNoSpecified  (optional)
+   * @param colNoIn  (optional)
+   * @param colNoNotIn  (optional)
    * @param priceFactorGreaterThan  (optional)
    * @param priceFactorLessThan  (optional)
    * @param priceFactorGreaterThanOrEqual  (optional)
@@ -65,6 +65,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param priceFactorSpecified  (optional)
    * @param priceFactorIn  (optional)
    * @param priceFactorNotIn  (optional)
+   * @param typeEquals  (optional)
+   * @param typeNotEquals  (optional)
+   * @param typeSpecified  (optional)
+   * @param typeIn  (optional)
+   * @param typeNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -114,11 +119,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return Long
    */
-  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  Long countSeats(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowGreaterThan") @jakarta.annotation.Nullable Integer rowGreaterThan, @Param("rowLessThan") @jakarta.annotation.Nullable Integer rowLessThan, @Param("rowGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowGreaterThanOrEqual, @Param("rowLessThanOrEqual") @jakarta.annotation.Nullable Integer rowLessThanOrEqual, @Param("rowEquals") @jakarta.annotation.Nullable Integer rowEquals, @Param("rowNotEquals") @jakarta.annotation.Nullable Integer rowNotEquals, @Param("rowSpecified") @jakarta.annotation.Nullable Boolean rowSpecified, @Param("rowIn") @jakarta.annotation.Nullable List<Integer> rowIn, @Param("rowNotIn") @jakarta.annotation.Nullable List<Integer> rowNotIn, @Param("colGreaterThan") @jakarta.annotation.Nullable Integer colGreaterThan, @Param("colLessThan") @jakarta.annotation.Nullable Integer colLessThan, @Param("colGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colGreaterThanOrEqual, @Param("colLessThanOrEqual") @jakarta.annotation.Nullable Integer colLessThanOrEqual, @Param("colEquals") @jakarta.annotation.Nullable Integer colEquals, @Param("colNotEquals") @jakarta.annotation.Nullable Integer colNotEquals, @Param("colSpecified") @jakarta.annotation.Nullable Boolean colSpecified, @Param("colIn") @jakarta.annotation.Nullable List<Integer> colIn, @Param("colNotIn") @jakarta.annotation.Nullable List<Integer> colNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  Long countSeats(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowNoGreaterThan") @jakarta.annotation.Nullable Integer rowNoGreaterThan, @Param("rowNoLessThan") @jakarta.annotation.Nullable Integer rowNoLessThan, @Param("rowNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowNoGreaterThanOrEqual, @Param("rowNoLessThanOrEqual") @jakarta.annotation.Nullable Integer rowNoLessThanOrEqual, @Param("rowNoEquals") @jakarta.annotation.Nullable Integer rowNoEquals, @Param("rowNoNotEquals") @jakarta.annotation.Nullable Integer rowNoNotEquals, @Param("rowNoSpecified") @jakarta.annotation.Nullable Boolean rowNoSpecified, @Param("rowNoIn") @jakarta.annotation.Nullable List<Integer> rowNoIn, @Param("rowNoNotIn") @jakarta.annotation.Nullable List<Integer> rowNoNotIn, @Param("colNoGreaterThan") @jakarta.annotation.Nullable Integer colNoGreaterThan, @Param("colNoLessThan") @jakarta.annotation.Nullable Integer colNoLessThan, @Param("colNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colNoGreaterThanOrEqual, @Param("colNoLessThanOrEqual") @jakarta.annotation.Nullable Integer colNoLessThanOrEqual, @Param("colNoEquals") @jakarta.annotation.Nullable Integer colNoEquals, @Param("colNoNotEquals") @jakarta.annotation.Nullable Integer colNoNotEquals, @Param("colNoSpecified") @jakarta.annotation.Nullable Boolean colNoSpecified, @Param("colNoIn") @jakarta.annotation.Nullable List<Integer> colNoIn, @Param("colNoNotIn") @jakarta.annotation.Nullable List<Integer> colNoNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("typeEquals") @jakarta.annotation.Nullable String typeEquals, @Param("typeNotEquals") @jakarta.annotation.Nullable String typeNotEquals, @Param("typeSpecified") @jakarta.annotation.Nullable Boolean typeSpecified, @Param("typeIn") @jakarta.annotation.Nullable List<String> typeIn, @Param("typeNotIn") @jakarta.annotation.Nullable List<String> typeNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -140,24 +145,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param seatNoSpecified  (optional)
    * @param seatNoIn  (optional)
    * @param seatNoNotIn  (optional)
-   * @param rowGreaterThan  (optional)
-   * @param rowLessThan  (optional)
-   * @param rowGreaterThanOrEqual  (optional)
-   * @param rowLessThanOrEqual  (optional)
-   * @param rowEquals  (optional)
-   * @param rowNotEquals  (optional)
-   * @param rowSpecified  (optional)
-   * @param rowIn  (optional)
-   * @param rowNotIn  (optional)
-   * @param colGreaterThan  (optional)
-   * @param colLessThan  (optional)
-   * @param colGreaterThanOrEqual  (optional)
-   * @param colLessThanOrEqual  (optional)
-   * @param colEquals  (optional)
-   * @param colNotEquals  (optional)
-   * @param colSpecified  (optional)
-   * @param colIn  (optional)
-   * @param colNotIn  (optional)
+   * @param rowNoGreaterThan  (optional)
+   * @param rowNoLessThan  (optional)
+   * @param rowNoGreaterThanOrEqual  (optional)
+   * @param rowNoLessThanOrEqual  (optional)
+   * @param rowNoEquals  (optional)
+   * @param rowNoNotEquals  (optional)
+   * @param rowNoSpecified  (optional)
+   * @param rowNoIn  (optional)
+   * @param rowNoNotIn  (optional)
+   * @param colNoGreaterThan  (optional)
+   * @param colNoLessThan  (optional)
+   * @param colNoGreaterThanOrEqual  (optional)
+   * @param colNoLessThanOrEqual  (optional)
+   * @param colNoEquals  (optional)
+   * @param colNoNotEquals  (optional)
+   * @param colNoSpecified  (optional)
+   * @param colNoIn  (optional)
+   * @param colNoNotIn  (optional)
    * @param priceFactorGreaterThan  (optional)
    * @param priceFactorLessThan  (optional)
    * @param priceFactorGreaterThanOrEqual  (optional)
@@ -167,6 +172,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param priceFactorSpecified  (optional)
    * @param priceFactorIn  (optional)
    * @param priceFactorNotIn  (optional)
+   * @param typeEquals  (optional)
+   * @param typeNotEquals  (optional)
+   * @param typeSpecified  (optional)
+   * @param typeIn  (optional)
+   * @param typeNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -216,11 +226,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<Long> countSeatsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowGreaterThan") @jakarta.annotation.Nullable Integer rowGreaterThan, @Param("rowLessThan") @jakarta.annotation.Nullable Integer rowLessThan, @Param("rowGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowGreaterThanOrEqual, @Param("rowLessThanOrEqual") @jakarta.annotation.Nullable Integer rowLessThanOrEqual, @Param("rowEquals") @jakarta.annotation.Nullable Integer rowEquals, @Param("rowNotEquals") @jakarta.annotation.Nullable Integer rowNotEquals, @Param("rowSpecified") @jakarta.annotation.Nullable Boolean rowSpecified, @Param("rowIn") @jakarta.annotation.Nullable List<Integer> rowIn, @Param("rowNotIn") @jakarta.annotation.Nullable List<Integer> rowNotIn, @Param("colGreaterThan") @jakarta.annotation.Nullable Integer colGreaterThan, @Param("colLessThan") @jakarta.annotation.Nullable Integer colLessThan, @Param("colGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colGreaterThanOrEqual, @Param("colLessThanOrEqual") @jakarta.annotation.Nullable Integer colLessThanOrEqual, @Param("colEquals") @jakarta.annotation.Nullable Integer colEquals, @Param("colNotEquals") @jakarta.annotation.Nullable Integer colNotEquals, @Param("colSpecified") @jakarta.annotation.Nullable Boolean colSpecified, @Param("colIn") @jakarta.annotation.Nullable List<Integer> colIn, @Param("colNotIn") @jakarta.annotation.Nullable List<Integer> colNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<Long> countSeatsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowNoGreaterThan") @jakarta.annotation.Nullable Integer rowNoGreaterThan, @Param("rowNoLessThan") @jakarta.annotation.Nullable Integer rowNoLessThan, @Param("rowNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowNoGreaterThanOrEqual, @Param("rowNoLessThanOrEqual") @jakarta.annotation.Nullable Integer rowNoLessThanOrEqual, @Param("rowNoEquals") @jakarta.annotation.Nullable Integer rowNoEquals, @Param("rowNoNotEquals") @jakarta.annotation.Nullable Integer rowNoNotEquals, @Param("rowNoSpecified") @jakarta.annotation.Nullable Boolean rowNoSpecified, @Param("rowNoIn") @jakarta.annotation.Nullable List<Integer> rowNoIn, @Param("rowNoNotIn") @jakarta.annotation.Nullable List<Integer> rowNoNotIn, @Param("colNoGreaterThan") @jakarta.annotation.Nullable Integer colNoGreaterThan, @Param("colNoLessThan") @jakarta.annotation.Nullable Integer colNoLessThan, @Param("colNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colNoGreaterThanOrEqual, @Param("colNoLessThanOrEqual") @jakarta.annotation.Nullable Integer colNoLessThanOrEqual, @Param("colNoEquals") @jakarta.annotation.Nullable Integer colNoEquals, @Param("colNoNotEquals") @jakarta.annotation.Nullable Integer colNoNotEquals, @Param("colNoSpecified") @jakarta.annotation.Nullable Boolean colNoSpecified, @Param("colNoIn") @jakarta.annotation.Nullable List<Integer> colNoIn, @Param("colNoNotIn") @jakarta.annotation.Nullable List<Integer> colNoNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("typeEquals") @jakarta.annotation.Nullable String typeEquals, @Param("typeNotEquals") @jakarta.annotation.Nullable String typeNotEquals, @Param("typeSpecified") @jakarta.annotation.Nullable Boolean typeSpecified, @Param("typeIn") @jakarta.annotation.Nullable List<String> typeIn, @Param("typeNotIn") @jakarta.annotation.Nullable List<String> typeNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -250,24 +260,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   <li>seatNoSpecified -  (optional)</li>
    *   <li>seatNoIn -  (optional)</li>
    *   <li>seatNoNotIn -  (optional)</li>
-   *   <li>rowGreaterThan -  (optional)</li>
-   *   <li>rowLessThan -  (optional)</li>
-   *   <li>rowGreaterThanOrEqual -  (optional)</li>
-   *   <li>rowLessThanOrEqual -  (optional)</li>
-   *   <li>rowEquals -  (optional)</li>
-   *   <li>rowNotEquals -  (optional)</li>
-   *   <li>rowSpecified -  (optional)</li>
-   *   <li>rowIn -  (optional)</li>
-   *   <li>rowNotIn -  (optional)</li>
-   *   <li>colGreaterThan -  (optional)</li>
-   *   <li>colLessThan -  (optional)</li>
-   *   <li>colGreaterThanOrEqual -  (optional)</li>
-   *   <li>colLessThanOrEqual -  (optional)</li>
-   *   <li>colEquals -  (optional)</li>
-   *   <li>colNotEquals -  (optional)</li>
-   *   <li>colSpecified -  (optional)</li>
-   *   <li>colIn -  (optional)</li>
-   *   <li>colNotIn -  (optional)</li>
+   *   <li>rowNoGreaterThan -  (optional)</li>
+   *   <li>rowNoLessThan -  (optional)</li>
+   *   <li>rowNoGreaterThanOrEqual -  (optional)</li>
+   *   <li>rowNoLessThanOrEqual -  (optional)</li>
+   *   <li>rowNoEquals -  (optional)</li>
+   *   <li>rowNoNotEquals -  (optional)</li>
+   *   <li>rowNoSpecified -  (optional)</li>
+   *   <li>rowNoIn -  (optional)</li>
+   *   <li>rowNoNotIn -  (optional)</li>
+   *   <li>colNoGreaterThan -  (optional)</li>
+   *   <li>colNoLessThan -  (optional)</li>
+   *   <li>colNoGreaterThanOrEqual -  (optional)</li>
+   *   <li>colNoLessThanOrEqual -  (optional)</li>
+   *   <li>colNoEquals -  (optional)</li>
+   *   <li>colNoNotEquals -  (optional)</li>
+   *   <li>colNoSpecified -  (optional)</li>
+   *   <li>colNoIn -  (optional)</li>
+   *   <li>colNoNotIn -  (optional)</li>
    *   <li>priceFactorGreaterThan -  (optional)</li>
    *   <li>priceFactorLessThan -  (optional)</li>
    *   <li>priceFactorGreaterThanOrEqual -  (optional)</li>
@@ -277,6 +287,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   <li>priceFactorSpecified -  (optional)</li>
    *   <li>priceFactorIn -  (optional)</li>
    *   <li>priceFactorNotIn -  (optional)</li>
+   *   <li>typeEquals -  (optional)</li>
+   *   <li>typeNotEquals -  (optional)</li>
+   *   <li>typeSpecified -  (optional)</li>
+   *   <li>typeIn -  (optional)</li>
+   *   <li>typeNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -327,7 +342,7 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   </ul>
    * @return Long
    */
-  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -357,24 +372,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
           *   <li>seatNoSpecified -  (optional)</li>
           *   <li>seatNoIn -  (optional)</li>
           *   <li>seatNoNotIn -  (optional)</li>
-          *   <li>rowGreaterThan -  (optional)</li>
-          *   <li>rowLessThan -  (optional)</li>
-          *   <li>rowGreaterThanOrEqual -  (optional)</li>
-          *   <li>rowLessThanOrEqual -  (optional)</li>
-          *   <li>rowEquals -  (optional)</li>
-          *   <li>rowNotEquals -  (optional)</li>
-          *   <li>rowSpecified -  (optional)</li>
-          *   <li>rowIn -  (optional)</li>
-          *   <li>rowNotIn -  (optional)</li>
-          *   <li>colGreaterThan -  (optional)</li>
-          *   <li>colLessThan -  (optional)</li>
-          *   <li>colGreaterThanOrEqual -  (optional)</li>
-          *   <li>colLessThanOrEqual -  (optional)</li>
-          *   <li>colEquals -  (optional)</li>
-          *   <li>colNotEquals -  (optional)</li>
-          *   <li>colSpecified -  (optional)</li>
-          *   <li>colIn -  (optional)</li>
-          *   <li>colNotIn -  (optional)</li>
+          *   <li>rowNoGreaterThan -  (optional)</li>
+          *   <li>rowNoLessThan -  (optional)</li>
+          *   <li>rowNoGreaterThanOrEqual -  (optional)</li>
+          *   <li>rowNoLessThanOrEqual -  (optional)</li>
+          *   <li>rowNoEquals -  (optional)</li>
+          *   <li>rowNoNotEquals -  (optional)</li>
+          *   <li>rowNoSpecified -  (optional)</li>
+          *   <li>rowNoIn -  (optional)</li>
+          *   <li>rowNoNotIn -  (optional)</li>
+          *   <li>colNoGreaterThan -  (optional)</li>
+          *   <li>colNoLessThan -  (optional)</li>
+          *   <li>colNoGreaterThanOrEqual -  (optional)</li>
+          *   <li>colNoLessThanOrEqual -  (optional)</li>
+          *   <li>colNoEquals -  (optional)</li>
+          *   <li>colNoNotEquals -  (optional)</li>
+          *   <li>colNoSpecified -  (optional)</li>
+          *   <li>colNoIn -  (optional)</li>
+          *   <li>colNoNotIn -  (optional)</li>
           *   <li>priceFactorGreaterThan -  (optional)</li>
           *   <li>priceFactorLessThan -  (optional)</li>
           *   <li>priceFactorGreaterThanOrEqual -  (optional)</li>
@@ -384,6 +399,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
           *   <li>priceFactorSpecified -  (optional)</li>
           *   <li>priceFactorIn -  (optional)</li>
           *   <li>priceFactorNotIn -  (optional)</li>
+          *   <li>typeEquals -  (optional)</li>
+          *   <li>typeNotEquals -  (optional)</li>
+          *   <li>typeSpecified -  (optional)</li>
+          *   <li>typeIn -  (optional)</li>
+          *   <li>typeNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -434,7 +454,7 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
       *   </ul>
           * @return Long
       */
-      @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/seats/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -510,76 +530,76 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
       put("seatNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountSeatsQueryParams rowGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("row.greaterThan", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoGreaterThan(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("row.lessThan", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoLessThan(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("row.greaterThanOrEqual", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("row.lessThanOrEqual", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("row.equals", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.equals", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("row.notEquals", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoNotEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("row.specified", EncodingUtils.encode(value));
+    public CountSeatsQueryParams rowNoSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("rowNo.specified", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams rowIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("row.in", EncodingUtils.encodeCollection(value, "multi"));
+    public CountSeatsQueryParams rowNoIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("rowNo.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountSeatsQueryParams rowNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("row.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public CountSeatsQueryParams rowNoNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("rowNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountSeatsQueryParams colGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("col.greaterThan", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoGreaterThan(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("col.lessThan", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoLessThan(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("col.greaterThanOrEqual", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("col.lessThanOrEqual", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("col.equals", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.equals", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("col.notEquals", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoNotEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("col.specified", EncodingUtils.encode(value));
+    public CountSeatsQueryParams colNoSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("colNo.specified", EncodingUtils.encode(value));
       return this;
     }
-    public CountSeatsQueryParams colIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("col.in", EncodingUtils.encodeCollection(value, "multi"));
+    public CountSeatsQueryParams colNoIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("colNo.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public CountSeatsQueryParams colNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("col.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public CountSeatsQueryParams colNoNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("colNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountSeatsQueryParams priceFactorGreaterThan(@jakarta.annotation.Nullable final BigDecimal value) {
@@ -616,6 +636,26 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
     }
     public CountSeatsQueryParams priceFactorNotIn(@jakarta.annotation.Nullable final List<BigDecimal> value) {
       put("priceFactor.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountSeatsQueryParams typeEquals(@jakarta.annotation.Nullable final String value) {
+      put("type.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountSeatsQueryParams typeNotEquals(@jakarta.annotation.Nullable final String value) {
+      put("type.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountSeatsQueryParams typeSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("type.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountSeatsQueryParams typeIn(@jakarta.annotation.Nullable final List<String> value) {
+      put("type.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountSeatsQueryParams typeNotIn(@jakarta.annotation.Nullable final List<String> value) {
+      put("type.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountSeatsQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -881,24 +921,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param seatNoSpecified  (optional)
    * @param seatNoIn  (optional)
    * @param seatNoNotIn  (optional)
-   * @param rowGreaterThan  (optional)
-   * @param rowLessThan  (optional)
-   * @param rowGreaterThanOrEqual  (optional)
-   * @param rowLessThanOrEqual  (optional)
-   * @param rowEquals  (optional)
-   * @param rowNotEquals  (optional)
-   * @param rowSpecified  (optional)
-   * @param rowIn  (optional)
-   * @param rowNotIn  (optional)
-   * @param colGreaterThan  (optional)
-   * @param colLessThan  (optional)
-   * @param colGreaterThanOrEqual  (optional)
-   * @param colLessThanOrEqual  (optional)
-   * @param colEquals  (optional)
-   * @param colNotEquals  (optional)
-   * @param colSpecified  (optional)
-   * @param colIn  (optional)
-   * @param colNotIn  (optional)
+   * @param rowNoGreaterThan  (optional)
+   * @param rowNoLessThan  (optional)
+   * @param rowNoGreaterThanOrEqual  (optional)
+   * @param rowNoLessThanOrEqual  (optional)
+   * @param rowNoEquals  (optional)
+   * @param rowNoNotEquals  (optional)
+   * @param rowNoSpecified  (optional)
+   * @param rowNoIn  (optional)
+   * @param rowNoNotIn  (optional)
+   * @param colNoGreaterThan  (optional)
+   * @param colNoLessThan  (optional)
+   * @param colNoGreaterThanOrEqual  (optional)
+   * @param colNoLessThanOrEqual  (optional)
+   * @param colNoEquals  (optional)
+   * @param colNoNotEquals  (optional)
+   * @param colNoSpecified  (optional)
+   * @param colNoIn  (optional)
+   * @param colNoNotIn  (optional)
    * @param priceFactorGreaterThan  (optional)
    * @param priceFactorLessThan  (optional)
    * @param priceFactorGreaterThanOrEqual  (optional)
@@ -908,6 +948,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param priceFactorSpecified  (optional)
    * @param priceFactorIn  (optional)
    * @param priceFactorNotIn  (optional)
+   * @param typeEquals  (optional)
+   * @param typeNotEquals  (optional)
+   * @param typeSpecified  (optional)
+   * @param typeIn  (optional)
+   * @param typeNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -957,11 +1002,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return List&lt;SeatDTO&gt;
    */
-  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  List<SeatDTO> getAllSeats(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowGreaterThan") @jakarta.annotation.Nullable Integer rowGreaterThan, @Param("rowLessThan") @jakarta.annotation.Nullable Integer rowLessThan, @Param("rowGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowGreaterThanOrEqual, @Param("rowLessThanOrEqual") @jakarta.annotation.Nullable Integer rowLessThanOrEqual, @Param("rowEquals") @jakarta.annotation.Nullable Integer rowEquals, @Param("rowNotEquals") @jakarta.annotation.Nullable Integer rowNotEquals, @Param("rowSpecified") @jakarta.annotation.Nullable Boolean rowSpecified, @Param("rowIn") @jakarta.annotation.Nullable List<Integer> rowIn, @Param("rowNotIn") @jakarta.annotation.Nullable List<Integer> rowNotIn, @Param("colGreaterThan") @jakarta.annotation.Nullable Integer colGreaterThan, @Param("colLessThan") @jakarta.annotation.Nullable Integer colLessThan, @Param("colGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colGreaterThanOrEqual, @Param("colLessThanOrEqual") @jakarta.annotation.Nullable Integer colLessThanOrEqual, @Param("colEquals") @jakarta.annotation.Nullable Integer colEquals, @Param("colNotEquals") @jakarta.annotation.Nullable Integer colNotEquals, @Param("colSpecified") @jakarta.annotation.Nullable Boolean colSpecified, @Param("colIn") @jakarta.annotation.Nullable List<Integer> colIn, @Param("colNotIn") @jakarta.annotation.Nullable List<Integer> colNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  List<SeatDTO> getAllSeats(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowNoGreaterThan") @jakarta.annotation.Nullable Integer rowNoGreaterThan, @Param("rowNoLessThan") @jakarta.annotation.Nullable Integer rowNoLessThan, @Param("rowNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowNoGreaterThanOrEqual, @Param("rowNoLessThanOrEqual") @jakarta.annotation.Nullable Integer rowNoLessThanOrEqual, @Param("rowNoEquals") @jakarta.annotation.Nullable Integer rowNoEquals, @Param("rowNoNotEquals") @jakarta.annotation.Nullable Integer rowNoNotEquals, @Param("rowNoSpecified") @jakarta.annotation.Nullable Boolean rowNoSpecified, @Param("rowNoIn") @jakarta.annotation.Nullable List<Integer> rowNoIn, @Param("rowNoNotIn") @jakarta.annotation.Nullable List<Integer> rowNoNotIn, @Param("colNoGreaterThan") @jakarta.annotation.Nullable Integer colNoGreaterThan, @Param("colNoLessThan") @jakarta.annotation.Nullable Integer colNoLessThan, @Param("colNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colNoGreaterThanOrEqual, @Param("colNoLessThanOrEqual") @jakarta.annotation.Nullable Integer colNoLessThanOrEqual, @Param("colNoEquals") @jakarta.annotation.Nullable Integer colNoEquals, @Param("colNoNotEquals") @jakarta.annotation.Nullable Integer colNoNotEquals, @Param("colNoSpecified") @jakarta.annotation.Nullable Boolean colNoSpecified, @Param("colNoIn") @jakarta.annotation.Nullable List<Integer> colNoIn, @Param("colNoNotIn") @jakarta.annotation.Nullable List<Integer> colNoNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("typeEquals") @jakarta.annotation.Nullable String typeEquals, @Param("typeNotEquals") @jakarta.annotation.Nullable String typeNotEquals, @Param("typeSpecified") @jakarta.annotation.Nullable Boolean typeSpecified, @Param("typeIn") @jakarta.annotation.Nullable List<String> typeIn, @Param("typeNotIn") @jakarta.annotation.Nullable List<String> typeNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -983,24 +1028,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param seatNoSpecified  (optional)
    * @param seatNoIn  (optional)
    * @param seatNoNotIn  (optional)
-   * @param rowGreaterThan  (optional)
-   * @param rowLessThan  (optional)
-   * @param rowGreaterThanOrEqual  (optional)
-   * @param rowLessThanOrEqual  (optional)
-   * @param rowEquals  (optional)
-   * @param rowNotEquals  (optional)
-   * @param rowSpecified  (optional)
-   * @param rowIn  (optional)
-   * @param rowNotIn  (optional)
-   * @param colGreaterThan  (optional)
-   * @param colLessThan  (optional)
-   * @param colGreaterThanOrEqual  (optional)
-   * @param colLessThanOrEqual  (optional)
-   * @param colEquals  (optional)
-   * @param colNotEquals  (optional)
-   * @param colSpecified  (optional)
-   * @param colIn  (optional)
-   * @param colNotIn  (optional)
+   * @param rowNoGreaterThan  (optional)
+   * @param rowNoLessThan  (optional)
+   * @param rowNoGreaterThanOrEqual  (optional)
+   * @param rowNoLessThanOrEqual  (optional)
+   * @param rowNoEquals  (optional)
+   * @param rowNoNotEquals  (optional)
+   * @param rowNoSpecified  (optional)
+   * @param rowNoIn  (optional)
+   * @param rowNoNotIn  (optional)
+   * @param colNoGreaterThan  (optional)
+   * @param colNoLessThan  (optional)
+   * @param colNoGreaterThanOrEqual  (optional)
+   * @param colNoLessThanOrEqual  (optional)
+   * @param colNoEquals  (optional)
+   * @param colNoNotEquals  (optional)
+   * @param colNoSpecified  (optional)
+   * @param colNoIn  (optional)
+   * @param colNoNotIn  (optional)
    * @param priceFactorGreaterThan  (optional)
    * @param priceFactorLessThan  (optional)
    * @param priceFactorGreaterThanOrEqual  (optional)
@@ -1010,6 +1055,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param priceFactorSpecified  (optional)
    * @param priceFactorIn  (optional)
    * @param priceFactorNotIn  (optional)
+   * @param typeEquals  (optional)
+   * @param typeNotEquals  (optional)
+   * @param typeSpecified  (optional)
+   * @param typeIn  (optional)
+   * @param typeNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -1059,11 +1109,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<List<SeatDTO>> getAllSeatsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowGreaterThan") @jakarta.annotation.Nullable Integer rowGreaterThan, @Param("rowLessThan") @jakarta.annotation.Nullable Integer rowLessThan, @Param("rowGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowGreaterThanOrEqual, @Param("rowLessThanOrEqual") @jakarta.annotation.Nullable Integer rowLessThanOrEqual, @Param("rowEquals") @jakarta.annotation.Nullable Integer rowEquals, @Param("rowNotEquals") @jakarta.annotation.Nullable Integer rowNotEquals, @Param("rowSpecified") @jakarta.annotation.Nullable Boolean rowSpecified, @Param("rowIn") @jakarta.annotation.Nullable List<Integer> rowIn, @Param("rowNotIn") @jakarta.annotation.Nullable List<Integer> rowNotIn, @Param("colGreaterThan") @jakarta.annotation.Nullable Integer colGreaterThan, @Param("colLessThan") @jakarta.annotation.Nullable Integer colLessThan, @Param("colGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colGreaterThanOrEqual, @Param("colLessThanOrEqual") @jakarta.annotation.Nullable Integer colLessThanOrEqual, @Param("colEquals") @jakarta.annotation.Nullable Integer colEquals, @Param("colNotEquals") @jakarta.annotation.Nullable Integer colNotEquals, @Param("colSpecified") @jakarta.annotation.Nullable Boolean colSpecified, @Param("colIn") @jakarta.annotation.Nullable List<Integer> colIn, @Param("colNotIn") @jakarta.annotation.Nullable List<Integer> colNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<List<SeatDTO>> getAllSeatsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("seatNoContains") @jakarta.annotation.Nullable String seatNoContains, @Param("seatNoDoesNotContain") @jakarta.annotation.Nullable String seatNoDoesNotContain, @Param("seatNoEquals") @jakarta.annotation.Nullable String seatNoEquals, @Param("seatNoNotEquals") @jakarta.annotation.Nullable String seatNoNotEquals, @Param("seatNoSpecified") @jakarta.annotation.Nullable Boolean seatNoSpecified, @Param("seatNoIn") @jakarta.annotation.Nullable List<String> seatNoIn, @Param("seatNoNotIn") @jakarta.annotation.Nullable List<String> seatNoNotIn, @Param("rowNoGreaterThan") @jakarta.annotation.Nullable Integer rowNoGreaterThan, @Param("rowNoLessThan") @jakarta.annotation.Nullable Integer rowNoLessThan, @Param("rowNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer rowNoGreaterThanOrEqual, @Param("rowNoLessThanOrEqual") @jakarta.annotation.Nullable Integer rowNoLessThanOrEqual, @Param("rowNoEquals") @jakarta.annotation.Nullable Integer rowNoEquals, @Param("rowNoNotEquals") @jakarta.annotation.Nullable Integer rowNoNotEquals, @Param("rowNoSpecified") @jakarta.annotation.Nullable Boolean rowNoSpecified, @Param("rowNoIn") @jakarta.annotation.Nullable List<Integer> rowNoIn, @Param("rowNoNotIn") @jakarta.annotation.Nullable List<Integer> rowNoNotIn, @Param("colNoGreaterThan") @jakarta.annotation.Nullable Integer colNoGreaterThan, @Param("colNoLessThan") @jakarta.annotation.Nullable Integer colNoLessThan, @Param("colNoGreaterThanOrEqual") @jakarta.annotation.Nullable Integer colNoGreaterThanOrEqual, @Param("colNoLessThanOrEqual") @jakarta.annotation.Nullable Integer colNoLessThanOrEqual, @Param("colNoEquals") @jakarta.annotation.Nullable Integer colNoEquals, @Param("colNoNotEquals") @jakarta.annotation.Nullable Integer colNoNotEquals, @Param("colNoSpecified") @jakarta.annotation.Nullable Boolean colNoSpecified, @Param("colNoIn") @jakarta.annotation.Nullable List<Integer> colNoIn, @Param("colNoNotIn") @jakarta.annotation.Nullable List<Integer> colNoNotIn, @Param("priceFactorGreaterThan") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThan, @Param("priceFactorLessThan") @jakarta.annotation.Nullable BigDecimal priceFactorLessThan, @Param("priceFactorGreaterThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorGreaterThanOrEqual, @Param("priceFactorLessThanOrEqual") @jakarta.annotation.Nullable BigDecimal priceFactorLessThanOrEqual, @Param("priceFactorEquals") @jakarta.annotation.Nullable BigDecimal priceFactorEquals, @Param("priceFactorNotEquals") @jakarta.annotation.Nullable BigDecimal priceFactorNotEquals, @Param("priceFactorSpecified") @jakarta.annotation.Nullable Boolean priceFactorSpecified, @Param("priceFactorIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorIn, @Param("priceFactorNotIn") @jakarta.annotation.Nullable List<BigDecimal> priceFactorNotIn, @Param("typeEquals") @jakarta.annotation.Nullable String typeEquals, @Param("typeNotEquals") @jakarta.annotation.Nullable String typeNotEquals, @Param("typeSpecified") @jakarta.annotation.Nullable Boolean typeSpecified, @Param("typeIn") @jakarta.annotation.Nullable List<String> typeIn, @Param("typeNotIn") @jakarta.annotation.Nullable List<String> typeNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("floorIdGreaterThan") @jakarta.annotation.Nullable Long floorIdGreaterThan, @Param("floorIdLessThan") @jakarta.annotation.Nullable Long floorIdLessThan, @Param("floorIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long floorIdGreaterThanOrEqual, @Param("floorIdLessThanOrEqual") @jakarta.annotation.Nullable Long floorIdLessThanOrEqual, @Param("floorIdEquals") @jakarta.annotation.Nullable Long floorIdEquals, @Param("floorIdNotEquals") @jakarta.annotation.Nullable Long floorIdNotEquals, @Param("floorIdSpecified") @jakarta.annotation.Nullable Boolean floorIdSpecified, @Param("floorIdIn") @jakarta.annotation.Nullable List<Long> floorIdIn, @Param("floorIdNotIn") @jakarta.annotation.Nullable List<Long> floorIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -1093,24 +1143,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   <li>seatNoSpecified -  (optional)</li>
    *   <li>seatNoIn -  (optional)</li>
    *   <li>seatNoNotIn -  (optional)</li>
-   *   <li>rowGreaterThan -  (optional)</li>
-   *   <li>rowLessThan -  (optional)</li>
-   *   <li>rowGreaterThanOrEqual -  (optional)</li>
-   *   <li>rowLessThanOrEqual -  (optional)</li>
-   *   <li>rowEquals -  (optional)</li>
-   *   <li>rowNotEquals -  (optional)</li>
-   *   <li>rowSpecified -  (optional)</li>
-   *   <li>rowIn -  (optional)</li>
-   *   <li>rowNotIn -  (optional)</li>
-   *   <li>colGreaterThan -  (optional)</li>
-   *   <li>colLessThan -  (optional)</li>
-   *   <li>colGreaterThanOrEqual -  (optional)</li>
-   *   <li>colLessThanOrEqual -  (optional)</li>
-   *   <li>colEquals -  (optional)</li>
-   *   <li>colNotEquals -  (optional)</li>
-   *   <li>colSpecified -  (optional)</li>
-   *   <li>colIn -  (optional)</li>
-   *   <li>colNotIn -  (optional)</li>
+   *   <li>rowNoGreaterThan -  (optional)</li>
+   *   <li>rowNoLessThan -  (optional)</li>
+   *   <li>rowNoGreaterThanOrEqual -  (optional)</li>
+   *   <li>rowNoLessThanOrEqual -  (optional)</li>
+   *   <li>rowNoEquals -  (optional)</li>
+   *   <li>rowNoNotEquals -  (optional)</li>
+   *   <li>rowNoSpecified -  (optional)</li>
+   *   <li>rowNoIn -  (optional)</li>
+   *   <li>rowNoNotIn -  (optional)</li>
+   *   <li>colNoGreaterThan -  (optional)</li>
+   *   <li>colNoLessThan -  (optional)</li>
+   *   <li>colNoGreaterThanOrEqual -  (optional)</li>
+   *   <li>colNoLessThanOrEqual -  (optional)</li>
+   *   <li>colNoEquals -  (optional)</li>
+   *   <li>colNoNotEquals -  (optional)</li>
+   *   <li>colNoSpecified -  (optional)</li>
+   *   <li>colNoIn -  (optional)</li>
+   *   <li>colNoNotIn -  (optional)</li>
    *   <li>priceFactorGreaterThan -  (optional)</li>
    *   <li>priceFactorLessThan -  (optional)</li>
    *   <li>priceFactorGreaterThanOrEqual -  (optional)</li>
@@ -1120,6 +1170,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   <li>priceFactorSpecified -  (optional)</li>
    *   <li>priceFactorIn -  (optional)</li>
    *   <li>priceFactorNotIn -  (optional)</li>
+   *   <li>typeEquals -  (optional)</li>
+   *   <li>typeNotEquals -  (optional)</li>
+   *   <li>typeSpecified -  (optional)</li>
+   *   <li>typeIn -  (optional)</li>
+   *   <li>typeNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -1170,7 +1225,7 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
    *   </ul>
    * @return List&lt;SeatDTO&gt;
    */
-  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -1200,24 +1255,24 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
           *   <li>seatNoSpecified -  (optional)</li>
           *   <li>seatNoIn -  (optional)</li>
           *   <li>seatNoNotIn -  (optional)</li>
-          *   <li>rowGreaterThan -  (optional)</li>
-          *   <li>rowLessThan -  (optional)</li>
-          *   <li>rowGreaterThanOrEqual -  (optional)</li>
-          *   <li>rowLessThanOrEqual -  (optional)</li>
-          *   <li>rowEquals -  (optional)</li>
-          *   <li>rowNotEquals -  (optional)</li>
-          *   <li>rowSpecified -  (optional)</li>
-          *   <li>rowIn -  (optional)</li>
-          *   <li>rowNotIn -  (optional)</li>
-          *   <li>colGreaterThan -  (optional)</li>
-          *   <li>colLessThan -  (optional)</li>
-          *   <li>colGreaterThanOrEqual -  (optional)</li>
-          *   <li>colLessThanOrEqual -  (optional)</li>
-          *   <li>colEquals -  (optional)</li>
-          *   <li>colNotEquals -  (optional)</li>
-          *   <li>colSpecified -  (optional)</li>
-          *   <li>colIn -  (optional)</li>
-          *   <li>colNotIn -  (optional)</li>
+          *   <li>rowNoGreaterThan -  (optional)</li>
+          *   <li>rowNoLessThan -  (optional)</li>
+          *   <li>rowNoGreaterThanOrEqual -  (optional)</li>
+          *   <li>rowNoLessThanOrEqual -  (optional)</li>
+          *   <li>rowNoEquals -  (optional)</li>
+          *   <li>rowNoNotEquals -  (optional)</li>
+          *   <li>rowNoSpecified -  (optional)</li>
+          *   <li>rowNoIn -  (optional)</li>
+          *   <li>rowNoNotIn -  (optional)</li>
+          *   <li>colNoGreaterThan -  (optional)</li>
+          *   <li>colNoLessThan -  (optional)</li>
+          *   <li>colNoGreaterThanOrEqual -  (optional)</li>
+          *   <li>colNoLessThanOrEqual -  (optional)</li>
+          *   <li>colNoEquals -  (optional)</li>
+          *   <li>colNoNotEquals -  (optional)</li>
+          *   <li>colNoSpecified -  (optional)</li>
+          *   <li>colNoIn -  (optional)</li>
+          *   <li>colNoNotIn -  (optional)</li>
           *   <li>priceFactorGreaterThan -  (optional)</li>
           *   <li>priceFactorLessThan -  (optional)</li>
           *   <li>priceFactorGreaterThanOrEqual -  (optional)</li>
@@ -1227,6 +1282,11 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
           *   <li>priceFactorSpecified -  (optional)</li>
           *   <li>priceFactorIn -  (optional)</li>
           *   <li>priceFactorNotIn -  (optional)</li>
+          *   <li>typeEquals -  (optional)</li>
+          *   <li>typeNotEquals -  (optional)</li>
+          *   <li>typeSpecified -  (optional)</li>
+          *   <li>typeIn -  (optional)</li>
+          *   <li>typeNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -1277,7 +1337,7 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
       *   </ul>
           * @return List&lt;SeatDTO&gt;
       */
-      @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&row.greaterThan={rowGreaterThan}&row.lessThan={rowLessThan}&row.greaterThanOrEqual={rowGreaterThanOrEqual}&row.lessThanOrEqual={rowLessThanOrEqual}&row.equals={rowEquals}&row.notEquals={rowNotEquals}&row.specified={rowSpecified}&row.in={rowIn}&row.notIn={rowNotIn}&col.greaterThan={colGreaterThan}&col.lessThan={colLessThan}&col.greaterThanOrEqual={colGreaterThanOrEqual}&col.lessThanOrEqual={colLessThanOrEqual}&col.equals={colEquals}&col.notEquals={colNotEquals}&col.specified={colSpecified}&col.in={colIn}&col.notIn={colNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/seats?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&seatNo.contains={seatNoContains}&seatNo.doesNotContain={seatNoDoesNotContain}&seatNo.equals={seatNoEquals}&seatNo.notEquals={seatNoNotEquals}&seatNo.specified={seatNoSpecified}&seatNo.in={seatNoIn}&seatNo.notIn={seatNoNotIn}&rowNo.greaterThan={rowNoGreaterThan}&rowNo.lessThan={rowNoLessThan}&rowNo.greaterThanOrEqual={rowNoGreaterThanOrEqual}&rowNo.lessThanOrEqual={rowNoLessThanOrEqual}&rowNo.equals={rowNoEquals}&rowNo.notEquals={rowNoNotEquals}&rowNo.specified={rowNoSpecified}&rowNo.in={rowNoIn}&rowNo.notIn={rowNoNotIn}&colNo.greaterThan={colNoGreaterThan}&colNo.lessThan={colNoLessThan}&colNo.greaterThanOrEqual={colNoGreaterThanOrEqual}&colNo.lessThanOrEqual={colNoLessThanOrEqual}&colNo.equals={colNoEquals}&colNo.notEquals={colNoNotEquals}&colNo.specified={colNoSpecified}&colNo.in={colNoIn}&colNo.notIn={colNoNotIn}&priceFactor.greaterThan={priceFactorGreaterThan}&priceFactor.lessThan={priceFactorLessThan}&priceFactor.greaterThanOrEqual={priceFactorGreaterThanOrEqual}&priceFactor.lessThanOrEqual={priceFactorLessThanOrEqual}&priceFactor.equals={priceFactorEquals}&priceFactor.notEquals={priceFactorNotEquals}&priceFactor.specified={priceFactorSpecified}&priceFactor.in={priceFactorIn}&priceFactor.notIn={priceFactorNotIn}&type.equals={typeEquals}&type.notEquals={typeNotEquals}&type.specified={typeSpecified}&type.in={typeIn}&type.notIn={typeNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&floorId.greaterThan={floorIdGreaterThan}&floorId.lessThan={floorIdLessThan}&floorId.greaterThanOrEqual={floorIdGreaterThanOrEqual}&floorId.lessThanOrEqual={floorIdLessThanOrEqual}&floorId.equals={floorIdEquals}&floorId.notEquals={floorIdNotEquals}&floorId.specified={floorIdSpecified}&floorId.in={floorIdIn}&floorId.notIn={floorIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -1353,76 +1413,76 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
       put("seatNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllSeatsQueryParams rowGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("row.greaterThan", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoGreaterThan(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("row.lessThan", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoLessThan(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("row.greaterThanOrEqual", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("row.lessThanOrEqual", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("row.equals", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.equals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("row.notEquals", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoNotEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("rowNo.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("row.specified", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams rowNoSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("rowNo.specified", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams rowIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("row.in", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllSeatsQueryParams rowNoIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("rowNo.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllSeatsQueryParams rowNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("row.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllSeatsQueryParams rowNoNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("rowNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllSeatsQueryParams colGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("col.greaterThan", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoGreaterThan(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.greaterThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("col.lessThan", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoLessThan(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.lessThan", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("col.greaterThanOrEqual", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.greaterThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("col.lessThanOrEqual", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.lessThanOrEqual", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("col.equals", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.equals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("col.notEquals", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoNotEquals(@jakarta.annotation.Nullable final Integer value) {
+      put("colNo.notEquals", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("col.specified", EncodingUtils.encode(value));
+    public GetAllSeatsQueryParams colNoSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("colNo.specified", EncodingUtils.encode(value));
       return this;
     }
-    public GetAllSeatsQueryParams colIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("col.in", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllSeatsQueryParams colNoIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("colNo.in", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
-    public GetAllSeatsQueryParams colNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("col.notIn", EncodingUtils.encodeCollection(value, "multi"));
+    public GetAllSeatsQueryParams colNoNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
+      put("colNo.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllSeatsQueryParams priceFactorGreaterThan(@jakarta.annotation.Nullable final BigDecimal value) {
@@ -1459,6 +1519,26 @@ public interface SeatResourceMsrouteApi extends ApiClient.Api {
     }
     public GetAllSeatsQueryParams priceFactorNotIn(@jakarta.annotation.Nullable final List<BigDecimal> value) {
       put("priceFactor.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllSeatsQueryParams typeEquals(@jakarta.annotation.Nullable final String value) {
+      put("type.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllSeatsQueryParams typeNotEquals(@jakarta.annotation.Nullable final String value) {
+      put("type.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllSeatsQueryParams typeSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("type.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllSeatsQueryParams typeIn(@jakarta.annotation.Nullable final List<String> value) {
+      put("type.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllSeatsQueryParams typeNotIn(@jakarta.annotation.Nullable final List<String> value) {
+      put("type.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllSeatsQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {

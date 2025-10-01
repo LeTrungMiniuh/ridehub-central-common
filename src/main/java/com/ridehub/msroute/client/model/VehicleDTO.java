@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.ridehub.msroute.client.model.FileRouteDTO;
 import com.ridehub.msroute.client.model.SeatMapDTO;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -37,12 +38,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VehicleDTO.JSON_PROPERTY_PLATE_NUMBER,
   VehicleDTO.JSON_PROPERTY_BRAND,
   VehicleDTO.JSON_PROPERTY_DESCRIPTION,
+  VehicleDTO.JSON_PROPERTY_STATUS,
   VehicleDTO.JSON_PROPERTY_CREATED_AT,
   VehicleDTO.JSON_PROPERTY_UPDATED_AT,
   VehicleDTO.JSON_PROPERTY_IS_DELETED,
   VehicleDTO.JSON_PROPERTY_DELETED_AT,
   VehicleDTO.JSON_PROPERTY_DELETED_BY,
-  VehicleDTO.JSON_PROPERTY_SEAT_MAP
+  VehicleDTO.JSON_PROPERTY_SEAT_MAP,
+  VehicleDTO.JSON_PROPERTY_VEHICLE_IMG
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class VehicleDTO {
@@ -54,7 +57,9 @@ public class VehicleDTO {
    * Gets or Sets type
    */
   public enum TypeEnum {
-    STANDARD_BUS(String.valueOf("STANDARD_BUS")),
+    STANDARD_BUS_VIP(String.valueOf("STANDARD_BUS_VIP")),
+    
+    STANDARD_BUS_NORMAL(String.valueOf("STANDARD_BUS_NORMAL")),
     
     LIMOUSINE(String.valueOf("LIMOUSINE"));
 
@@ -105,6 +110,47 @@ public class VehicleDTO {
   @jakarta.annotation.Nullable
   private String description;
 
+  /**
+   * Gets or Sets status
+   */
+  public enum StatusEnum {
+    ACTIVE(String.valueOf("ACTIVE")),
+    
+    MAINTENANCE(String.valueOf("MAINTENANCE")),
+    
+    RETIRED(String.valueOf("RETIRED"));
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_STATUS = "status";
+  @jakarta.annotation.Nonnull
+  private StatusEnum status;
+
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
   private OffsetDateTime createdAt;
@@ -128,6 +174,10 @@ public class VehicleDTO {
   public static final String JSON_PROPERTY_SEAT_MAP = "seatMap";
   @jakarta.annotation.Nonnull
   private SeatMapDTO seatMap;
+
+  public static final String JSON_PROPERTY_VEHICLE_IMG = "vehicleImg";
+  @jakarta.annotation.Nullable
+  private FileRouteDTO vehicleImg;
 
   public VehicleDTO() {
   }
@@ -288,6 +338,32 @@ public class VehicleDTO {
   }
 
 
+  public VehicleDTO status(@jakarta.annotation.Nonnull StatusEnum status) {
+    
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
+    this.status = status;
+  }
+
+
   public VehicleDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
@@ -444,6 +520,32 @@ public class VehicleDTO {
   }
 
 
+  public VehicleDTO vehicleImg(@jakarta.annotation.Nullable FileRouteDTO vehicleImg) {
+    
+    this.vehicleImg = vehicleImg;
+    return this;
+  }
+
+  /**
+   * Get vehicleImg
+   * @return vehicleImg
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VEHICLE_IMG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public FileRouteDTO getVehicleImg() {
+    return vehicleImg;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VEHICLE_IMG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVehicleImg(@jakarta.annotation.Nullable FileRouteDTO vehicleImg) {
+    this.vehicleImg = vehicleImg;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -459,17 +561,19 @@ public class VehicleDTO {
         Objects.equals(this.plateNumber, vehicleDTO.plateNumber) &&
         Objects.equals(this.brand, vehicleDTO.brand) &&
         Objects.equals(this.description, vehicleDTO.description) &&
+        Objects.equals(this.status, vehicleDTO.status) &&
         Objects.equals(this.createdAt, vehicleDTO.createdAt) &&
         Objects.equals(this.updatedAt, vehicleDTO.updatedAt) &&
         Objects.equals(this.isDeleted, vehicleDTO.isDeleted) &&
         Objects.equals(this.deletedAt, vehicleDTO.deletedAt) &&
         Objects.equals(this.deletedBy, vehicleDTO.deletedBy) &&
-        Objects.equals(this.seatMap, vehicleDTO.seatMap);
+        Objects.equals(this.seatMap, vehicleDTO.seatMap) &&
+        Objects.equals(this.vehicleImg, vehicleDTO.vehicleImg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, typeFactor, plateNumber, brand, description, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, seatMap);
+    return Objects.hash(id, type, typeFactor, plateNumber, brand, description, status, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, seatMap, vehicleImg);
   }
 
   @Override
@@ -482,12 +586,14 @@ public class VehicleDTO {
     sb.append("    plateNumber: ").append(toIndentedString(plateNumber)).append("\n");
     sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
     sb.append("    seatMap: ").append(toIndentedString(seatMap)).append("\n");
+    sb.append("    vehicleImg: ").append(toIndentedString(vehicleImg)).append("\n");
     sb.append("}");
     return sb.toString();
   }

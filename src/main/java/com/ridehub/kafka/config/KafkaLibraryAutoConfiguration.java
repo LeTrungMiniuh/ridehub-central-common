@@ -12,6 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.retry.RetryPolicy;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
 import org.springframework.retry.policy.SimpleRetryPolicy;
@@ -31,8 +32,8 @@ import java.util.Map;
 @EnableConfigurationProperties({ KafkaLibraryProperties.class })
 public class KafkaLibraryAutoConfiguration {
 
-    @Bean
-    @ConditionalOnMissingBean
+        @Primary
+    @Bean(name = "kafkaObjectMapper")
     public ObjectMapper kafkaObjectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());

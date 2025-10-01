@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.ridehub.msroute.client.model.StaffDTO;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -36,7 +37,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   DriverDTO.JSON_PROPERTY_UPDATED_AT,
   DriverDTO.JSON_PROPERTY_IS_DELETED,
   DriverDTO.JSON_PROPERTY_DELETED_AT,
-  DriverDTO.JSON_PROPERTY_DELETED_BY
+  DriverDTO.JSON_PROPERTY_DELETED_BY,
+  DriverDTO.JSON_PROPERTY_STAFF
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class DriverDTO {
@@ -71,6 +73,10 @@ public class DriverDTO {
   public static final String JSON_PROPERTY_DELETED_BY = "deletedBy";
   @jakarta.annotation.Nullable
   private UUID deletedBy;
+
+  public static final String JSON_PROPERTY_STAFF = "staff";
+  @jakarta.annotation.Nonnull
+  private StaffDTO staff;
 
   public DriverDTO() {
   }
@@ -283,6 +289,32 @@ public class DriverDTO {
   }
 
 
+  public DriverDTO staff(@jakarta.annotation.Nonnull StaffDTO staff) {
+    
+    this.staff = staff;
+    return this;
+  }
+
+  /**
+   * Get staff
+   * @return staff
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_STAFF)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public StaffDTO getStaff() {
+    return staff;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_STAFF)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStaff(@jakarta.annotation.Nonnull StaffDTO staff) {
+    this.staff = staff;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -299,12 +331,13 @@ public class DriverDTO {
         Objects.equals(this.updatedAt, driverDTO.updatedAt) &&
         Objects.equals(this.isDeleted, driverDTO.isDeleted) &&
         Objects.equals(this.deletedAt, driverDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, driverDTO.deletedBy);
+        Objects.equals(this.deletedBy, driverDTO.deletedBy) &&
+        Objects.equals(this.staff, driverDTO.staff);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, licenseClass, yearsExperience, createdAt, updatedAt, isDeleted, deletedAt, deletedBy);
+    return Objects.hash(id, licenseClass, yearsExperience, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, staff);
   }
 
   @Override
@@ -319,6 +352,7 @@ public class DriverDTO {
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
+    sb.append("    staff: ").append(toIndentedString(staff)).append("\n");
     sb.append("}");
     return sb.toString();
   }

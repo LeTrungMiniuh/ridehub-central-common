@@ -1,0 +1,2 @@
+com.ridehub.kafka.config.KafkaLibraryAutoConfiguration
+com.ridehub.common.feign.FeignCommonAutoConfiguration

@@ -1,6 +1,6 @@
 /*
- * Ms Route API
- * Ms Route API documentation
+ * Ms User API
+ * Ms User API documentation
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: 
@@ -11,7 +11,7 @@
  */
 
 
-package com.ridehub.msroute.client.model;
+package com.ridehub.msuser.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -20,34 +20,40 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ridehub.msroute.client.model.FileRouteDTO;
+import com.ridehub.msuser.client.model.FileUserDTO;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * SeatMapDTO
+ * ProfileDTO
  */
 @JsonPropertyOrder({
-  SeatMapDTO.JSON_PROPERTY_ID,
-  SeatMapDTO.JSON_PROPERTY_NAME,
-  SeatMapDTO.JSON_PROPERTY_CREATED_AT,
-  SeatMapDTO.JSON_PROPERTY_UPDATED_AT,
-  SeatMapDTO.JSON_PROPERTY_IS_DELETED,
-  SeatMapDTO.JSON_PROPERTY_DELETED_AT,
-  SeatMapDTO.JSON_PROPERTY_DELETED_BY,
-  SeatMapDTO.JSON_PROPERTY_SEAT_MAP_IMG
+  ProfileDTO.JSON_PROPERTY_ID,
+  ProfileDTO.JSON_PROPERTY_FULL_NAME,
+  ProfileDTO.JSON_PROPERTY_BIRTH_DATE,
+  ProfileDTO.JSON_PROPERTY_CREATED_AT,
+  ProfileDTO.JSON_PROPERTY_UPDATED_AT,
+  ProfileDTO.JSON_PROPERTY_IS_DELETED,
+  ProfileDTO.JSON_PROPERTY_DELETED_AT,
+  ProfileDTO.JSON_PROPERTY_DELETED_BY,
+  ProfileDTO.JSON_PROPERTY_AVATAR
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class SeatMapDTO {
+public class ProfileDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
 
-  public static final String JSON_PROPERTY_NAME = "name";
-  @jakarta.annotation.Nonnull
-  private String name;
+  public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  @jakarta.annotation.Nullable
+  private String fullName;
+
+  public static final String JSON_PROPERTY_BIRTH_DATE = "birthDate";
+  @jakarta.annotation.Nullable
+  private LocalDate birthDate;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -69,14 +75,14 @@ public class SeatMapDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_SEAT_MAP_IMG = "seatMapImg";
+  public static final String JSON_PROPERTY_AVATAR = "avatar";
   @jakarta.annotation.Nullable
-  private FileRouteDTO seatMapImg;
+  private FileUserDTO avatar;
 
-  public SeatMapDTO() {
+  public ProfileDTO() {
   }
 
-  public SeatMapDTO id(@jakarta.annotation.Nullable Long id) {
+  public ProfileDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -102,33 +108,59 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO name(@jakarta.annotation.Nonnull String name) {
+  public ProfileDTO fullName(@jakarta.annotation.Nullable String fullName) {
     
-    this.name = name;
+    this.fullName = fullName;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get fullName
+   * @return fullName
    */
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getName() {
-    return name;
+  public String getFullName() {
+    return fullName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
+  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFullName(@jakarta.annotation.Nullable String fullName) {
+    this.fullName = fullName;
   }
 
 
-  public SeatMapDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public ProfileDTO birthDate(@jakarta.annotation.Nullable LocalDate birthDate) {
+    
+    this.birthDate = birthDate;
+    return this;
+  }
+
+  /**
+   * Get birthDate
+   * @return birthDate
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public LocalDate getBirthDate() {
+    return birthDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BIRTH_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBirthDate(@jakarta.annotation.Nullable LocalDate birthDate) {
+    this.birthDate = birthDate;
+  }
+
+
+  public ProfileDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -154,7 +186,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public ProfileDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -180,7 +212,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public ProfileDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -206,7 +238,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public ProfileDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -232,7 +264,7 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public ProfileDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -258,29 +290,29 @@ public class SeatMapDTO {
   }
 
 
-  public SeatMapDTO seatMapImg(@jakarta.annotation.Nullable FileRouteDTO seatMapImg) {
+  public ProfileDTO avatar(@jakarta.annotation.Nullable FileUserDTO avatar) {
     
-    this.seatMapImg = seatMapImg;
+    this.avatar = avatar;
     return this;
   }
 
   /**
-   * Get seatMapImg
-   * @return seatMapImg
+   * Get avatar
+   * @return avatar
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEAT_MAP_IMG)
+  @JsonProperty(JSON_PROPERTY_AVATAR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public FileRouteDTO getSeatMapImg() {
-    return seatMapImg;
+  public FileUserDTO getAvatar() {
+    return avatar;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SEAT_MAP_IMG)
+  @JsonProperty(JSON_PROPERTY_AVATAR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSeatMapImg(@jakarta.annotation.Nullable FileRouteDTO seatMapImg) {
-    this.seatMapImg = seatMapImg;
+  public void setAvatar(@jakarta.annotation.Nullable FileUserDTO avatar) {
+    this.avatar = avatar;
   }
 
 
@@ -292,34 +324,36 @@ public class SeatMapDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SeatMapDTO seatMapDTO = (SeatMapDTO) o;
-    return Objects.equals(this.id, seatMapDTO.id) &&
-        Objects.equals(this.name, seatMapDTO.name) &&
-        Objects.equals(this.createdAt, seatMapDTO.createdAt) &&
-        Objects.equals(this.updatedAt, seatMapDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, seatMapDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, seatMapDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, seatMapDTO.deletedBy) &&
-        Objects.equals(this.seatMapImg, seatMapDTO.seatMapImg);
+    ProfileDTO profileDTO = (ProfileDTO) o;
+    return Objects.equals(this.id, profileDTO.id) &&
+        Objects.equals(this.fullName, profileDTO.fullName) &&
+        Objects.equals(this.birthDate, profileDTO.birthDate) &&
+        Objects.equals(this.createdAt, profileDTO.createdAt) &&
+        Objects.equals(this.updatedAt, profileDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, profileDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, profileDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, profileDTO.deletedBy) &&
+        Objects.equals(this.avatar, profileDTO.avatar);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, seatMapImg);
+    return Objects.hash(id, fullName, birthDate, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, avatar);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SeatMapDTO {\n");
+    sb.append("class ProfileDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
+    sb.append("    birthDate: ").append(toIndentedString(birthDate)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    seatMapImg: ").append(toIndentedString(seatMapImg)).append("\n");
+    sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
     sb.append("}");
     return sb.toString();
   }
