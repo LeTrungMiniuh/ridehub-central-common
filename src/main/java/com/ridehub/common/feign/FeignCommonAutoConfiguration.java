@@ -31,18 +31,19 @@ import java.io.IOException;
 
 /**
  * Auto-configuration for Ridehub Feign clients.
- * This configuration is automatically loaded when the central common package is on the classpath.
- * It automatically scans for Feign client interfaces and registers them as beans.
+ * This configuration is automatically loaded when the central common package is
+ * on the classpath.
+ * It automatically scans for Feign client interfaces and registers them as
+ * beans.
  */
 @AutoConfiguration
-@ConditionalOnClass({Feign.class, LoadBalancerClient.class})
-@EnableConfigurationProperties({
-        RidehubFeignScanProperties.class
-})
+@ConditionalOnClass({ Feign.class, LoadBalancerClient.class })
+@EnableConfigurationProperties({ RidehubFeignScanProperties.class, ServiceAuthProperties.class })
 @Import(FeignCommonAutoConfiguration.FeignClientRegistrar.class)
 public class FeignCommonAutoConfiguration {
 
-    // Nếu service có context-path (hiếm khi), có thể set "/app" ở đây, mặc định là rỗng
+    // Nếu service có context-path (hiếm khi), có thể set "/app" ở đây, mặc định là
+    // rỗng
     @Value("${services.context-path:}")
     private String contextPath;
 
@@ -68,37 +69,43 @@ public class FeignCommonAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(name = "authRequestInterceptor")
-    public RequestInterceptor authRequestInterceptor() {
+    public RequestInterceptor authRequestInterceptor(ServiceAuthProperties props) {
+        final ServiceTokenManager s2s = new ServiceTokenManager(
+                props.getTokenUrl(), props.getClientId(), props.getClientSecret(), props.getScope());
+
         return req -> {
+            // 1) If there's a user JWT in SecurityContext, forward it (current behavior)
             try {
-                // If Security is not on classpath, this throws ClassNotFoundException
                 Class<?> sch = Class.forName("org.springframework.security.core.context.SecurityContextHolder");
                 Object context = sch.getMethod("getContext").invoke(null);
-                if (context == null)
-                    return;
-
-                Object auth = context.getClass().getMethod("getAuthentication").invoke(context);
-                if (auth == null)
-                    return;
-
-                // Check JwtAuthenticationToken by name to avoid compile-time dependency
-                Class<?> jwtAuthClass = Class.forName(
-                        "org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken");
-                if (!jwtAuthClass.isInstance(auth))
-                    return;
-
-                Object token = auth.getClass().getMethod("getToken").invoke(auth);
-                if (token == null)
-                    return;
-
-                String tokenValue = (String) token.getClass().getMethod("getTokenValue").invoke(token);
-                if (tokenValue != null && !tokenValue.isBlank()) {
-                    req.header("Authorization", "Bearer " + tokenValue);
+                if (context != null) {
+                    Object auth = context.getClass().getMethod("getAuthentication").invoke(context);
+                    if (auth != null) {
+                        Class<?> jwtAuthClass = Class.forName(
+                                "org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken");
+                        if (jwtAuthClass.isInstance(auth)) {
+                            Object token = auth.getClass().getMethod("getToken").invoke(auth);
+                            if (token != null) {
+                                String tokenValue = (String) token.getClass().getMethod("getTokenValue").invoke(token);
+                                if (tokenValue != null && !tokenValue.isBlank()) {
+                                    req.header("Authorization", "Bearer " + tokenValue);
+                                    return; // done
+                                }
+                            }
+                        }
+                    }
                 }
-            } catch (ClassNotFoundException e) {
-                // Spring Security not on classpath -> no-op (service builds fine)
+            } catch (ClassNotFoundException ignore) {
+                // security not on classpath
             } catch (Throwable ignore) {
-                // Best-effort; don't break requests if anything goes wrong
+                /* best-effort */ }
+
+            // 2) No user token -> use service-to-service client_credentials token
+            try {
+                String token = s2s.getAccessToken();
+                req.header("Authorization", "Bearer " + token);
+            } catch (Throwable e) {
+                // don’t block the app from starting; request will 401 if truly required
             }
         };
     }
@@ -112,12 +119,14 @@ public class FeignCommonAutoConfiguration {
     // ================== AUTOMATIC FEIGN CLIENT REGISTRATION ==================
 
     /**
-     * Registrar that automatically scans for Feign client interfaces and registers them as beans.
+     * Registrar that automatically scans for Feign client interfaces and registers
+     * them as beans.
      */
     public static class FeignClientRegistrar implements ImportBeanDefinitionRegistrar {
 
         @Override
-        public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+        public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata,
+                BeanDefinitionRegistry registry) {
             // Get the properties to determine what packages to scan
             RidehubFeignScanProperties properties = new RidehubFeignScanProperties();
 
@@ -172,7 +181,8 @@ public class FeignCommonAutoConfiguration {
             try {
                 String resourcePath = resource.getURI().toString();
                 int packageIndex = resourcePath.indexOf(packagePath);
-                if (packageIndex == -1) return null;
+                if (packageIndex == -1)
+                    return null;
 
                 String classPath = resourcePath.substring(packageIndex);
                 if (classPath.endsWith(".class")) {
@@ -188,20 +198,21 @@ public class FeignCommonAutoConfiguration {
             // Check if it's likely a Feign client interface
             // You can add more sophisticated checks here
             return clazz.isInterface() &&
-                   clazz.getSimpleName().contains("Api") &&
-                   clazz.getMethods().length > 0;
+                    clazz.getSimpleName().contains("Api") &&
+                    clazz.getMethods().length > 0;
         }
 
-        private void registerFeignClientBean(BeanDefinitionRegistry registry, Class<?> clientInterface, String serviceId) {
+        private void registerFeignClientBean(BeanDefinitionRegistry registry, Class<?> clientInterface,
+                String serviceId) {
             String beanName = getBeanName(clientInterface);
 
             if (!registry.containsBeanDefinition(beanName)) {
                 BeanDefinition beanDefinition = BeanDefinitionBuilder
-                    .genericBeanDefinition(FeignClientFactoryBean.class)
-                    .addConstructorArgValue(clientInterface)
-                    .addConstructorArgValue(serviceId)
-                    .setLazyInit(true)
-                    .getBeanDefinition();
+                        .genericBeanDefinition(FeignClientFactoryBean.class)
+                        .addConstructorArgValue(clientInterface)
+                        .addConstructorArgValue(serviceId)
+                        .setLazyInit(true)
+                        .getBeanDefinition();
 
                 registry.registerBeanDefinition(beanName, beanDefinition);
             }
