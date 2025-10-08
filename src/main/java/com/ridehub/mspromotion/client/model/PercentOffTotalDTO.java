@@ -34,6 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PercentOffTotalDTO.JSON_PROPERTY_ID,
   PercentOffTotalDTO.JSON_PROPERTY_PERCENT,
   PercentOffTotalDTO.JSON_PROPERTY_MAX_OFF,
+  PercentOffTotalDTO.JSON_PROPERTY_MIN_PRICE,
   PercentOffTotalDTO.JSON_PROPERTY_CREATED_AT,
   PercentOffTotalDTO.JSON_PROPERTY_UPDATED_AT,
   PercentOffTotalDTO.JSON_PROPERTY_IS_DELETED,
@@ -54,6 +55,10 @@ public class PercentOffTotalDTO {
   public static final String JSON_PROPERTY_MAX_OFF = "maxOff";
   @jakarta.annotation.Nullable
   private BigDecimal maxOff;
+
+  public static final String JSON_PROPERTY_MIN_PRICE = "minPrice";
+  @jakarta.annotation.Nullable
+  private BigDecimal minPrice;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -116,6 +121,8 @@ public class PercentOffTotalDTO {
 
   /**
    * Get percent
+   * minimum: 1
+   * maximum: 100
    * @return percent
    */
   @jakarta.annotation.Nonnull
@@ -157,6 +164,32 @@ public class PercentOffTotalDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMaxOff(@jakarta.annotation.Nullable BigDecimal maxOff) {
     this.maxOff = maxOff;
+  }
+
+
+  public PercentOffTotalDTO minPrice(@jakarta.annotation.Nullable BigDecimal minPrice) {
+    
+    this.minPrice = minPrice;
+    return this;
+  }
+
+  /**
+   * Get minPrice
+   * @return minPrice
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MIN_PRICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public BigDecimal getMinPrice() {
+    return minPrice;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MIN_PRICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMinPrice(@jakarta.annotation.Nullable BigDecimal minPrice) {
+    this.minPrice = minPrice;
   }
 
 
@@ -328,6 +361,7 @@ public class PercentOffTotalDTO {
     return Objects.equals(this.id, percentOffTotalDTO.id) &&
         Objects.equals(this.percent, percentOffTotalDTO.percent) &&
         Objects.equals(this.maxOff, percentOffTotalDTO.maxOff) &&
+        Objects.equals(this.minPrice, percentOffTotalDTO.minPrice) &&
         Objects.equals(this.createdAt, percentOffTotalDTO.createdAt) &&
         Objects.equals(this.updatedAt, percentOffTotalDTO.updatedAt) &&
         Objects.equals(this.isDeleted, percentOffTotalDTO.isDeleted) &&
@@ -338,7 +372,7 @@ public class PercentOffTotalDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, percent, maxOff, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion);
+    return Objects.hash(id, percent, maxOff, minPrice, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion);
   }
 
   @Override
@@ -348,6 +382,7 @@ public class PercentOffTotalDTO {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
     sb.append("    maxOff: ").append(toIndentedString(maxOff)).append("\n");
+    sb.append("    minPrice: ").append(toIndentedString(minPrice)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");

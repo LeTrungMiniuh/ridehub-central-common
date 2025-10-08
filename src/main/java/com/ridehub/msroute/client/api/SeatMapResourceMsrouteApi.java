@@ -6,6 +6,7 @@ import com.ridehub.msroute.client.model.ApiResponse;
 
 import java.time.OffsetDateTime;
 import com.ridehub.msroute.client.model.SeatMapDTO;
+import com.ridehub.msroute.client.model.SeatMapDetailVM;
 import java.util.UUID;
 
 import java.util.ArrayList;
@@ -1386,6 +1387,33 @@ public interface SeatMapResourceMsrouteApi extends ApiClient.Api {
     "Accept: */*",
   })
   ApiResponse<SeatMapDTO> getSeatMapWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+
+
+  /**
+   * 
+   * 
+   * @param id  (required)
+   * @return SeatMapDetailVM
+   */
+  @RequestLine("GET /api/seat-maps/{id}/detail")
+  @Headers({
+    "Accept: */*",
+  })
+  SeatMapDetailVM getSeatMapDetail(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+  /**
+   * 
+   * Similar to <code>getSeatMapDetail</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("GET /api/seat-maps/{id}/detail")
+  @Headers({
+    "Accept: */*",
+  })
+  ApiResponse<SeatMapDetailVM> getSeatMapDetailWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id);
 
 
 

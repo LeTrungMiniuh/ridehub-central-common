@@ -20,34 +20,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.ridehub.mspromotion.client.model.ConditionRouteItemDTO;
-import com.ridehub.mspromotion.client.model.PromotionDTO;
+import com.ridehub.mspromotion.client.model.ConditionByRouteDTO;
 import java.time.OffsetDateTime;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * ConditionByRouteDTO
+ * ConditionRouteItemDTO
  */
 @JsonPropertyOrder({
-  ConditionByRouteDTO.JSON_PROPERTY_ID,
-  ConditionByRouteDTO.JSON_PROPERTY_CREATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_UPDATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_IS_DELETED,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_BY,
-  ConditionByRouteDTO.JSON_PROPERTY_ITEMS,
-  ConditionByRouteDTO.JSON_PROPERTY_PROMOTION
+  ConditionRouteItemDTO.JSON_PROPERTY_ID,
+  ConditionRouteItemDTO.JSON_PROPERTY_ROUTE_ID,
+  ConditionRouteItemDTO.JSON_PROPERTY_CREATED_AT,
+  ConditionRouteItemDTO.JSON_PROPERTY_UPDATED_AT,
+  ConditionRouteItemDTO.JSON_PROPERTY_IS_DELETED,
+  ConditionRouteItemDTO.JSON_PROPERTY_DELETED_AT,
+  ConditionRouteItemDTO.JSON_PROPERTY_DELETED_BY,
+  ConditionRouteItemDTO.JSON_PROPERTY_CONDITION
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class ConditionByRouteDTO {
+public class ConditionRouteItemDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
+
+  public static final String JSON_PROPERTY_ROUTE_ID = "routeId";
+  @jakarta.annotation.Nonnull
+  private Long routeId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -69,18 +69,14 @@ public class ConditionByRouteDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_ITEMS = "items";
-  @jakarta.annotation.Nullable
-  private Set<ConditionRouteItemDTO> items = new LinkedHashSet<>();
-
-  public static final String JSON_PROPERTY_PROMOTION = "promotion";
+  public static final String JSON_PROPERTY_CONDITION = "condition";
   @jakarta.annotation.Nonnull
-  private PromotionDTO promotion;
+  private ConditionByRouteDTO condition;
 
-  public ConditionByRouteDTO() {
+  public ConditionRouteItemDTO() {
   }
 
-  public ConditionByRouteDTO id(@jakarta.annotation.Nullable Long id) {
+  public ConditionRouteItemDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -106,7 +102,33 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public ConditionRouteItemDTO routeId(@jakarta.annotation.Nonnull Long routeId) {
+    
+    this.routeId = routeId;
+    return this;
+  }
+
+  /**
+   * Get routeId
+   * @return routeId
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ROUTE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Long getRouteId() {
+    return routeId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ROUTE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setRouteId(@jakarta.annotation.Nonnull Long routeId) {
+    this.routeId = routeId;
+  }
+
+
+  public ConditionRouteItemDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -132,7 +154,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public ConditionRouteItemDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -158,7 +180,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public ConditionRouteItemDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -184,7 +206,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public ConditionRouteItemDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -210,7 +232,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public ConditionRouteItemDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -236,64 +258,29 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO items(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
+  public ConditionRouteItemDTO condition(@jakarta.annotation.Nonnull ConditionByRouteDTO condition) {
     
-    this.items = items;
-    return this;
-  }
-
-  public ConditionByRouteDTO addItemsItem(ConditionRouteItemDTO itemsItem) {
-    if (this.items == null) {
-      this.items = new LinkedHashSet<>();
-    }
-    this.items.add(itemsItem);
+    this.condition = condition;
     return this;
   }
 
   /**
-   * Get items
-   * @return items
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Set<ConditionRouteItemDTO> getItems() {
-    return items;
-  }
-
-
-  @JsonDeserialize(as = LinkedHashSet.class)
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
-    this.items = items;
-  }
-
-
-  public ConditionByRouteDTO promotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
-    
-    this.promotion = promotion;
-    return this;
-  }
-
-  /**
-   * Get promotion
-   * @return promotion
+   * Get condition
+   * @return condition
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PROMOTION)
+  @JsonProperty(JSON_PROPERTY_CONDITION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public PromotionDTO getPromotion() {
-    return promotion;
+  public ConditionByRouteDTO getCondition() {
+    return condition;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROMOTION)
+  @JsonProperty(JSON_PROPERTY_CONDITION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPromotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
-    this.promotion = promotion;
+  public void setCondition(@jakarta.annotation.Nonnull ConditionByRouteDTO condition) {
+    this.condition = condition;
   }
 
 
@@ -305,34 +292,34 @@ public class ConditionByRouteDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConditionByRouteDTO conditionByRouteDTO = (ConditionByRouteDTO) o;
-    return Objects.equals(this.id, conditionByRouteDTO.id) &&
-        Objects.equals(this.createdAt, conditionByRouteDTO.createdAt) &&
-        Objects.equals(this.updatedAt, conditionByRouteDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, conditionByRouteDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, conditionByRouteDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, conditionByRouteDTO.deletedBy) &&
-        Objects.equals(this.items, conditionByRouteDTO.items) &&
-        Objects.equals(this.promotion, conditionByRouteDTO.promotion);
+    ConditionRouteItemDTO conditionRouteItemDTO = (ConditionRouteItemDTO) o;
+    return Objects.equals(this.id, conditionRouteItemDTO.id) &&
+        Objects.equals(this.routeId, conditionRouteItemDTO.routeId) &&
+        Objects.equals(this.createdAt, conditionRouteItemDTO.createdAt) &&
+        Objects.equals(this.updatedAt, conditionRouteItemDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, conditionRouteItemDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, conditionRouteItemDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, conditionRouteItemDTO.deletedBy) &&
+        Objects.equals(this.condition, conditionRouteItemDTO.condition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, items, promotion);
+    return Objects.hash(id, routeId, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, condition);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConditionByRouteDTO {\n");
+    sb.append("class ConditionRouteItemDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    routeId: ").append(toIndentedString(routeId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
-    sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
+    sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

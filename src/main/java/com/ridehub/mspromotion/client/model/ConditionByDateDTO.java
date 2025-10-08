@@ -20,9 +20,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.ridehub.mspromotion.client.model.ConditionDateItemDTO;
 import com.ridehub.mspromotion.client.model.PromotionDTO;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -32,28 +35,19 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonPropertyOrder({
   ConditionByDateDTO.JSON_PROPERTY_ID,
-  ConditionByDateDTO.JSON_PROPERTY_SPECIFIC_DATE,
-  ConditionByDateDTO.JSON_PROPERTY_WEEKDAY,
   ConditionByDateDTO.JSON_PROPERTY_CREATED_AT,
   ConditionByDateDTO.JSON_PROPERTY_UPDATED_AT,
   ConditionByDateDTO.JSON_PROPERTY_IS_DELETED,
   ConditionByDateDTO.JSON_PROPERTY_DELETED_AT,
   ConditionByDateDTO.JSON_PROPERTY_DELETED_BY,
-  ConditionByDateDTO.JSON_PROPERTY_PROMOTION
+  ConditionByDateDTO.JSON_PROPERTY_PROMOTION,
+  ConditionByDateDTO.JSON_PROPERTY_ITEMS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class ConditionByDateDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
-
-  public static final String JSON_PROPERTY_SPECIFIC_DATE = "specificDate";
-  @jakarta.annotation.Nullable
-  private LocalDate specificDate;
-
-  public static final String JSON_PROPERTY_WEEKDAY = "weekday";
-  @jakarta.annotation.Nullable
-  private Integer weekday;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -78,6 +72,10 @@ public class ConditionByDateDTO {
   public static final String JSON_PROPERTY_PROMOTION = "promotion";
   @jakarta.annotation.Nonnull
   private PromotionDTO promotion;
+
+  public static final String JSON_PROPERTY_ITEMS = "items";
+  @jakarta.annotation.Nullable
+  private Set<ConditionDateItemDTO> items = new LinkedHashSet<>();
 
   public ConditionByDateDTO() {
   }
@@ -105,58 +103,6 @@ public class ConditionByDateDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@jakarta.annotation.Nullable Long id) {
     this.id = id;
-  }
-
-
-  public ConditionByDateDTO specificDate(@jakarta.annotation.Nullable LocalDate specificDate) {
-    
-    this.specificDate = specificDate;
-    return this;
-  }
-
-  /**
-   * Get specificDate
-   * @return specificDate
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SPECIFIC_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public LocalDate getSpecificDate() {
-    return specificDate;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SPECIFIC_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSpecificDate(@jakarta.annotation.Nullable LocalDate specificDate) {
-    this.specificDate = specificDate;
-  }
-
-
-  public ConditionByDateDTO weekday(@jakarta.annotation.Nullable Integer weekday) {
-    
-    this.weekday = weekday;
-    return this;
-  }
-
-  /**
-   * Get weekday
-   * @return weekday
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEEKDAY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getWeekday() {
-    return weekday;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_WEEKDAY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWeekday(@jakarta.annotation.Nullable Integer weekday) {
-    this.weekday = weekday;
   }
 
 
@@ -316,6 +262,41 @@ public class ConditionByDateDTO {
   }
 
 
+  public ConditionByDateDTO items(@jakarta.annotation.Nullable Set<ConditionDateItemDTO> items) {
+    
+    this.items = items;
+    return this;
+  }
+
+  public ConditionByDateDTO addItemsItem(ConditionDateItemDTO itemsItem) {
+    if (this.items == null) {
+      this.items = new LinkedHashSet<>();
+    }
+    this.items.add(itemsItem);
+    return this;
+  }
+
+  /**
+   * Get items
+   * @return items
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Set<ConditionDateItemDTO> getItems() {
+    return items;
+  }
+
+
+  @JsonDeserialize(as = LinkedHashSet.class)
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setItems(@jakarta.annotation.Nullable Set<ConditionDateItemDTO> items) {
+    this.items = items;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -326,19 +307,18 @@ public class ConditionByDateDTO {
     }
     ConditionByDateDTO conditionByDateDTO = (ConditionByDateDTO) o;
     return Objects.equals(this.id, conditionByDateDTO.id) &&
-        Objects.equals(this.specificDate, conditionByDateDTO.specificDate) &&
-        Objects.equals(this.weekday, conditionByDateDTO.weekday) &&
         Objects.equals(this.createdAt, conditionByDateDTO.createdAt) &&
         Objects.equals(this.updatedAt, conditionByDateDTO.updatedAt) &&
         Objects.equals(this.isDeleted, conditionByDateDTO.isDeleted) &&
         Objects.equals(this.deletedAt, conditionByDateDTO.deletedAt) &&
         Objects.equals(this.deletedBy, conditionByDateDTO.deletedBy) &&
-        Objects.equals(this.promotion, conditionByDateDTO.promotion);
+        Objects.equals(this.promotion, conditionByDateDTO.promotion) &&
+        Objects.equals(this.items, conditionByDateDTO.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, specificDate, weekday, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion);
+    return Objects.hash(id, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion, items);
   }
 
   @Override
@@ -346,14 +326,13 @@ public class ConditionByDateDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConditionByDateDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    specificDate: ").append(toIndentedString(specificDate)).append("\n");
-    sb.append("    weekday: ").append(toIndentedString(weekday)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
     sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }

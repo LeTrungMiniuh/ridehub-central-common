@@ -6,6 +6,8 @@ import com.ridehub.msroute.client.model.ApiResponse;
 
 import com.ridehub.msroute.client.model.AttendantDTO;
 import java.time.OffsetDateTime;
+import com.ridehub.msroute.client.model.SimpleAttendantRequestDTO;
+import com.ridehub.msroute.client.model.SimpleAttendantResponseDTO;
 import java.util.UUID;
 
 import java.util.ArrayList;
@@ -561,6 +563,35 @@ public interface AttendantResourceMsrouteApi extends ApiClient.Api {
     "Accept: */*",
   })
   ApiResponse<AttendantDTO> createAttendantWithHttpInfo(@jakarta.annotation.Nonnull AttendantDTO attendantDTO);
+
+
+
+  /**
+   * 
+   * 
+   * @param simpleAttendantRequestDTO  (required)
+   * @return SimpleAttendantResponseDTO
+   */
+  @RequestLine("POST /api/attendants/simple")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  SimpleAttendantResponseDTO createSimpleAttendant(@jakarta.annotation.Nonnull SimpleAttendantRequestDTO simpleAttendantRequestDTO);
+
+  /**
+   * 
+   * Similar to <code>createSimpleAttendant</code> but it also returns the http response headers .
+   * 
+   * @param simpleAttendantRequestDTO  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/attendants/simple")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  ApiResponse<SimpleAttendantResponseDTO> createSimpleAttendantWithHttpInfo(@jakarta.annotation.Nonnull SimpleAttendantRequestDTO simpleAttendantRequestDTO);
 
 
 
@@ -1137,6 +1168,33 @@ public interface AttendantResourceMsrouteApi extends ApiClient.Api {
    * 
    * 
    * @param id  (required)
+   * @return SimpleAttendantResponseDTO
+   */
+  @RequestLine("GET /api/attendants/simple/{id}")
+  @Headers({
+    "Accept: */*",
+  })
+  SimpleAttendantResponseDTO getSimpleAttendant(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+  /**
+   * 
+   * Similar to <code>getSimpleAttendant</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("GET /api/attendants/simple/{id}")
+  @Headers({
+    "Accept: */*",
+  })
+  ApiResponse<SimpleAttendantResponseDTO> getSimpleAttendantWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+
+
+  /**
+   * 
+   * 
+   * @param id  (required)
    * @param attendantDTO  (required)
    * @return AttendantDTO
    */
@@ -1192,6 +1250,37 @@ public interface AttendantResourceMsrouteApi extends ApiClient.Api {
     "Accept: */*",
   })
   ApiResponse<AttendantDTO> updateAttendantWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull AttendantDTO attendantDTO);
+
+
+
+  /**
+   * 
+   * 
+   * @param id  (required)
+   * @param simpleAttendantRequestDTO  (required)
+   * @return SimpleAttendantResponseDTO
+   */
+  @RequestLine("PUT /api/attendants/simple/{id}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  SimpleAttendantResponseDTO updateSimpleAttendant(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull SimpleAttendantRequestDTO simpleAttendantRequestDTO);
+
+  /**
+   * 
+   * Similar to <code>updateSimpleAttendant</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @param simpleAttendantRequestDTO  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("PUT /api/attendants/simple/{id}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  ApiResponse<SimpleAttendantResponseDTO> updateSimpleAttendantWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull SimpleAttendantRequestDTO simpleAttendantRequestDTO);
 
 
 }

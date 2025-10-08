@@ -1081,6 +1081,33 @@ public interface AppUserResourceMsuserApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param id  (required)
+   * @return Map&lt;String, Object&gt;
+   */
+  @RequestLine("PUT /api/app-users/{id}/disable")
+  @Headers({
+    "Accept: */*",
+  })
+  Map<String, Object> disableAppUser(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+  /**
+   * 
+   * Similar to <code>disableAppUser</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("PUT /api/app-users/{id}/disable")
+  @Headers({
+    "Accept: */*",
+  })
+  ApiResponse<Map<String, Object>> disableAppUserWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+
+
+  /**
+   * 
+   * 
    * @param idGreaterThan  (optional)
    * @param idLessThan  (optional)
    * @param idGreaterThanOrEqual  (optional)

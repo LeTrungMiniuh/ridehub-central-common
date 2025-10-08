@@ -30,21 +30,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param provinceIdEquals  (optional)
-   * @param provinceIdNotEquals  (optional)
-   * @param provinceIdSpecified  (optional)
-   * @param provinceIdIn  (optional)
-   * @param provinceIdNotIn  (optional)
-   * @param districtIdEquals  (optional)
-   * @param districtIdNotEquals  (optional)
-   * @param districtIdSpecified  (optional)
-   * @param districtIdIn  (optional)
-   * @param districtIdNotIn  (optional)
-   * @param wardIdEquals  (optional)
-   * @param wardIdNotEquals  (optional)
-   * @param wardIdSpecified  (optional)
-   * @param wardIdIn  (optional)
-   * @param wardIdNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -82,6 +67,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -94,11 +88,11 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param distinct  (optional)
    * @return Long
    */
-  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  Long countConditionByLocations(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("provinceIdEquals") @jakarta.annotation.Nullable UUID provinceIdEquals, @Param("provinceIdNotEquals") @jakarta.annotation.Nullable UUID provinceIdNotEquals, @Param("provinceIdSpecified") @jakarta.annotation.Nullable Boolean provinceIdSpecified, @Param("provinceIdIn") @jakarta.annotation.Nullable List<UUID> provinceIdIn, @Param("provinceIdNotIn") @jakarta.annotation.Nullable List<UUID> provinceIdNotIn, @Param("districtIdEquals") @jakarta.annotation.Nullable UUID districtIdEquals, @Param("districtIdNotEquals") @jakarta.annotation.Nullable UUID districtIdNotEquals, @Param("districtIdSpecified") @jakarta.annotation.Nullable Boolean districtIdSpecified, @Param("districtIdIn") @jakarta.annotation.Nullable List<UUID> districtIdIn, @Param("districtIdNotIn") @jakarta.annotation.Nullable List<UUID> districtIdNotIn, @Param("wardIdEquals") @jakarta.annotation.Nullable UUID wardIdEquals, @Param("wardIdNotEquals") @jakarta.annotation.Nullable UUID wardIdNotEquals, @Param("wardIdSpecified") @jakarta.annotation.Nullable Boolean wardIdSpecified, @Param("wardIdIn") @jakarta.annotation.Nullable List<UUID> wardIdIn, @Param("wardIdNotIn") @jakarta.annotation.Nullable List<UUID> wardIdNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  Long countConditionByLocations(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -113,21 +107,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param provinceIdEquals  (optional)
-   * @param provinceIdNotEquals  (optional)
-   * @param provinceIdSpecified  (optional)
-   * @param provinceIdIn  (optional)
-   * @param provinceIdNotIn  (optional)
-   * @param districtIdEquals  (optional)
-   * @param districtIdNotEquals  (optional)
-   * @param districtIdSpecified  (optional)
-   * @param districtIdIn  (optional)
-   * @param districtIdNotIn  (optional)
-   * @param wardIdEquals  (optional)
-   * @param wardIdNotEquals  (optional)
-   * @param wardIdSpecified  (optional)
-   * @param wardIdIn  (optional)
-   * @param wardIdNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -165,6 +144,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -177,11 +165,11 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<Long> countConditionByLocationsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("provinceIdEquals") @jakarta.annotation.Nullable UUID provinceIdEquals, @Param("provinceIdNotEquals") @jakarta.annotation.Nullable UUID provinceIdNotEquals, @Param("provinceIdSpecified") @jakarta.annotation.Nullable Boolean provinceIdSpecified, @Param("provinceIdIn") @jakarta.annotation.Nullable List<UUID> provinceIdIn, @Param("provinceIdNotIn") @jakarta.annotation.Nullable List<UUID> provinceIdNotIn, @Param("districtIdEquals") @jakarta.annotation.Nullable UUID districtIdEquals, @Param("districtIdNotEquals") @jakarta.annotation.Nullable UUID districtIdNotEquals, @Param("districtIdSpecified") @jakarta.annotation.Nullable Boolean districtIdSpecified, @Param("districtIdIn") @jakarta.annotation.Nullable List<UUID> districtIdIn, @Param("districtIdNotIn") @jakarta.annotation.Nullable List<UUID> districtIdNotIn, @Param("wardIdEquals") @jakarta.annotation.Nullable UUID wardIdEquals, @Param("wardIdNotEquals") @jakarta.annotation.Nullable UUID wardIdNotEquals, @Param("wardIdSpecified") @jakarta.annotation.Nullable Boolean wardIdSpecified, @Param("wardIdIn") @jakarta.annotation.Nullable List<UUID> wardIdIn, @Param("wardIdNotIn") @jakarta.annotation.Nullable List<UUID> wardIdNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<Long> countConditionByLocationsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -204,21 +192,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>provinceIdEquals -  (optional)</li>
-   *   <li>provinceIdNotEquals -  (optional)</li>
-   *   <li>provinceIdSpecified -  (optional)</li>
-   *   <li>provinceIdIn -  (optional)</li>
-   *   <li>provinceIdNotIn -  (optional)</li>
-   *   <li>districtIdEquals -  (optional)</li>
-   *   <li>districtIdNotEquals -  (optional)</li>
-   *   <li>districtIdSpecified -  (optional)</li>
-   *   <li>districtIdIn -  (optional)</li>
-   *   <li>districtIdNotIn -  (optional)</li>
-   *   <li>wardIdEquals -  (optional)</li>
-   *   <li>wardIdNotEquals -  (optional)</li>
-   *   <li>wardIdSpecified -  (optional)</li>
-   *   <li>wardIdIn -  (optional)</li>
-   *   <li>wardIdNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -256,6 +229,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   <li>deletedBySpecified -  (optional)</li>
    *   <li>deletedByIn -  (optional)</li>
    *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>itemsIdGreaterThan -  (optional)</li>
+   *   <li>itemsIdLessThan -  (optional)</li>
+   *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+   *   <li>itemsIdEquals -  (optional)</li>
+   *   <li>itemsIdNotEquals -  (optional)</li>
+   *   <li>itemsIdSpecified -  (optional)</li>
+   *   <li>itemsIdIn -  (optional)</li>
+   *   <li>itemsIdNotIn -  (optional)</li>
    *   <li>promotionIdGreaterThan -  (optional)</li>
    *   <li>promotionIdLessThan -  (optional)</li>
    *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -269,7 +251,7 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   </ul>
    * @return Long
    */
-  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -292,21 +274,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>provinceIdEquals -  (optional)</li>
-          *   <li>provinceIdNotEquals -  (optional)</li>
-          *   <li>provinceIdSpecified -  (optional)</li>
-          *   <li>provinceIdIn -  (optional)</li>
-          *   <li>provinceIdNotIn -  (optional)</li>
-          *   <li>districtIdEquals -  (optional)</li>
-          *   <li>districtIdNotEquals -  (optional)</li>
-          *   <li>districtIdSpecified -  (optional)</li>
-          *   <li>districtIdIn -  (optional)</li>
-          *   <li>districtIdNotIn -  (optional)</li>
-          *   <li>wardIdEquals -  (optional)</li>
-          *   <li>wardIdNotEquals -  (optional)</li>
-          *   <li>wardIdSpecified -  (optional)</li>
-          *   <li>wardIdIn -  (optional)</li>
-          *   <li>wardIdNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -344,6 +311,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
           *   <li>deletedBySpecified -  (optional)</li>
           *   <li>deletedByIn -  (optional)</li>
           *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>itemsIdGreaterThan -  (optional)</li>
+          *   <li>itemsIdLessThan -  (optional)</li>
+          *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+          *   <li>itemsIdEquals -  (optional)</li>
+          *   <li>itemsIdNotEquals -  (optional)</li>
+          *   <li>itemsIdSpecified -  (optional)</li>
+          *   <li>itemsIdIn -  (optional)</li>
+          *   <li>itemsIdNotIn -  (optional)</li>
           *   <li>promotionIdGreaterThan -  (optional)</li>
           *   <li>promotionIdLessThan -  (optional)</li>
           *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -357,7 +333,7 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
       *   </ul>
           * @return Long
       */
-      @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/condition-by-locations/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -403,66 +379,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
     }
     public CountConditionByLocationsQueryParams idNotIn(@jakarta.annotation.Nullable final List<Long> value) {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams provinceIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("provinceId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams provinceIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("provinceId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams provinceIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("provinceId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams provinceIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("provinceId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams provinceIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("provinceId.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams districtIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("districtId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams districtIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("districtId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams districtIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("districtId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams districtIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("districtId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams districtIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("districtId.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams wardIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("wardId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams wardIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("wardId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams wardIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("wardId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams wardIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("wardId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByLocationsQueryParams wardIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("wardId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountConditionByLocationsQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -613,6 +529,42 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
       put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
+    public CountConditionByLocationsQueryParams itemsIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("itemsId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountConditionByLocationsQueryParams itemsIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
     public CountConditionByLocationsQueryParams promotionIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
       put("promotionId.greaterThan", EncodingUtils.encode(value));
       return this;
@@ -721,21 +673,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param provinceIdEquals  (optional)
-   * @param provinceIdNotEquals  (optional)
-   * @param provinceIdSpecified  (optional)
-   * @param provinceIdIn  (optional)
-   * @param provinceIdNotIn  (optional)
-   * @param districtIdEquals  (optional)
-   * @param districtIdNotEquals  (optional)
-   * @param districtIdSpecified  (optional)
-   * @param districtIdIn  (optional)
-   * @param districtIdNotIn  (optional)
-   * @param wardIdEquals  (optional)
-   * @param wardIdNotEquals  (optional)
-   * @param wardIdSpecified  (optional)
-   * @param wardIdIn  (optional)
-   * @param wardIdNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -773,6 +710,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -785,11 +731,11 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param distinct  (optional)
    * @return List&lt;ConditionByLocationDTO&gt;
    */
-  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  List<ConditionByLocationDTO> getAllConditionByLocations(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("provinceIdEquals") @jakarta.annotation.Nullable UUID provinceIdEquals, @Param("provinceIdNotEquals") @jakarta.annotation.Nullable UUID provinceIdNotEquals, @Param("provinceIdSpecified") @jakarta.annotation.Nullable Boolean provinceIdSpecified, @Param("provinceIdIn") @jakarta.annotation.Nullable List<UUID> provinceIdIn, @Param("provinceIdNotIn") @jakarta.annotation.Nullable List<UUID> provinceIdNotIn, @Param("districtIdEquals") @jakarta.annotation.Nullable UUID districtIdEquals, @Param("districtIdNotEquals") @jakarta.annotation.Nullable UUID districtIdNotEquals, @Param("districtIdSpecified") @jakarta.annotation.Nullable Boolean districtIdSpecified, @Param("districtIdIn") @jakarta.annotation.Nullable List<UUID> districtIdIn, @Param("districtIdNotIn") @jakarta.annotation.Nullable List<UUID> districtIdNotIn, @Param("wardIdEquals") @jakarta.annotation.Nullable UUID wardIdEquals, @Param("wardIdNotEquals") @jakarta.annotation.Nullable UUID wardIdNotEquals, @Param("wardIdSpecified") @jakarta.annotation.Nullable Boolean wardIdSpecified, @Param("wardIdIn") @jakarta.annotation.Nullable List<UUID> wardIdIn, @Param("wardIdNotIn") @jakarta.annotation.Nullable List<UUID> wardIdNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  List<ConditionByLocationDTO> getAllConditionByLocations(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -804,21 +750,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param provinceIdEquals  (optional)
-   * @param provinceIdNotEquals  (optional)
-   * @param provinceIdSpecified  (optional)
-   * @param provinceIdIn  (optional)
-   * @param provinceIdNotIn  (optional)
-   * @param districtIdEquals  (optional)
-   * @param districtIdNotEquals  (optional)
-   * @param districtIdSpecified  (optional)
-   * @param districtIdIn  (optional)
-   * @param districtIdNotIn  (optional)
-   * @param wardIdEquals  (optional)
-   * @param wardIdNotEquals  (optional)
-   * @param wardIdSpecified  (optional)
-   * @param wardIdIn  (optional)
-   * @param wardIdNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -856,6 +787,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -868,11 +808,11 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<List<ConditionByLocationDTO>> getAllConditionByLocationsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("provinceIdEquals") @jakarta.annotation.Nullable UUID provinceIdEquals, @Param("provinceIdNotEquals") @jakarta.annotation.Nullable UUID provinceIdNotEquals, @Param("provinceIdSpecified") @jakarta.annotation.Nullable Boolean provinceIdSpecified, @Param("provinceIdIn") @jakarta.annotation.Nullable List<UUID> provinceIdIn, @Param("provinceIdNotIn") @jakarta.annotation.Nullable List<UUID> provinceIdNotIn, @Param("districtIdEquals") @jakarta.annotation.Nullable UUID districtIdEquals, @Param("districtIdNotEquals") @jakarta.annotation.Nullable UUID districtIdNotEquals, @Param("districtIdSpecified") @jakarta.annotation.Nullable Boolean districtIdSpecified, @Param("districtIdIn") @jakarta.annotation.Nullable List<UUID> districtIdIn, @Param("districtIdNotIn") @jakarta.annotation.Nullable List<UUID> districtIdNotIn, @Param("wardIdEquals") @jakarta.annotation.Nullable UUID wardIdEquals, @Param("wardIdNotEquals") @jakarta.annotation.Nullable UUID wardIdNotEquals, @Param("wardIdSpecified") @jakarta.annotation.Nullable Boolean wardIdSpecified, @Param("wardIdIn") @jakarta.annotation.Nullable List<UUID> wardIdIn, @Param("wardIdNotIn") @jakarta.annotation.Nullable List<UUID> wardIdNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<List<ConditionByLocationDTO>> getAllConditionByLocationsWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -895,21 +835,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>provinceIdEquals -  (optional)</li>
-   *   <li>provinceIdNotEquals -  (optional)</li>
-   *   <li>provinceIdSpecified -  (optional)</li>
-   *   <li>provinceIdIn -  (optional)</li>
-   *   <li>provinceIdNotIn -  (optional)</li>
-   *   <li>districtIdEquals -  (optional)</li>
-   *   <li>districtIdNotEquals -  (optional)</li>
-   *   <li>districtIdSpecified -  (optional)</li>
-   *   <li>districtIdIn -  (optional)</li>
-   *   <li>districtIdNotIn -  (optional)</li>
-   *   <li>wardIdEquals -  (optional)</li>
-   *   <li>wardIdNotEquals -  (optional)</li>
-   *   <li>wardIdSpecified -  (optional)</li>
-   *   <li>wardIdIn -  (optional)</li>
-   *   <li>wardIdNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -947,6 +872,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   <li>deletedBySpecified -  (optional)</li>
    *   <li>deletedByIn -  (optional)</li>
    *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>itemsIdGreaterThan -  (optional)</li>
+   *   <li>itemsIdLessThan -  (optional)</li>
+   *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+   *   <li>itemsIdEquals -  (optional)</li>
+   *   <li>itemsIdNotEquals -  (optional)</li>
+   *   <li>itemsIdSpecified -  (optional)</li>
+   *   <li>itemsIdIn -  (optional)</li>
+   *   <li>itemsIdNotIn -  (optional)</li>
    *   <li>promotionIdGreaterThan -  (optional)</li>
    *   <li>promotionIdLessThan -  (optional)</li>
    *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -960,7 +894,7 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
    *   </ul>
    * @return List&lt;ConditionByLocationDTO&gt;
    */
-  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -983,21 +917,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>provinceIdEquals -  (optional)</li>
-          *   <li>provinceIdNotEquals -  (optional)</li>
-          *   <li>provinceIdSpecified -  (optional)</li>
-          *   <li>provinceIdIn -  (optional)</li>
-          *   <li>provinceIdNotIn -  (optional)</li>
-          *   <li>districtIdEquals -  (optional)</li>
-          *   <li>districtIdNotEquals -  (optional)</li>
-          *   <li>districtIdSpecified -  (optional)</li>
-          *   <li>districtIdIn -  (optional)</li>
-          *   <li>districtIdNotIn -  (optional)</li>
-          *   <li>wardIdEquals -  (optional)</li>
-          *   <li>wardIdNotEquals -  (optional)</li>
-          *   <li>wardIdSpecified -  (optional)</li>
-          *   <li>wardIdIn -  (optional)</li>
-          *   <li>wardIdNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -1035,6 +954,15 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
           *   <li>deletedBySpecified -  (optional)</li>
           *   <li>deletedByIn -  (optional)</li>
           *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>itemsIdGreaterThan -  (optional)</li>
+          *   <li>itemsIdLessThan -  (optional)</li>
+          *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+          *   <li>itemsIdEquals -  (optional)</li>
+          *   <li>itemsIdNotEquals -  (optional)</li>
+          *   <li>itemsIdSpecified -  (optional)</li>
+          *   <li>itemsIdIn -  (optional)</li>
+          *   <li>itemsIdNotIn -  (optional)</li>
           *   <li>promotionIdGreaterThan -  (optional)</li>
           *   <li>promotionIdLessThan -  (optional)</li>
           *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -1048,7 +976,7 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
       *   </ul>
           * @return List&lt;ConditionByLocationDTO&gt;
       */
-      @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&provinceId.equals={provinceIdEquals}&provinceId.notEquals={provinceIdNotEquals}&provinceId.specified={provinceIdSpecified}&provinceId.in={provinceIdIn}&provinceId.notIn={provinceIdNotIn}&districtId.equals={districtIdEquals}&districtId.notEquals={districtIdNotEquals}&districtId.specified={districtIdSpecified}&districtId.in={districtIdIn}&districtId.notIn={districtIdNotIn}&wardId.equals={wardIdEquals}&wardId.notEquals={wardIdNotEquals}&wardId.specified={wardIdSpecified}&wardId.in={wardIdIn}&wardId.notIn={wardIdNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/condition-by-locations?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -1094,66 +1022,6 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
     }
     public GetAllConditionByLocationsQueryParams idNotIn(@jakarta.annotation.Nullable final List<Long> value) {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams provinceIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("provinceId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams provinceIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("provinceId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams provinceIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("provinceId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams provinceIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("provinceId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams provinceIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("provinceId.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams districtIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("districtId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams districtIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("districtId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams districtIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("districtId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams districtIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("districtId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams districtIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("districtId.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams wardIdEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("wardId.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams wardIdNotEquals(@jakarta.annotation.Nullable final UUID value) {
-      put("wardId.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams wardIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("wardId.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams wardIdIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("wardId.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByLocationsQueryParams wardIdNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
-      put("wardId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllConditionByLocationsQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -1302,6 +1170,42 @@ public interface ConditionByLocationResourceMspromotionApi extends ApiClient.Api
     }
     public GetAllConditionByLocationsQueryParams deletedByNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
       put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("itemsId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllConditionByLocationsQueryParams itemsIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllConditionByLocationsQueryParams promotionIdGreaterThan(@jakarta.annotation.Nullable final Long value) {

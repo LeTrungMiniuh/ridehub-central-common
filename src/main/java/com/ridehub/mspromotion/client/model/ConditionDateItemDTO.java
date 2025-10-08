@@ -20,34 +20,40 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.ridehub.mspromotion.client.model.ConditionRouteItemDTO;
-import com.ridehub.mspromotion.client.model.PromotionDTO;
+import com.ridehub.mspromotion.client.model.ConditionByDateDTO;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * ConditionByRouteDTO
+ * ConditionDateItemDTO
  */
 @JsonPropertyOrder({
-  ConditionByRouteDTO.JSON_PROPERTY_ID,
-  ConditionByRouteDTO.JSON_PROPERTY_CREATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_UPDATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_IS_DELETED,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_BY,
-  ConditionByRouteDTO.JSON_PROPERTY_ITEMS,
-  ConditionByRouteDTO.JSON_PROPERTY_PROMOTION
+  ConditionDateItemDTO.JSON_PROPERTY_ID,
+  ConditionDateItemDTO.JSON_PROPERTY_SPECIFIC_DATE,
+  ConditionDateItemDTO.JSON_PROPERTY_WEEKDAY,
+  ConditionDateItemDTO.JSON_PROPERTY_CREATED_AT,
+  ConditionDateItemDTO.JSON_PROPERTY_UPDATED_AT,
+  ConditionDateItemDTO.JSON_PROPERTY_IS_DELETED,
+  ConditionDateItemDTO.JSON_PROPERTY_DELETED_AT,
+  ConditionDateItemDTO.JSON_PROPERTY_DELETED_BY,
+  ConditionDateItemDTO.JSON_PROPERTY_CONDITION
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class ConditionByRouteDTO {
+public class ConditionDateItemDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
+
+  public static final String JSON_PROPERTY_SPECIFIC_DATE = "specificDate";
+  @jakarta.annotation.Nullable
+  private LocalDate specificDate;
+
+  public static final String JSON_PROPERTY_WEEKDAY = "weekday";
+  @jakarta.annotation.Nullable
+  private Integer weekday;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -69,18 +75,14 @@ public class ConditionByRouteDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_ITEMS = "items";
-  @jakarta.annotation.Nullable
-  private Set<ConditionRouteItemDTO> items = new LinkedHashSet<>();
-
-  public static final String JSON_PROPERTY_PROMOTION = "promotion";
+  public static final String JSON_PROPERTY_CONDITION = "condition";
   @jakarta.annotation.Nonnull
-  private PromotionDTO promotion;
+  private ConditionByDateDTO condition;
 
-  public ConditionByRouteDTO() {
+  public ConditionDateItemDTO() {
   }
 
-  public ConditionByRouteDTO id(@jakarta.annotation.Nullable Long id) {
+  public ConditionDateItemDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -106,7 +108,59 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public ConditionDateItemDTO specificDate(@jakarta.annotation.Nullable LocalDate specificDate) {
+    
+    this.specificDate = specificDate;
+    return this;
+  }
+
+  /**
+   * Get specificDate
+   * @return specificDate
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SPECIFIC_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public LocalDate getSpecificDate() {
+    return specificDate;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SPECIFIC_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSpecificDate(@jakarta.annotation.Nullable LocalDate specificDate) {
+    this.specificDate = specificDate;
+  }
+
+
+  public ConditionDateItemDTO weekday(@jakarta.annotation.Nullable Integer weekday) {
+    
+    this.weekday = weekday;
+    return this;
+  }
+
+  /**
+   * Get weekday
+   * @return weekday
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_WEEKDAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getWeekday() {
+    return weekday;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_WEEKDAY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWeekday(@jakarta.annotation.Nullable Integer weekday) {
+    this.weekday = weekday;
+  }
+
+
+  public ConditionDateItemDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -132,7 +186,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public ConditionDateItemDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -158,7 +212,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public ConditionDateItemDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -184,7 +238,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public ConditionDateItemDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -210,7 +264,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public ConditionDateItemDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -236,64 +290,29 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO items(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
+  public ConditionDateItemDTO condition(@jakarta.annotation.Nonnull ConditionByDateDTO condition) {
     
-    this.items = items;
-    return this;
-  }
-
-  public ConditionByRouteDTO addItemsItem(ConditionRouteItemDTO itemsItem) {
-    if (this.items == null) {
-      this.items = new LinkedHashSet<>();
-    }
-    this.items.add(itemsItem);
+    this.condition = condition;
     return this;
   }
 
   /**
-   * Get items
-   * @return items
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Set<ConditionRouteItemDTO> getItems() {
-    return items;
-  }
-
-
-  @JsonDeserialize(as = LinkedHashSet.class)
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
-    this.items = items;
-  }
-
-
-  public ConditionByRouteDTO promotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
-    
-    this.promotion = promotion;
-    return this;
-  }
-
-  /**
-   * Get promotion
-   * @return promotion
+   * Get condition
+   * @return condition
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PROMOTION)
+  @JsonProperty(JSON_PROPERTY_CONDITION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public PromotionDTO getPromotion() {
-    return promotion;
+  public ConditionByDateDTO getCondition() {
+    return condition;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PROMOTION)
+  @JsonProperty(JSON_PROPERTY_CONDITION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPromotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
-    this.promotion = promotion;
+  public void setCondition(@jakarta.annotation.Nonnull ConditionByDateDTO condition) {
+    this.condition = condition;
   }
 
 
@@ -305,34 +324,36 @@ public class ConditionByRouteDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConditionByRouteDTO conditionByRouteDTO = (ConditionByRouteDTO) o;
-    return Objects.equals(this.id, conditionByRouteDTO.id) &&
-        Objects.equals(this.createdAt, conditionByRouteDTO.createdAt) &&
-        Objects.equals(this.updatedAt, conditionByRouteDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, conditionByRouteDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, conditionByRouteDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, conditionByRouteDTO.deletedBy) &&
-        Objects.equals(this.items, conditionByRouteDTO.items) &&
-        Objects.equals(this.promotion, conditionByRouteDTO.promotion);
+    ConditionDateItemDTO conditionDateItemDTO = (ConditionDateItemDTO) o;
+    return Objects.equals(this.id, conditionDateItemDTO.id) &&
+        Objects.equals(this.specificDate, conditionDateItemDTO.specificDate) &&
+        Objects.equals(this.weekday, conditionDateItemDTO.weekday) &&
+        Objects.equals(this.createdAt, conditionDateItemDTO.createdAt) &&
+        Objects.equals(this.updatedAt, conditionDateItemDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, conditionDateItemDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, conditionDateItemDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, conditionDateItemDTO.deletedBy) &&
+        Objects.equals(this.condition, conditionDateItemDTO.condition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, items, promotion);
+    return Objects.hash(id, specificDate, weekday, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, condition);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConditionByRouteDTO {\n");
+    sb.append("class ConditionDateItemDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    specificDate: ").append(toIndentedString(specificDate)).append("\n");
+    sb.append("    weekday: ").append(toIndentedString(weekday)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
-    sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
+    sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
     sb.append("}");
     return sb.toString();
   }

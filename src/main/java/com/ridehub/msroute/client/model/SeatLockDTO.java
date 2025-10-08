@@ -36,6 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SeatLockDTO.JSON_PROPERTY_STATUS,
   SeatLockDTO.JSON_PROPERTY_EXPIRES_AT,
   SeatLockDTO.JSON_PROPERTY_IDEMPOTENCY_KEY,
+  SeatLockDTO.JSON_PROPERTY_BOOKING_ID,
   SeatLockDTO.JSON_PROPERTY_CREATED_AT,
   SeatLockDTO.JSON_PROPERTY_UPDATED_AT,
   SeatLockDTO.JSON_PROPERTY_IS_DELETED,
@@ -55,7 +56,7 @@ public class SeatLockDTO {
 
   public static final String JSON_PROPERTY_USER_ID = "userId";
   @jakarta.annotation.Nullable
-  private UUID userId;
+  private Long userId;
 
   /**
    * Gets or Sets status
@@ -105,6 +106,10 @@ public class SeatLockDTO {
   public static final String JSON_PROPERTY_IDEMPOTENCY_KEY = "idempotencyKey";
   @jakarta.annotation.Nullable
   private String idempotencyKey;
+
+  public static final String JSON_PROPERTY_BOOKING_ID = "bookingId";
+  @jakarta.annotation.Nullable
+  private Long bookingId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -185,7 +190,7 @@ public class SeatLockDTO {
   }
 
 
-  public SeatLockDTO userId(@jakarta.annotation.Nullable UUID userId) {
+  public SeatLockDTO userId(@jakarta.annotation.Nullable Long userId) {
     
     this.userId = userId;
     return this;
@@ -199,14 +204,14 @@ public class SeatLockDTO {
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getUserId() {
+  public Long getUserId() {
     return userId;
   }
 
 
   @JsonProperty(JSON_PROPERTY_USER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(@jakarta.annotation.Nullable UUID userId) {
+  public void setUserId(@jakarta.annotation.Nullable Long userId) {
     this.userId = userId;
   }
 
@@ -286,6 +291,32 @@ public class SeatLockDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIdempotencyKey(@jakarta.annotation.Nullable String idempotencyKey) {
     this.idempotencyKey = idempotencyKey;
+  }
+
+
+  public SeatLockDTO bookingId(@jakarta.annotation.Nullable Long bookingId) {
+    
+    this.bookingId = bookingId;
+    return this;
+  }
+
+  /**
+   * Get bookingId
+   * @return bookingId
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BOOKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getBookingId() {
+    return bookingId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BOOKING_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBookingId(@jakarta.annotation.Nullable Long bookingId) {
+    this.bookingId = bookingId;
   }
 
 
@@ -460,6 +491,7 @@ public class SeatLockDTO {
         Objects.equals(this.status, seatLockDTO.status) &&
         Objects.equals(this.expiresAt, seatLockDTO.expiresAt) &&
         Objects.equals(this.idempotencyKey, seatLockDTO.idempotencyKey) &&
+        Objects.equals(this.bookingId, seatLockDTO.bookingId) &&
         Objects.equals(this.createdAt, seatLockDTO.createdAt) &&
         Objects.equals(this.updatedAt, seatLockDTO.updatedAt) &&
         Objects.equals(this.isDeleted, seatLockDTO.isDeleted) &&
@@ -470,7 +502,7 @@ public class SeatLockDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, seatNo, userId, status, expiresAt, idempotencyKey, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, trip);
+    return Objects.hash(id, seatNo, userId, status, expiresAt, idempotencyKey, bookingId, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, trip);
   }
 
   @Override
@@ -483,6 +515,7 @@ public class SeatLockDTO {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    idempotencyKey: ").append(toIndentedString(idempotencyKey)).append("\n");
+    sb.append("    bookingId: ").append(toIndentedString(bookingId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");

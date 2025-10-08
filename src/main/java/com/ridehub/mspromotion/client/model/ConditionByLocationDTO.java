@@ -20,8 +20,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.ridehub.mspromotion.client.model.ConditionLocationItemDTO;
 import com.ridehub.mspromotion.client.model.PromotionDTO;
 import java.time.OffsetDateTime;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -31,33 +35,19 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonPropertyOrder({
   ConditionByLocationDTO.JSON_PROPERTY_ID,
-  ConditionByLocationDTO.JSON_PROPERTY_PROVINCE_ID,
-  ConditionByLocationDTO.JSON_PROPERTY_DISTRICT_ID,
-  ConditionByLocationDTO.JSON_PROPERTY_WARD_ID,
   ConditionByLocationDTO.JSON_PROPERTY_CREATED_AT,
   ConditionByLocationDTO.JSON_PROPERTY_UPDATED_AT,
   ConditionByLocationDTO.JSON_PROPERTY_IS_DELETED,
   ConditionByLocationDTO.JSON_PROPERTY_DELETED_AT,
   ConditionByLocationDTO.JSON_PROPERTY_DELETED_BY,
-  ConditionByLocationDTO.JSON_PROPERTY_PROMOTION
+  ConditionByLocationDTO.JSON_PROPERTY_PROMOTION,
+  ConditionByLocationDTO.JSON_PROPERTY_ITEMS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
 public class ConditionByLocationDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
-
-  public static final String JSON_PROPERTY_PROVINCE_ID = "provinceId";
-  @jakarta.annotation.Nullable
-  private UUID provinceId;
-
-  public static final String JSON_PROPERTY_DISTRICT_ID = "districtId";
-  @jakarta.annotation.Nullable
-  private UUID districtId;
-
-  public static final String JSON_PROPERTY_WARD_ID = "wardId";
-  @jakarta.annotation.Nullable
-  private UUID wardId;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -82,6 +72,10 @@ public class ConditionByLocationDTO {
   public static final String JSON_PROPERTY_PROMOTION = "promotion";
   @jakarta.annotation.Nonnull
   private PromotionDTO promotion;
+
+  public static final String JSON_PROPERTY_ITEMS = "items";
+  @jakarta.annotation.Nullable
+  private Set<ConditionLocationItemDTO> items = new LinkedHashSet<>();
 
   public ConditionByLocationDTO() {
   }
@@ -109,84 +103,6 @@ public class ConditionByLocationDTO {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setId(@jakarta.annotation.Nullable Long id) {
     this.id = id;
-  }
-
-
-  public ConditionByLocationDTO provinceId(@jakarta.annotation.Nullable UUID provinceId) {
-    
-    this.provinceId = provinceId;
-    return this;
-  }
-
-  /**
-   * Get provinceId
-   * @return provinceId
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROVINCE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getProvinceId() {
-    return provinceId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PROVINCE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setProvinceId(@jakarta.annotation.Nullable UUID provinceId) {
-    this.provinceId = provinceId;
-  }
-
-
-  public ConditionByLocationDTO districtId(@jakarta.annotation.Nullable UUID districtId) {
-    
-    this.districtId = districtId;
-    return this;
-  }
-
-  /**
-   * Get districtId
-   * @return districtId
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DISTRICT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getDistrictId() {
-    return districtId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DISTRICT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDistrictId(@jakarta.annotation.Nullable UUID districtId) {
-    this.districtId = districtId;
-  }
-
-
-  public ConditionByLocationDTO wardId(@jakarta.annotation.Nullable UUID wardId) {
-    
-    this.wardId = wardId;
-    return this;
-  }
-
-  /**
-   * Get wardId
-   * @return wardId
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WARD_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public UUID getWardId() {
-    return wardId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_WARD_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWardId(@jakarta.annotation.Nullable UUID wardId) {
-    this.wardId = wardId;
   }
 
 
@@ -346,6 +262,41 @@ public class ConditionByLocationDTO {
   }
 
 
+  public ConditionByLocationDTO items(@jakarta.annotation.Nullable Set<ConditionLocationItemDTO> items) {
+    
+    this.items = items;
+    return this;
+  }
+
+  public ConditionByLocationDTO addItemsItem(ConditionLocationItemDTO itemsItem) {
+    if (this.items == null) {
+      this.items = new LinkedHashSet<>();
+    }
+    this.items.add(itemsItem);
+    return this;
+  }
+
+  /**
+   * Get items
+   * @return items
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Set<ConditionLocationItemDTO> getItems() {
+    return items;
+  }
+
+
+  @JsonDeserialize(as = LinkedHashSet.class)
+  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setItems(@jakarta.annotation.Nullable Set<ConditionLocationItemDTO> items) {
+    this.items = items;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -356,20 +307,18 @@ public class ConditionByLocationDTO {
     }
     ConditionByLocationDTO conditionByLocationDTO = (ConditionByLocationDTO) o;
     return Objects.equals(this.id, conditionByLocationDTO.id) &&
-        Objects.equals(this.provinceId, conditionByLocationDTO.provinceId) &&
-        Objects.equals(this.districtId, conditionByLocationDTO.districtId) &&
-        Objects.equals(this.wardId, conditionByLocationDTO.wardId) &&
         Objects.equals(this.createdAt, conditionByLocationDTO.createdAt) &&
         Objects.equals(this.updatedAt, conditionByLocationDTO.updatedAt) &&
         Objects.equals(this.isDeleted, conditionByLocationDTO.isDeleted) &&
         Objects.equals(this.deletedAt, conditionByLocationDTO.deletedAt) &&
         Objects.equals(this.deletedBy, conditionByLocationDTO.deletedBy) &&
-        Objects.equals(this.promotion, conditionByLocationDTO.promotion);
+        Objects.equals(this.promotion, conditionByLocationDTO.promotion) &&
+        Objects.equals(this.items, conditionByLocationDTO.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, provinceId, districtId, wardId, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion);
+    return Objects.hash(id, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion, items);
   }
 
   @Override
@@ -377,15 +326,13 @@ public class ConditionByLocationDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConditionByLocationDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    provinceId: ").append(toIndentedString(provinceId)).append("\n");
-    sb.append("    districtId: ").append(toIndentedString(districtId)).append("\n");
-    sb.append("    wardId: ").append(toIndentedString(wardId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
     sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }

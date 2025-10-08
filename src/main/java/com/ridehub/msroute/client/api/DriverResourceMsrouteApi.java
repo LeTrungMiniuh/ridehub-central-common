@@ -6,6 +6,8 @@ import com.ridehub.msroute.client.model.ApiResponse;
 
 import com.ridehub.msroute.client.model.DriverDTO;
 import java.time.OffsetDateTime;
+import com.ridehub.msroute.client.model.SimpleDriverRequestDTO;
+import com.ridehub.msroute.client.model.SimpleDriverResponseDTO;
 import java.util.UUID;
 
 import java.util.ArrayList;
@@ -689,6 +691,35 @@ public interface DriverResourceMsrouteApi extends ApiClient.Api {
     "Accept: */*",
   })
   ApiResponse<DriverDTO> createDriverWithHttpInfo(@jakarta.annotation.Nonnull DriverDTO driverDTO);
+
+
+
+  /**
+   * 
+   * 
+   * @param simpleDriverRequestDTO  (required)
+   * @return SimpleDriverResponseDTO
+   */
+  @RequestLine("POST /api/drivers/simple")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  SimpleDriverResponseDTO createSimpleDriver(@jakarta.annotation.Nonnull SimpleDriverRequestDTO simpleDriverRequestDTO);
+
+  /**
+   * 
+   * Similar to <code>createSimpleDriver</code> but it also returns the http response headers .
+   * 
+   * @param simpleDriverRequestDTO  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/drivers/simple")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  ApiResponse<SimpleDriverResponseDTO> createSimpleDriverWithHttpInfo(@jakarta.annotation.Nonnull SimpleDriverRequestDTO simpleDriverRequestDTO);
 
 
 
@@ -1393,6 +1424,33 @@ public interface DriverResourceMsrouteApi extends ApiClient.Api {
    * 
    * 
    * @param id  (required)
+   * @return SimpleDriverResponseDTO
+   */
+  @RequestLine("GET /api/drivers/simple/{id}")
+  @Headers({
+    "Accept: */*",
+  })
+  SimpleDriverResponseDTO getSimpleDriver(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+  /**
+   * 
+   * Similar to <code>getSimpleDriver</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("GET /api/drivers/simple/{id}")
+  @Headers({
+    "Accept: */*",
+  })
+  ApiResponse<SimpleDriverResponseDTO> getSimpleDriverWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id);
+
+
+
+  /**
+   * 
+   * 
+   * @param id  (required)
    * @param driverDTO  (required)
    * @return DriverDTO
    */
@@ -1448,6 +1506,37 @@ public interface DriverResourceMsrouteApi extends ApiClient.Api {
     "Accept: */*",
   })
   ApiResponse<DriverDTO> updateDriverWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull DriverDTO driverDTO);
+
+
+
+  /**
+   * 
+   * 
+   * @param id  (required)
+   * @param simpleDriverRequestDTO  (required)
+   * @return SimpleDriverResponseDTO
+   */
+  @RequestLine("PUT /api/drivers/simple/{id}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  SimpleDriverResponseDTO updateSimpleDriver(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull SimpleDriverRequestDTO simpleDriverRequestDTO);
+
+  /**
+   * 
+   * Similar to <code>updateSimpleDriver</code> but it also returns the http response headers .
+   * 
+   * @param id  (required)
+   * @param simpleDriverRequestDTO  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("PUT /api/drivers/simple/{id}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: */*",
+  })
+  ApiResponse<SimpleDriverResponseDTO> updateSimpleDriverWithHttpInfo(@Param("id") @jakarta.annotation.Nonnull Long id, @jakarta.annotation.Nonnull SimpleDriverRequestDTO simpleDriverRequestDTO);
 
 
 }

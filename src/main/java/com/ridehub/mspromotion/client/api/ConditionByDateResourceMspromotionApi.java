@@ -5,7 +5,6 @@ import com.ridehub.mspromotion.client.invoker.EncodingUtils;
 import com.ridehub.mspromotion.client.model.ApiResponse;
 
 import com.ridehub.mspromotion.client.model.ConditionByDateDTO;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -31,24 +30,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param specificDateGreaterThan  (optional)
-   * @param specificDateLessThan  (optional)
-   * @param specificDateGreaterThanOrEqual  (optional)
-   * @param specificDateLessThanOrEqual  (optional)
-   * @param specificDateEquals  (optional)
-   * @param specificDateNotEquals  (optional)
-   * @param specificDateSpecified  (optional)
-   * @param specificDateIn  (optional)
-   * @param specificDateNotIn  (optional)
-   * @param weekdayGreaterThan  (optional)
-   * @param weekdayLessThan  (optional)
-   * @param weekdayGreaterThanOrEqual  (optional)
-   * @param weekdayLessThanOrEqual  (optional)
-   * @param weekdayEquals  (optional)
-   * @param weekdayNotEquals  (optional)
-   * @param weekdaySpecified  (optional)
-   * @param weekdayIn  (optional)
-   * @param weekdayNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -86,6 +67,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -98,11 +88,11 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return Long
    */
-  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  Long countConditionByDates(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("specificDateGreaterThan") @jakarta.annotation.Nullable LocalDate specificDateGreaterThan, @Param("specificDateLessThan") @jakarta.annotation.Nullable LocalDate specificDateLessThan, @Param("specificDateGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateGreaterThanOrEqual, @Param("specificDateLessThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateLessThanOrEqual, @Param("specificDateEquals") @jakarta.annotation.Nullable LocalDate specificDateEquals, @Param("specificDateNotEquals") @jakarta.annotation.Nullable LocalDate specificDateNotEquals, @Param("specificDateSpecified") @jakarta.annotation.Nullable Boolean specificDateSpecified, @Param("specificDateIn") @jakarta.annotation.Nullable List<LocalDate> specificDateIn, @Param("specificDateNotIn") @jakarta.annotation.Nullable List<LocalDate> specificDateNotIn, @Param("weekdayGreaterThan") @jakarta.annotation.Nullable Integer weekdayGreaterThan, @Param("weekdayLessThan") @jakarta.annotation.Nullable Integer weekdayLessThan, @Param("weekdayGreaterThanOrEqual") @jakarta.annotation.Nullable Integer weekdayGreaterThanOrEqual, @Param("weekdayLessThanOrEqual") @jakarta.annotation.Nullable Integer weekdayLessThanOrEqual, @Param("weekdayEquals") @jakarta.annotation.Nullable Integer weekdayEquals, @Param("weekdayNotEquals") @jakarta.annotation.Nullable Integer weekdayNotEquals, @Param("weekdaySpecified") @jakarta.annotation.Nullable Boolean weekdaySpecified, @Param("weekdayIn") @jakarta.annotation.Nullable List<Integer> weekdayIn, @Param("weekdayNotIn") @jakarta.annotation.Nullable List<Integer> weekdayNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  Long countConditionByDates(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -117,24 +107,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param specificDateGreaterThan  (optional)
-   * @param specificDateLessThan  (optional)
-   * @param specificDateGreaterThanOrEqual  (optional)
-   * @param specificDateLessThanOrEqual  (optional)
-   * @param specificDateEquals  (optional)
-   * @param specificDateNotEquals  (optional)
-   * @param specificDateSpecified  (optional)
-   * @param specificDateIn  (optional)
-   * @param specificDateNotIn  (optional)
-   * @param weekdayGreaterThan  (optional)
-   * @param weekdayLessThan  (optional)
-   * @param weekdayGreaterThanOrEqual  (optional)
-   * @param weekdayLessThanOrEqual  (optional)
-   * @param weekdayEquals  (optional)
-   * @param weekdayNotEquals  (optional)
-   * @param weekdaySpecified  (optional)
-   * @param weekdayIn  (optional)
-   * @param weekdayNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -172,6 +144,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -184,11 +165,11 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<Long> countConditionByDatesWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("specificDateGreaterThan") @jakarta.annotation.Nullable LocalDate specificDateGreaterThan, @Param("specificDateLessThan") @jakarta.annotation.Nullable LocalDate specificDateLessThan, @Param("specificDateGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateGreaterThanOrEqual, @Param("specificDateLessThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateLessThanOrEqual, @Param("specificDateEquals") @jakarta.annotation.Nullable LocalDate specificDateEquals, @Param("specificDateNotEquals") @jakarta.annotation.Nullable LocalDate specificDateNotEquals, @Param("specificDateSpecified") @jakarta.annotation.Nullable Boolean specificDateSpecified, @Param("specificDateIn") @jakarta.annotation.Nullable List<LocalDate> specificDateIn, @Param("specificDateNotIn") @jakarta.annotation.Nullable List<LocalDate> specificDateNotIn, @Param("weekdayGreaterThan") @jakarta.annotation.Nullable Integer weekdayGreaterThan, @Param("weekdayLessThan") @jakarta.annotation.Nullable Integer weekdayLessThan, @Param("weekdayGreaterThanOrEqual") @jakarta.annotation.Nullable Integer weekdayGreaterThanOrEqual, @Param("weekdayLessThanOrEqual") @jakarta.annotation.Nullable Integer weekdayLessThanOrEqual, @Param("weekdayEquals") @jakarta.annotation.Nullable Integer weekdayEquals, @Param("weekdayNotEquals") @jakarta.annotation.Nullable Integer weekdayNotEquals, @Param("weekdaySpecified") @jakarta.annotation.Nullable Boolean weekdaySpecified, @Param("weekdayIn") @jakarta.annotation.Nullable List<Integer> weekdayIn, @Param("weekdayNotIn") @jakarta.annotation.Nullable List<Integer> weekdayNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<Long> countConditionByDatesWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -211,24 +192,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>specificDateGreaterThan -  (optional)</li>
-   *   <li>specificDateLessThan -  (optional)</li>
-   *   <li>specificDateGreaterThanOrEqual -  (optional)</li>
-   *   <li>specificDateLessThanOrEqual -  (optional)</li>
-   *   <li>specificDateEquals -  (optional)</li>
-   *   <li>specificDateNotEquals -  (optional)</li>
-   *   <li>specificDateSpecified -  (optional)</li>
-   *   <li>specificDateIn -  (optional)</li>
-   *   <li>specificDateNotIn -  (optional)</li>
-   *   <li>weekdayGreaterThan -  (optional)</li>
-   *   <li>weekdayLessThan -  (optional)</li>
-   *   <li>weekdayGreaterThanOrEqual -  (optional)</li>
-   *   <li>weekdayLessThanOrEqual -  (optional)</li>
-   *   <li>weekdayEquals -  (optional)</li>
-   *   <li>weekdayNotEquals -  (optional)</li>
-   *   <li>weekdaySpecified -  (optional)</li>
-   *   <li>weekdayIn -  (optional)</li>
-   *   <li>weekdayNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -266,6 +229,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   <li>deletedBySpecified -  (optional)</li>
    *   <li>deletedByIn -  (optional)</li>
    *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>itemsIdGreaterThan -  (optional)</li>
+   *   <li>itemsIdLessThan -  (optional)</li>
+   *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+   *   <li>itemsIdEquals -  (optional)</li>
+   *   <li>itemsIdNotEquals -  (optional)</li>
+   *   <li>itemsIdSpecified -  (optional)</li>
+   *   <li>itemsIdIn -  (optional)</li>
+   *   <li>itemsIdNotIn -  (optional)</li>
    *   <li>promotionIdGreaterThan -  (optional)</li>
    *   <li>promotionIdLessThan -  (optional)</li>
    *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -279,7 +251,7 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   </ul>
    * @return Long
    */
-  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -302,24 +274,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>specificDateGreaterThan -  (optional)</li>
-          *   <li>specificDateLessThan -  (optional)</li>
-          *   <li>specificDateGreaterThanOrEqual -  (optional)</li>
-          *   <li>specificDateLessThanOrEqual -  (optional)</li>
-          *   <li>specificDateEquals -  (optional)</li>
-          *   <li>specificDateNotEquals -  (optional)</li>
-          *   <li>specificDateSpecified -  (optional)</li>
-          *   <li>specificDateIn -  (optional)</li>
-          *   <li>specificDateNotIn -  (optional)</li>
-          *   <li>weekdayGreaterThan -  (optional)</li>
-          *   <li>weekdayLessThan -  (optional)</li>
-          *   <li>weekdayGreaterThanOrEqual -  (optional)</li>
-          *   <li>weekdayLessThanOrEqual -  (optional)</li>
-          *   <li>weekdayEquals -  (optional)</li>
-          *   <li>weekdayNotEquals -  (optional)</li>
-          *   <li>weekdaySpecified -  (optional)</li>
-          *   <li>weekdayIn -  (optional)</li>
-          *   <li>weekdayNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -357,6 +311,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
           *   <li>deletedBySpecified -  (optional)</li>
           *   <li>deletedByIn -  (optional)</li>
           *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>itemsIdGreaterThan -  (optional)</li>
+          *   <li>itemsIdLessThan -  (optional)</li>
+          *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+          *   <li>itemsIdEquals -  (optional)</li>
+          *   <li>itemsIdNotEquals -  (optional)</li>
+          *   <li>itemsIdSpecified -  (optional)</li>
+          *   <li>itemsIdIn -  (optional)</li>
+          *   <li>itemsIdNotIn -  (optional)</li>
           *   <li>promotionIdGreaterThan -  (optional)</li>
           *   <li>promotionIdLessThan -  (optional)</li>
           *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -370,7 +333,7 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
       *   </ul>
           * @return Long
       */
-      @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/condition-by-dates/count?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -416,78 +379,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
     }
     public CountConditionByDatesQueryParams idNotIn(@jakarta.annotation.Nullable final List<Long> value) {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateGreaterThan(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateLessThan(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateGreaterThanOrEqual(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateLessThanOrEqual(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateEquals(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateNotEquals(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("specificDate.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateIn(@jakarta.annotation.Nullable final List<LocalDate> value) {
-      put("specificDate.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByDatesQueryParams specificDateNotIn(@jakarta.annotation.Nullable final List<LocalDate> value) {
-      put("specificDate.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdaySpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("weekday.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("weekday.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public CountConditionByDatesQueryParams weekdayNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("weekday.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public CountConditionByDatesQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -638,6 +529,42 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
       put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
+    public CountConditionByDatesQueryParams itemsIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("itemsId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public CountConditionByDatesQueryParams itemsIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
     public CountConditionByDatesQueryParams promotionIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
       put("promotionId.greaterThan", EncodingUtils.encode(value));
       return this;
@@ -746,24 +673,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param specificDateGreaterThan  (optional)
-   * @param specificDateLessThan  (optional)
-   * @param specificDateGreaterThanOrEqual  (optional)
-   * @param specificDateLessThanOrEqual  (optional)
-   * @param specificDateEquals  (optional)
-   * @param specificDateNotEquals  (optional)
-   * @param specificDateSpecified  (optional)
-   * @param specificDateIn  (optional)
-   * @param specificDateNotIn  (optional)
-   * @param weekdayGreaterThan  (optional)
-   * @param weekdayLessThan  (optional)
-   * @param weekdayGreaterThanOrEqual  (optional)
-   * @param weekdayLessThanOrEqual  (optional)
-   * @param weekdayEquals  (optional)
-   * @param weekdayNotEquals  (optional)
-   * @param weekdaySpecified  (optional)
-   * @param weekdayIn  (optional)
-   * @param weekdayNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -801,6 +710,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -813,11 +731,11 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return List&lt;ConditionByDateDTO&gt;
    */
-  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  List<ConditionByDateDTO> getAllConditionByDates(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("specificDateGreaterThan") @jakarta.annotation.Nullable LocalDate specificDateGreaterThan, @Param("specificDateLessThan") @jakarta.annotation.Nullable LocalDate specificDateLessThan, @Param("specificDateGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateGreaterThanOrEqual, @Param("specificDateLessThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateLessThanOrEqual, @Param("specificDateEquals") @jakarta.annotation.Nullable LocalDate specificDateEquals, @Param("specificDateNotEquals") @jakarta.annotation.Nullable LocalDate specificDateNotEquals, @Param("specificDateSpecified") @jakarta.annotation.Nullable Boolean specificDateSpecified, @Param("specificDateIn") @jakarta.annotation.Nullable List<LocalDate> specificDateIn, @Param("specificDateNotIn") @jakarta.annotation.Nullable List<LocalDate> specificDateNotIn, @Param("weekdayGreaterThan") @jakarta.annotation.Nullable Integer weekdayGreaterThan, @Param("weekdayLessThan") @jakarta.annotation.Nullable Integer weekdayLessThan, @Param("weekdayGreaterThanOrEqual") @jakarta.annotation.Nullable Integer weekdayGreaterThanOrEqual, @Param("weekdayLessThanOrEqual") @jakarta.annotation.Nullable Integer weekdayLessThanOrEqual, @Param("weekdayEquals") @jakarta.annotation.Nullable Integer weekdayEquals, @Param("weekdayNotEquals") @jakarta.annotation.Nullable Integer weekdayNotEquals, @Param("weekdaySpecified") @jakarta.annotation.Nullable Boolean weekdaySpecified, @Param("weekdayIn") @jakarta.annotation.Nullable List<Integer> weekdayIn, @Param("weekdayNotIn") @jakarta.annotation.Nullable List<Integer> weekdayNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  List<ConditionByDateDTO> getAllConditionByDates(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
   /**
    * 
@@ -832,24 +750,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param idSpecified  (optional)
    * @param idIn  (optional)
    * @param idNotIn  (optional)
-   * @param specificDateGreaterThan  (optional)
-   * @param specificDateLessThan  (optional)
-   * @param specificDateGreaterThanOrEqual  (optional)
-   * @param specificDateLessThanOrEqual  (optional)
-   * @param specificDateEquals  (optional)
-   * @param specificDateNotEquals  (optional)
-   * @param specificDateSpecified  (optional)
-   * @param specificDateIn  (optional)
-   * @param specificDateNotIn  (optional)
-   * @param weekdayGreaterThan  (optional)
-   * @param weekdayLessThan  (optional)
-   * @param weekdayGreaterThanOrEqual  (optional)
-   * @param weekdayLessThanOrEqual  (optional)
-   * @param weekdayEquals  (optional)
-   * @param weekdayNotEquals  (optional)
-   * @param weekdaySpecified  (optional)
-   * @param weekdayIn  (optional)
-   * @param weekdayNotIn  (optional)
    * @param createdAtGreaterThan  (optional)
    * @param createdAtLessThan  (optional)
    * @param createdAtGreaterThanOrEqual  (optional)
@@ -887,6 +787,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param deletedBySpecified  (optional)
    * @param deletedByIn  (optional)
    * @param deletedByNotIn  (optional)
+   * @param itemsIdGreaterThan  (optional)
+   * @param itemsIdLessThan  (optional)
+   * @param itemsIdGreaterThanOrEqual  (optional)
+   * @param itemsIdLessThanOrEqual  (optional)
+   * @param itemsIdEquals  (optional)
+   * @param itemsIdNotEquals  (optional)
+   * @param itemsIdSpecified  (optional)
+   * @param itemsIdIn  (optional)
+   * @param itemsIdNotIn  (optional)
    * @param promotionIdGreaterThan  (optional)
    * @param promotionIdLessThan  (optional)
    * @param promotionIdGreaterThanOrEqual  (optional)
@@ -899,11 +808,11 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    * @param distinct  (optional)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
     "Accept: */*",
   })
-  ApiResponse<List<ConditionByDateDTO>> getAllConditionByDatesWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("specificDateGreaterThan") @jakarta.annotation.Nullable LocalDate specificDateGreaterThan, @Param("specificDateLessThan") @jakarta.annotation.Nullable LocalDate specificDateLessThan, @Param("specificDateGreaterThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateGreaterThanOrEqual, @Param("specificDateLessThanOrEqual") @jakarta.annotation.Nullable LocalDate specificDateLessThanOrEqual, @Param("specificDateEquals") @jakarta.annotation.Nullable LocalDate specificDateEquals, @Param("specificDateNotEquals") @jakarta.annotation.Nullable LocalDate specificDateNotEquals, @Param("specificDateSpecified") @jakarta.annotation.Nullable Boolean specificDateSpecified, @Param("specificDateIn") @jakarta.annotation.Nullable List<LocalDate> specificDateIn, @Param("specificDateNotIn") @jakarta.annotation.Nullable List<LocalDate> specificDateNotIn, @Param("weekdayGreaterThan") @jakarta.annotation.Nullable Integer weekdayGreaterThan, @Param("weekdayLessThan") @jakarta.annotation.Nullable Integer weekdayLessThan, @Param("weekdayGreaterThanOrEqual") @jakarta.annotation.Nullable Integer weekdayGreaterThanOrEqual, @Param("weekdayLessThanOrEqual") @jakarta.annotation.Nullable Integer weekdayLessThanOrEqual, @Param("weekdayEquals") @jakarta.annotation.Nullable Integer weekdayEquals, @Param("weekdayNotEquals") @jakarta.annotation.Nullable Integer weekdayNotEquals, @Param("weekdaySpecified") @jakarta.annotation.Nullable Boolean weekdaySpecified, @Param("weekdayIn") @jakarta.annotation.Nullable List<Integer> weekdayIn, @Param("weekdayNotIn") @jakarta.annotation.Nullable List<Integer> weekdayNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
+  ApiResponse<List<ConditionByDateDTO>> getAllConditionByDatesWithHttpInfo(@Param("idGreaterThan") @jakarta.annotation.Nullable Long idGreaterThan, @Param("idLessThan") @jakarta.annotation.Nullable Long idLessThan, @Param("idGreaterThanOrEqual") @jakarta.annotation.Nullable Long idGreaterThanOrEqual, @Param("idLessThanOrEqual") @jakarta.annotation.Nullable Long idLessThanOrEqual, @Param("idEquals") @jakarta.annotation.Nullable Long idEquals, @Param("idNotEquals") @jakarta.annotation.Nullable Long idNotEquals, @Param("idSpecified") @jakarta.annotation.Nullable Boolean idSpecified, @Param("idIn") @jakarta.annotation.Nullable List<Long> idIn, @Param("idNotIn") @jakarta.annotation.Nullable List<Long> idNotIn, @Param("createdAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThan, @Param("createdAtLessThan") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThan, @Param("createdAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtGreaterThanOrEqual, @Param("createdAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime createdAtLessThanOrEqual, @Param("createdAtEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtEquals, @Param("createdAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime createdAtNotEquals, @Param("createdAtSpecified") @jakarta.annotation.Nullable Boolean createdAtSpecified, @Param("createdAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtIn, @Param("createdAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> createdAtNotIn, @Param("updatedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThan, @Param("updatedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThan, @Param("updatedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtGreaterThanOrEqual, @Param("updatedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime updatedAtLessThanOrEqual, @Param("updatedAtEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtEquals, @Param("updatedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime updatedAtNotEquals, @Param("updatedAtSpecified") @jakarta.annotation.Nullable Boolean updatedAtSpecified, @Param("updatedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtIn, @Param("updatedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> updatedAtNotIn, @Param("isDeletedEquals") @jakarta.annotation.Nullable Boolean isDeletedEquals, @Param("isDeletedNotEquals") @jakarta.annotation.Nullable Boolean isDeletedNotEquals, @Param("isDeletedSpecified") @jakarta.annotation.Nullable Boolean isDeletedSpecified, @Param("isDeletedIn") @jakarta.annotation.Nullable List<Boolean> isDeletedIn, @Param("isDeletedNotIn") @jakarta.annotation.Nullable List<Boolean> isDeletedNotIn, @Param("deletedAtGreaterThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThan, @Param("deletedAtLessThan") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThan, @Param("deletedAtGreaterThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtGreaterThanOrEqual, @Param("deletedAtLessThanOrEqual") @jakarta.annotation.Nullable OffsetDateTime deletedAtLessThanOrEqual, @Param("deletedAtEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtEquals, @Param("deletedAtNotEquals") @jakarta.annotation.Nullable OffsetDateTime deletedAtNotEquals, @Param("deletedAtSpecified") @jakarta.annotation.Nullable Boolean deletedAtSpecified, @Param("deletedAtIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtIn, @Param("deletedAtNotIn") @jakarta.annotation.Nullable List<OffsetDateTime> deletedAtNotIn, @Param("deletedByEquals") @jakarta.annotation.Nullable UUID deletedByEquals, @Param("deletedByNotEquals") @jakarta.annotation.Nullable UUID deletedByNotEquals, @Param("deletedBySpecified") @jakarta.annotation.Nullable Boolean deletedBySpecified, @Param("deletedByIn") @jakarta.annotation.Nullable List<UUID> deletedByIn, @Param("deletedByNotIn") @jakarta.annotation.Nullable List<UUID> deletedByNotIn, @Param("itemsIdGreaterThan") @jakarta.annotation.Nullable Long itemsIdGreaterThan, @Param("itemsIdLessThan") @jakarta.annotation.Nullable Long itemsIdLessThan, @Param("itemsIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long itemsIdGreaterThanOrEqual, @Param("itemsIdLessThanOrEqual") @jakarta.annotation.Nullable Long itemsIdLessThanOrEqual, @Param("itemsIdEquals") @jakarta.annotation.Nullable Long itemsIdEquals, @Param("itemsIdNotEquals") @jakarta.annotation.Nullable Long itemsIdNotEquals, @Param("itemsIdSpecified") @jakarta.annotation.Nullable Boolean itemsIdSpecified, @Param("itemsIdIn") @jakarta.annotation.Nullable List<Long> itemsIdIn, @Param("itemsIdNotIn") @jakarta.annotation.Nullable List<Long> itemsIdNotIn, @Param("promotionIdGreaterThan") @jakarta.annotation.Nullable Long promotionIdGreaterThan, @Param("promotionIdLessThan") @jakarta.annotation.Nullable Long promotionIdLessThan, @Param("promotionIdGreaterThanOrEqual") @jakarta.annotation.Nullable Long promotionIdGreaterThanOrEqual, @Param("promotionIdLessThanOrEqual") @jakarta.annotation.Nullable Long promotionIdLessThanOrEqual, @Param("promotionIdEquals") @jakarta.annotation.Nullable Long promotionIdEquals, @Param("promotionIdNotEquals") @jakarta.annotation.Nullable Long promotionIdNotEquals, @Param("promotionIdSpecified") @jakarta.annotation.Nullable Boolean promotionIdSpecified, @Param("promotionIdIn") @jakarta.annotation.Nullable List<Long> promotionIdIn, @Param("promotionIdNotIn") @jakarta.annotation.Nullable List<Long> promotionIdNotIn, @Param("distinct") @jakarta.annotation.Nullable Boolean distinct);
 
 
   /**
@@ -926,24 +835,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   <li>idSpecified -  (optional)</li>
    *   <li>idIn -  (optional)</li>
    *   <li>idNotIn -  (optional)</li>
-   *   <li>specificDateGreaterThan -  (optional)</li>
-   *   <li>specificDateLessThan -  (optional)</li>
-   *   <li>specificDateGreaterThanOrEqual -  (optional)</li>
-   *   <li>specificDateLessThanOrEqual -  (optional)</li>
-   *   <li>specificDateEquals -  (optional)</li>
-   *   <li>specificDateNotEquals -  (optional)</li>
-   *   <li>specificDateSpecified -  (optional)</li>
-   *   <li>specificDateIn -  (optional)</li>
-   *   <li>specificDateNotIn -  (optional)</li>
-   *   <li>weekdayGreaterThan -  (optional)</li>
-   *   <li>weekdayLessThan -  (optional)</li>
-   *   <li>weekdayGreaterThanOrEqual -  (optional)</li>
-   *   <li>weekdayLessThanOrEqual -  (optional)</li>
-   *   <li>weekdayEquals -  (optional)</li>
-   *   <li>weekdayNotEquals -  (optional)</li>
-   *   <li>weekdaySpecified -  (optional)</li>
-   *   <li>weekdayIn -  (optional)</li>
-   *   <li>weekdayNotIn -  (optional)</li>
    *   <li>createdAtGreaterThan -  (optional)</li>
    *   <li>createdAtLessThan -  (optional)</li>
    *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -981,6 +872,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   <li>deletedBySpecified -  (optional)</li>
    *   <li>deletedByIn -  (optional)</li>
    *   <li>deletedByNotIn -  (optional)</li>
+   *   <li>itemsIdGreaterThan -  (optional)</li>
+   *   <li>itemsIdLessThan -  (optional)</li>
+   *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+   *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+   *   <li>itemsIdEquals -  (optional)</li>
+   *   <li>itemsIdNotEquals -  (optional)</li>
+   *   <li>itemsIdSpecified -  (optional)</li>
+   *   <li>itemsIdIn -  (optional)</li>
+   *   <li>itemsIdNotIn -  (optional)</li>
    *   <li>promotionIdGreaterThan -  (optional)</li>
    *   <li>promotionIdLessThan -  (optional)</li>
    *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -994,7 +894,7 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
    *   </ul>
    * @return List&lt;ConditionByDateDTO&gt;
    */
-  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+  @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
   @Headers({
   "Accept: */*",
   })
@@ -1017,24 +917,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
           *   <li>idSpecified -  (optional)</li>
           *   <li>idIn -  (optional)</li>
           *   <li>idNotIn -  (optional)</li>
-          *   <li>specificDateGreaterThan -  (optional)</li>
-          *   <li>specificDateLessThan -  (optional)</li>
-          *   <li>specificDateGreaterThanOrEqual -  (optional)</li>
-          *   <li>specificDateLessThanOrEqual -  (optional)</li>
-          *   <li>specificDateEquals -  (optional)</li>
-          *   <li>specificDateNotEquals -  (optional)</li>
-          *   <li>specificDateSpecified -  (optional)</li>
-          *   <li>specificDateIn -  (optional)</li>
-          *   <li>specificDateNotIn -  (optional)</li>
-          *   <li>weekdayGreaterThan -  (optional)</li>
-          *   <li>weekdayLessThan -  (optional)</li>
-          *   <li>weekdayGreaterThanOrEqual -  (optional)</li>
-          *   <li>weekdayLessThanOrEqual -  (optional)</li>
-          *   <li>weekdayEquals -  (optional)</li>
-          *   <li>weekdayNotEquals -  (optional)</li>
-          *   <li>weekdaySpecified -  (optional)</li>
-          *   <li>weekdayIn -  (optional)</li>
-          *   <li>weekdayNotIn -  (optional)</li>
           *   <li>createdAtGreaterThan -  (optional)</li>
           *   <li>createdAtLessThan -  (optional)</li>
           *   <li>createdAtGreaterThanOrEqual -  (optional)</li>
@@ -1072,6 +954,15 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
           *   <li>deletedBySpecified -  (optional)</li>
           *   <li>deletedByIn -  (optional)</li>
           *   <li>deletedByNotIn -  (optional)</li>
+          *   <li>itemsIdGreaterThan -  (optional)</li>
+          *   <li>itemsIdLessThan -  (optional)</li>
+          *   <li>itemsIdGreaterThanOrEqual -  (optional)</li>
+          *   <li>itemsIdLessThanOrEqual -  (optional)</li>
+          *   <li>itemsIdEquals -  (optional)</li>
+          *   <li>itemsIdNotEquals -  (optional)</li>
+          *   <li>itemsIdSpecified -  (optional)</li>
+          *   <li>itemsIdIn -  (optional)</li>
+          *   <li>itemsIdNotIn -  (optional)</li>
           *   <li>promotionIdGreaterThan -  (optional)</li>
           *   <li>promotionIdLessThan -  (optional)</li>
           *   <li>promotionIdGreaterThanOrEqual -  (optional)</li>
@@ -1085,7 +976,7 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
       *   </ul>
           * @return List&lt;ConditionByDateDTO&gt;
       */
-      @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&specificDate.greaterThan={specificDateGreaterThan}&specificDate.lessThan={specificDateLessThan}&specificDate.greaterThanOrEqual={specificDateGreaterThanOrEqual}&specificDate.lessThanOrEqual={specificDateLessThanOrEqual}&specificDate.equals={specificDateEquals}&specificDate.notEquals={specificDateNotEquals}&specificDate.specified={specificDateSpecified}&specificDate.in={specificDateIn}&specificDate.notIn={specificDateNotIn}&weekday.greaterThan={weekdayGreaterThan}&weekday.lessThan={weekdayLessThan}&weekday.greaterThanOrEqual={weekdayGreaterThanOrEqual}&weekday.lessThanOrEqual={weekdayLessThanOrEqual}&weekday.equals={weekdayEquals}&weekday.notEquals={weekdayNotEquals}&weekday.specified={weekdaySpecified}&weekday.in={weekdayIn}&weekday.notIn={weekdayNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
+      @RequestLine("GET /api/condition-by-dates?id.greaterThan={idGreaterThan}&id.lessThan={idLessThan}&id.greaterThanOrEqual={idGreaterThanOrEqual}&id.lessThanOrEqual={idLessThanOrEqual}&id.equals={idEquals}&id.notEquals={idNotEquals}&id.specified={idSpecified}&id.in={idIn}&id.notIn={idNotIn}&createdAt.greaterThan={createdAtGreaterThan}&createdAt.lessThan={createdAtLessThan}&createdAt.greaterThanOrEqual={createdAtGreaterThanOrEqual}&createdAt.lessThanOrEqual={createdAtLessThanOrEqual}&createdAt.equals={createdAtEquals}&createdAt.notEquals={createdAtNotEquals}&createdAt.specified={createdAtSpecified}&createdAt.in={createdAtIn}&createdAt.notIn={createdAtNotIn}&updatedAt.greaterThan={updatedAtGreaterThan}&updatedAt.lessThan={updatedAtLessThan}&updatedAt.greaterThanOrEqual={updatedAtGreaterThanOrEqual}&updatedAt.lessThanOrEqual={updatedAtLessThanOrEqual}&updatedAt.equals={updatedAtEquals}&updatedAt.notEquals={updatedAtNotEquals}&updatedAt.specified={updatedAtSpecified}&updatedAt.in={updatedAtIn}&updatedAt.notIn={updatedAtNotIn}&isDeleted.equals={isDeletedEquals}&isDeleted.notEquals={isDeletedNotEquals}&isDeleted.specified={isDeletedSpecified}&isDeleted.in={isDeletedIn}&isDeleted.notIn={isDeletedNotIn}&deletedAt.greaterThan={deletedAtGreaterThan}&deletedAt.lessThan={deletedAtLessThan}&deletedAt.greaterThanOrEqual={deletedAtGreaterThanOrEqual}&deletedAt.lessThanOrEqual={deletedAtLessThanOrEqual}&deletedAt.equals={deletedAtEquals}&deletedAt.notEquals={deletedAtNotEquals}&deletedAt.specified={deletedAtSpecified}&deletedAt.in={deletedAtIn}&deletedAt.notIn={deletedAtNotIn}&deletedBy.equals={deletedByEquals}&deletedBy.notEquals={deletedByNotEquals}&deletedBy.specified={deletedBySpecified}&deletedBy.in={deletedByIn}&deletedBy.notIn={deletedByNotIn}&itemsId.greaterThan={itemsIdGreaterThan}&itemsId.lessThan={itemsIdLessThan}&itemsId.greaterThanOrEqual={itemsIdGreaterThanOrEqual}&itemsId.lessThanOrEqual={itemsIdLessThanOrEqual}&itemsId.equals={itemsIdEquals}&itemsId.notEquals={itemsIdNotEquals}&itemsId.specified={itemsIdSpecified}&itemsId.in={itemsIdIn}&itemsId.notIn={itemsIdNotIn}&promotionId.greaterThan={promotionIdGreaterThan}&promotionId.lessThan={promotionIdLessThan}&promotionId.greaterThanOrEqual={promotionIdGreaterThanOrEqual}&promotionId.lessThanOrEqual={promotionIdLessThanOrEqual}&promotionId.equals={promotionIdEquals}&promotionId.notEquals={promotionIdNotEquals}&promotionId.specified={promotionIdSpecified}&promotionId.in={promotionIdIn}&promotionId.notIn={promotionIdNotIn}&distinct={distinct}")
       @Headers({
     "Accept: */*",
       })
@@ -1131,78 +1022,6 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
     }
     public GetAllConditionByDatesQueryParams idNotIn(@jakarta.annotation.Nullable final List<Long> value) {
       put("id.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateGreaterThan(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateLessThan(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateGreaterThanOrEqual(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateLessThanOrEqual(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateEquals(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateNotEquals(@jakarta.annotation.Nullable final LocalDate value) {
-      put("specificDate.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateSpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("specificDate.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateIn(@jakarta.annotation.Nullable final List<LocalDate> value) {
-      put("specificDate.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams specificDateNotIn(@jakarta.annotation.Nullable final List<LocalDate> value) {
-      put("specificDate.notIn", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayGreaterThan(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.greaterThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayLessThan(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.lessThan", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayGreaterThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.greaterThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayLessThanOrEqual(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.lessThanOrEqual", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.equals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayNotEquals(@jakarta.annotation.Nullable final Integer value) {
-      put("weekday.notEquals", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdaySpecified(@jakarta.annotation.Nullable final Boolean value) {
-      put("weekday.specified", EncodingUtils.encode(value));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("weekday.in", EncodingUtils.encodeCollection(value, "multi"));
-      return this;
-    }
-    public GetAllConditionByDatesQueryParams weekdayNotIn(@jakarta.annotation.Nullable final List<Integer> value) {
-      put("weekday.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllConditionByDatesQueryParams createdAtGreaterThan(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -1351,6 +1170,42 @@ public interface ConditionByDateResourceMspromotionApi extends ApiClient.Api {
     }
     public GetAllConditionByDatesQueryParams deletedByNotIn(@jakarta.annotation.Nullable final List<UUID> value) {
       put("deletedBy.notIn", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdGreaterThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdLessThan(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThan", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdGreaterThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.greaterThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdLessThanOrEqual(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.lessThanOrEqual", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.equals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdNotEquals(@jakarta.annotation.Nullable final Long value) {
+      put("itemsId.notEquals", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdSpecified(@jakarta.annotation.Nullable final Boolean value) {
+      put("itemsId.specified", EncodingUtils.encode(value));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.in", EncodingUtils.encodeCollection(value, "multi"));
+      return this;
+    }
+    public GetAllConditionByDatesQueryParams itemsIdNotIn(@jakarta.annotation.Nullable final List<Long> value) {
+      put("itemsId.notIn", EncodingUtils.encodeCollection(value, "multi"));
       return this;
     }
     public GetAllConditionByDatesQueryParams promotionIdGreaterThan(@jakarta.annotation.Nullable final Long value) {

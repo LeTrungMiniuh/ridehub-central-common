@@ -20,34 +20,54 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.ridehub.mspromotion.client.model.ConditionRouteItemDTO;
 import com.ridehub.mspromotion.client.model.PromotionDTO;
 import java.time.OffsetDateTime;
-import java.util.LinkedHashSet;
-import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * ConditionByRouteDTO
+ * FilePromotionDTO
  */
 @JsonPropertyOrder({
-  ConditionByRouteDTO.JSON_PROPERTY_ID,
-  ConditionByRouteDTO.JSON_PROPERTY_CREATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_UPDATED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_IS_DELETED,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_AT,
-  ConditionByRouteDTO.JSON_PROPERTY_DELETED_BY,
-  ConditionByRouteDTO.JSON_PROPERTY_ITEMS,
-  ConditionByRouteDTO.JSON_PROPERTY_PROMOTION
+  FilePromotionDTO.JSON_PROPERTY_ID,
+  FilePromotionDTO.JSON_PROPERTY_BUCKET,
+  FilePromotionDTO.JSON_PROPERTY_OBJECT_KEY,
+  FilePromotionDTO.JSON_PROPERTY_CONTENT_TYPE,
+  FilePromotionDTO.JSON_PROPERTY_SIZE,
+  FilePromotionDTO.JSON_PROPERTY_IS_BANNER,
+  FilePromotionDTO.JSON_PROPERTY_CREATED_AT,
+  FilePromotionDTO.JSON_PROPERTY_UPDATED_AT,
+  FilePromotionDTO.JSON_PROPERTY_IS_DELETED,
+  FilePromotionDTO.JSON_PROPERTY_DELETED_AT,
+  FilePromotionDTO.JSON_PROPERTY_DELETED_BY,
+  FilePromotionDTO.JSON_PROPERTY_PROMOTION
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.14.0")
-public class ConditionByRouteDTO {
+public class FilePromotionDTO {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nullable
   private Long id;
+
+  public static final String JSON_PROPERTY_BUCKET = "bucket";
+  @jakarta.annotation.Nonnull
+  private String bucket;
+
+  public static final String JSON_PROPERTY_OBJECT_KEY = "objectKey";
+  @jakarta.annotation.Nonnull
+  private String objectKey;
+
+  public static final String JSON_PROPERTY_CONTENT_TYPE = "contentType";
+  @jakarta.annotation.Nullable
+  private String contentType;
+
+  public static final String JSON_PROPERTY_SIZE = "size";
+  @jakarta.annotation.Nullable
+  private Long size;
+
+  public static final String JSON_PROPERTY_IS_BANNER = "isBanner";
+  @jakarta.annotation.Nullable
+  private Boolean isBanner;
 
   public static final String JSON_PROPERTY_CREATED_AT = "createdAt";
   @jakarta.annotation.Nonnull
@@ -69,18 +89,14 @@ public class ConditionByRouteDTO {
   @jakarta.annotation.Nullable
   private UUID deletedBy;
 
-  public static final String JSON_PROPERTY_ITEMS = "items";
-  @jakarta.annotation.Nullable
-  private Set<ConditionRouteItemDTO> items = new LinkedHashSet<>();
-
   public static final String JSON_PROPERTY_PROMOTION = "promotion";
   @jakarta.annotation.Nonnull
   private PromotionDTO promotion;
 
-  public ConditionByRouteDTO() {
+  public FilePromotionDTO() {
   }
 
-  public ConditionByRouteDTO id(@jakarta.annotation.Nullable Long id) {
+  public FilePromotionDTO id(@jakarta.annotation.Nullable Long id) {
     
     this.id = id;
     return this;
@@ -106,7 +122,137 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
+  public FilePromotionDTO bucket(@jakarta.annotation.Nonnull String bucket) {
+    
+    this.bucket = bucket;
+    return this;
+  }
+
+  /**
+   * Get bucket
+   * @return bucket
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_BUCKET)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getBucket() {
+    return bucket;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_BUCKET)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setBucket(@jakarta.annotation.Nonnull String bucket) {
+    this.bucket = bucket;
+  }
+
+
+  public FilePromotionDTO objectKey(@jakarta.annotation.Nonnull String objectKey) {
+    
+    this.objectKey = objectKey;
+    return this;
+  }
+
+  /**
+   * Get objectKey
+   * @return objectKey
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getObjectKey() {
+    return objectKey;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_OBJECT_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setObjectKey(@jakarta.annotation.Nonnull String objectKey) {
+    this.objectKey = objectKey;
+  }
+
+
+  public FilePromotionDTO contentType(@jakarta.annotation.Nullable String contentType) {
+    
+    this.contentType = contentType;
+    return this;
+  }
+
+  /**
+   * Get contentType
+   * @return contentType
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getContentType() {
+    return contentType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTENT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContentType(@jakarta.annotation.Nullable String contentType) {
+    this.contentType = contentType;
+  }
+
+
+  public FilePromotionDTO size(@jakarta.annotation.Nullable Long size) {
+    
+    this.size = size;
+    return this;
+  }
+
+  /**
+   * Get size
+   * @return size
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getSize() {
+    return size;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SIZE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSize(@jakarta.annotation.Nullable Long size) {
+    this.size = size;
+  }
+
+
+  public FilePromotionDTO isBanner(@jakarta.annotation.Nullable Boolean isBanner) {
+    
+    this.isBanner = isBanner;
+    return this;
+  }
+
+  /**
+   * Get isBanner
+   * @return isBanner
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_IS_BANNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getIsBanner() {
+    return isBanner;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_IS_BANNER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setIsBanner(@jakarta.annotation.Nullable Boolean isBanner) {
+    this.isBanner = isBanner;
+  }
+
+
+  public FilePromotionDTO createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     
     this.createdAt = createdAt;
     return this;
@@ -132,7 +278,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
+  public FilePromotionDTO updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     
     this.updatedAt = updatedAt;
     return this;
@@ -158,7 +304,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
+  public FilePromotionDTO isDeleted(@jakarta.annotation.Nullable Boolean isDeleted) {
     
     this.isDeleted = isDeleted;
     return this;
@@ -184,7 +330,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
+  public FilePromotionDTO deletedAt(@jakarta.annotation.Nullable OffsetDateTime deletedAt) {
     
     this.deletedAt = deletedAt;
     return this;
@@ -210,7 +356,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
+  public FilePromotionDTO deletedBy(@jakarta.annotation.Nullable UUID deletedBy) {
     
     this.deletedBy = deletedBy;
     return this;
@@ -236,42 +382,7 @@ public class ConditionByRouteDTO {
   }
 
 
-  public ConditionByRouteDTO items(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
-    
-    this.items = items;
-    return this;
-  }
-
-  public ConditionByRouteDTO addItemsItem(ConditionRouteItemDTO itemsItem) {
-    if (this.items == null) {
-      this.items = new LinkedHashSet<>();
-    }
-    this.items.add(itemsItem);
-    return this;
-  }
-
-  /**
-   * Get items
-   * @return items
-   */
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Set<ConditionRouteItemDTO> getItems() {
-    return items;
-  }
-
-
-  @JsonDeserialize(as = LinkedHashSet.class)
-  @JsonProperty(JSON_PROPERTY_ITEMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setItems(@jakarta.annotation.Nullable Set<ConditionRouteItemDTO> items) {
-    this.items = items;
-  }
-
-
-  public ConditionByRouteDTO promotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
+  public FilePromotionDTO promotion(@jakarta.annotation.Nonnull PromotionDTO promotion) {
     
     this.promotion = promotion;
     return this;
@@ -305,33 +416,41 @@ public class ConditionByRouteDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConditionByRouteDTO conditionByRouteDTO = (ConditionByRouteDTO) o;
-    return Objects.equals(this.id, conditionByRouteDTO.id) &&
-        Objects.equals(this.createdAt, conditionByRouteDTO.createdAt) &&
-        Objects.equals(this.updatedAt, conditionByRouteDTO.updatedAt) &&
-        Objects.equals(this.isDeleted, conditionByRouteDTO.isDeleted) &&
-        Objects.equals(this.deletedAt, conditionByRouteDTO.deletedAt) &&
-        Objects.equals(this.deletedBy, conditionByRouteDTO.deletedBy) &&
-        Objects.equals(this.items, conditionByRouteDTO.items) &&
-        Objects.equals(this.promotion, conditionByRouteDTO.promotion);
+    FilePromotionDTO filePromotionDTO = (FilePromotionDTO) o;
+    return Objects.equals(this.id, filePromotionDTO.id) &&
+        Objects.equals(this.bucket, filePromotionDTO.bucket) &&
+        Objects.equals(this.objectKey, filePromotionDTO.objectKey) &&
+        Objects.equals(this.contentType, filePromotionDTO.contentType) &&
+        Objects.equals(this.size, filePromotionDTO.size) &&
+        Objects.equals(this.isBanner, filePromotionDTO.isBanner) &&
+        Objects.equals(this.createdAt, filePromotionDTO.createdAt) &&
+        Objects.equals(this.updatedAt, filePromotionDTO.updatedAt) &&
+        Objects.equals(this.isDeleted, filePromotionDTO.isDeleted) &&
+        Objects.equals(this.deletedAt, filePromotionDTO.deletedAt) &&
+        Objects.equals(this.deletedBy, filePromotionDTO.deletedBy) &&
+        Objects.equals(this.promotion, filePromotionDTO.promotion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, items, promotion);
+    return Objects.hash(id, bucket, objectKey, contentType, size, isBanner, createdAt, updatedAt, isDeleted, deletedAt, deletedBy, promotion);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ConditionByRouteDTO {\n");
+    sb.append("class FilePromotionDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
+    sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    isBanner: ").append(toIndentedString(isBanner)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    promotion: ").append(toIndentedString(promotion)).append("\n");
     sb.append("}");
     return sb.toString();
