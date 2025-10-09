@@ -56,7 +56,7 @@ public class ConsulSSHTunnelProperties {
      * Profile suffix for development environment.
      * Defaults to "DEV".
      */
-    private String devSuffix = "DEV";
+    private String devSuffix = "dev";
 
     // Getters and Setters
     public String getVpsHost() {
