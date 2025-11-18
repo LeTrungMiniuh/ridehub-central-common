@@ -81,7 +81,7 @@ for SPEC in "${SPECS[@]}"; do
       -p apiPackage="com.ridehub.${SVC_PKG}.client.api" \
       -p modelPackage="com.ridehub.${SVC_PKG}.client.model" \
       -p invokerPackage="com.ridehub.${SVC_PKG}.client.invoker" \
-      --additional-properties useJakartaEe=true,dateLibrary=java8,interfaceOnly=true,useTags=true,hideGenerationTimestamp=true,apiNameSuffix="${API_SUFFIX}" \
+      --additional-properties useJakartaEe=true,dateLibrary=java8,interfaceOnly=true,useTags=true,hideGenerationTimestamp=true,apiNameSuffix="${API_SUFFIX}",useBeanValidation=true,performBeanValidation=true,useOptional=true,generateParameterObjects=true,aggregateParameters=true,paramNamingStrategy=camelCase,groupByTags=true,useSpringBoot3=true,serializableModel=true \
       --global-property models,apis,supportingFiles,modelTests=false,apiTests=false,modelDocs=false,apiDocs=false \
       --skip-validate-spec \
       --enable-post-process-file \
