@@ -7,5 +7,5 @@ mvn clean package
 
 git add .
 git commit -m"b"
-git tag -a v2.2.5 -m "Release 2.2.5"
-git push origin v2.2.5
+git tag -a v2.2.7 -m "Release 2.2.7"
+git push origin v2.2.7
